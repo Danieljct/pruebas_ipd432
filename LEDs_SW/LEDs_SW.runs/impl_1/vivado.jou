@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Aug 10 16:43:49 2024
+# Process ID: 13624
+# Current directory: C:/Users/danie/OneDrive - Universidad Tcnica Federico Santa Mara/Escritorio/u/IPD432/pruebas/LEDs_SW/LEDs_SW.runs/impl_1
+# Command line: vivado.exe -log LED_SW.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source LED_SW.tcl -notrace
+# Log file: C:/Users/danie/OneDrive - Universidad Tcnica Federico Santa Mara/Escritorio/u/IPD432/pruebas/LEDs_SW/LEDs_SW.runs/impl_1/LED_SW.vdi
+# Journal file: C:/Users/danie/OneDrive - Universidad Tcnica Federico Santa Mara/Escritorio/u/IPD432/pruebas/LEDs_SW/LEDs_SW.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source LED_SW.tcl -notrace

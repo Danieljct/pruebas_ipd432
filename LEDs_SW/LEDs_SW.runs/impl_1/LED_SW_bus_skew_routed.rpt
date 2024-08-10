@@ -1,0 +1,15 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sat Aug 10 16:43:30 2024
+| Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file LED_SW_bus_skew_routed.rpt -pb LED_SW_bus_skew_routed.pb -rpx LED_SW_bus_skew_routed.rpx
+| Design       : LED_SW
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+
