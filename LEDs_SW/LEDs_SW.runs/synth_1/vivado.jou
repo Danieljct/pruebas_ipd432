@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sat Aug 10 21:20:08 2024
-# Process ID: 7584
+# Start of session at: Sat Aug 10 23:59:26 2024
+# Process ID: 7916
 # Current directory: E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.runs/synth_1
 # Command line: vivado.exe -log LED_SW.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LED_SW.tcl
 # Log file: E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.runs/synth_1/LED_SW.vds
@@ -19,6 +19,6 @@
 # Host memory       :17092 MB
 # Swap memory       :9126 MB
 # Total Virtual     :26218 MB
-# Available Virtual :10794 MB
+# Available Virtual :8192 MB
 #-----------------------------------------------------------
 source LED_SW.tcl -notrace

@@ -8,3 +8,83 @@
     <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="3688" HostCore="4" HostMemory="017092083712">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="7104" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="10412" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="5836" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="15456" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="4852" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="3744" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="4060" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="272" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="5184" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="11148" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="4376" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="7840" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="4672" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="4336" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="580" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="2296" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>

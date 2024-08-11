@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.srcs/sources_1/new/LED_SW.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LED_SW
+INFO: [VRFC 10-311] analyzing module divisorreloj
+INFO: [VRFC 10-311] analyzing module blink
+INFO: [VRFC 10-311] analyzing module contadorN
+INFO: [VRFC 10-311] analyzing module led7segmentos
+INFO: [VRFC 10-311] analyzing module dobledable
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.srcs/sim_1/new/testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
