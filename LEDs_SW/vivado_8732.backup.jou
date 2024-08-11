@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Aug 10 17:22:04 2024
+# Process ID: 8732
+# Current directory: E:/github/pruebas_ipd432/LEDs_SW
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent720 E:\github\pruebas_ipd432\LEDs_SW\LEDs_SW.xpr
+# Log file: E:/github/pruebas_ipd432/LEDs_SW/vivado.log
+# Journal file: E:/github/pruebas_ipd432/LEDs_SW\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{E:/../../../OneDrive - Universidad Técnica Federico Santa María/Escritorio/u/IPD432/pruebas/Nexys-4-DDR-Master.xdc}}] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 {{E:/../../../OneDrive - Universidad Técnica Federico Santa María/Escritorio/u/IPD432/pruebas/Nexys-4-DDR-Master.xdc}}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+refresh_hw_server {localhost:3121}
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag

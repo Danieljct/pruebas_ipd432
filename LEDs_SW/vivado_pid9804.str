@@ -1,0 +1,164 @@
+/*
+
+Xilinx Vivado v2021.1 (64-bit) [Major: 2021, Minor: 1]
+SW Build: 3247384 on Thu Jun 10 19:36:33 MDT 2021
+IP Build: 3246043 on Fri Jun 11 00:30:35 MDT 2021
+
+Process ID (PID): 9804
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Aug 10 17:14:55 CLT 2024
+Time zone: 	Chile Standard Time (America/Santiago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	D:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2
+Java executable: 	D:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	danie
+User home directory: C:/Users/danie
+User working directory: E:/github/pruebas_ipd432/LEDs_SW
+User country: 	MX
+User language: 	es
+User locale: 	es_MX
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2021.1
+RDI_DATADIR: D:/Xilinx/Vivado/2021.1/data
+RDI_BINDIR: D:/Xilinx/Vivado/2021.1/bin
+
+Vivado preferences file: C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2021.1/vivado.xml
+Vivado preferences directory: C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2021.1/
+Vivado layouts directory: C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2021.1/data/layouts
+PlanAhead jar file: 	D:/Xilinx/Vivado/2021.1/lib/classes/planAhead.jar
+Vivado log file: 	E:/github/pruebas_ipd432/LEDs_SW/vivado.log
+Vivado journal file: 	E:/github/pruebas_ipd432/LEDs_SW/vivado.jou
+Engine tmp dir: 	E:/github/pruebas_ipd432/LEDs_SW/.Xil/Vivado-9804-DESKTOP-MK895J2
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_HLS: D:/Xilinx/Vitis_HLS/2021.1
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2021.1
+XILINX_VIVADO: D:/Xilinx/Vivado/2021.1
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2021.1
+
+
+GUI allocated memory:	308 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,152 MB
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: E:\github\pruebas_ipd432\LEDs_SW\LEDs_SW.xpr. Version: Vivado v2021.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/danie/OneDrive - Universidad Tcnica Federico Santa Mara/Escritorio/u/IPD432/pruebas/LEDs_SW' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 91 MB (+92461kb) [00:00:08]
+// [Engine Memory]: 1,152 MB (+1056688kb) [00:00:08]
+// [GUI Memory]: 113 MB (+18817kb) [00:00:09]
+// [GUI Memory]: 119 MB (+283kb) [00:00:10]
+// WARNING: HEventQueue.dispatchEvent() is taking  3538 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2021.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 66 MB. Current time: 8/10/24, 5:14:55 PM CLT
+// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 1135.352 ; gain = 0.000 
+// Project name: LEDs_SW; location: E:/github/pruebas_ipd432/LEDs_SW; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bz
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1172 ms. Increasing delay to 3000 ms.
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// a (cs): Critical Messages: addNotify
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 16 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2); // D
+// [GUI Memory]: 132 MB (+7447kb) [00:00:34]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys-4-DDR-Master.xdc]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ak
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ak
+selectMenuItem(PAResourceCommand.PACommandNames_ADD_SOURCES, "Add Sources..."); // an
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectTable(PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, "Nexys-4-DDR-Master.xdc ; E:\\..\\..\\..\\OneDrive - Universidad Técnica Federico Santa María\\Escritorio\\u\\IPD432\\pruebas", 0, "E:\\..\\..\\..\\OneDrive - Universidad Técnica Federico Santa María\\Escritorio\\u\\IPD432\\pruebas", 1); // t
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a
+setFileChooser("E:/github/pruebas_ipd432/Nexys-4-DDR-Master.xdc");
+selectTable(PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, "Nexys-4-DDR-Master.xdc ; E:\\github\\pruebas_ipd432", 0, "E:\\github\\pruebas_ipd432", 1); // t
+selectTable(PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, "Nexys-4-DDR-Master.xdc ; E:\\github\\pruebas_ipd432", 0, "E:\\github\\pruebas_ipd432", 1); // t
+selectTable(PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, "Nexys-4-DDR-Master.xdc ; E:\\github\\pruebas_ipd432", 0, "E:\\github\\pruebas_ipd432", 1, false, false, false, false, true); // t - Double Click
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 21 seconds
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Add Sources"); // c
+// Tcl Message: add_files -fileset constrs_1 -norecurse E:/github/pruebas_ipd432/Nexys-4-DDR-Master.xdc 
+// bz (cs):  Add Constraint  : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:16:11 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:16:41 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:17:12 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:18:11 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:18:41 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:19:11 PM CLT
+// Elapsed time: 230 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:20:11 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:20:41 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:21:11 PM CLT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 83 MB. Current time: 8/10/24, 5:21:42 PM CLT
+// Elapsed time: 138 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a
+closeMainWindow("LEDs_SW - [E:/github/pruebas_ipd432/LEDs_SW/LEDs_SW.xpr] - Vivado 2021.1"); // cs
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'
+selectButton("OptionPane.button", "Wait"); // JButton

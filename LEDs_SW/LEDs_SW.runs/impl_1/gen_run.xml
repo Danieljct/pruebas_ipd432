@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1723322503">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1723339204">
   <File Type="ROUTE-PWR" Name="LED_SW_power_routed.rpt"/>
   <File Type="PA-TCL" Name="LED_SW.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="LED_SW_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="LED_SW_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="LED_SW_rqa_opted.pb"/>
   <File Type="BITSTR-MMI" Name="LED_SW.mmi"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="LED_SW_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="LED_SW_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="LED_SW_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="LED_SW_reports.tcl"/>
   <File Type="OPT-TIMING" Name="LED_SW_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="LED_SW_opt.dcp"/>
   <File Type="OPT-DRC" Name="LED_SW_drc_opted.rpt"/>
@@ -24,6 +25,8 @@
   <File Type="PLACE-PRE-SIMILARITY" Name="LED_SW_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BIN" Name="LED_SW.bin"/>
   <File Type="PLACE-TIMING" Name="LED_SW_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="LED_SW_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="LED_SW_rqa_placed.pb"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="LED_SW_postplace_pwropt.dcp"/>
   <File Type="BITSTR-MSK" Name="LED_SW.msk"/>
   <File Type="POSTPLACE-PWROPT-TIMING" Name="LED_SW_timing_summary_postplace_pwropted.rpt"/>
@@ -40,7 +43,7 @@
   <File Type="ROUTE-METHODOLOGY-DRC" Name="LED_SW_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="LED_SW_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="LED_SW_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="LED_SW_power_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="LED_SW_rqs_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="LED_SW_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="LED_SW_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="LED_SW_timing_summary_routed.rpt"/>
@@ -63,6 +66,8 @@
   <File Type="BITSTR-NKY" Name="LED_SW.nky"/>
   <File Type="BITSTR-BMM" Name="LED_SW_bd.bmm"/>
   <File Type="PDI-FILE" Name="LED_SW.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="LED_SW_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="LED_SW_pld.pdi"/>
   <File Type="RCFI_FILE" Name="LED_SW.rcfi"/>
   <File Type="CFI_FILE" Name="LED_SW.cfi"/>
   <File Type="RNPI_FILE" Name="LED_SW.rnpi"/>
@@ -75,6 +80,10 @@
   <File Type="BG-DRC" Name="LED_SW.drc"/>
   <File Type="RDI-RDI" Name="LED_SW.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="LED_SW_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="LED_SW_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/LED_SW.sv">
@@ -90,9 +99,9 @@
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../../../../OneDrive - Universidad Técnica Federico Santa María/Escritorio/u/IPD432/pruebas/Nexys-4-DDR-Master.xdc">
+    <File Path="$PPRDIR/../Nexys-4-DDR-Master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -102,23 +111,27 @@
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Implementation 2024"/>
     <Step Id="init_design"/>
-    <Step Id="opt_design"/>
+    <Step Id="opt_design">
+      <Option Id="Directive">4</Option>
+    </Step>
     <Step Id="power_opt_design"/>
-    <Step Id="place_design"/>
+    <Step Id="place_design">
+      <Option Id="Directive">15</Option>
+    </Step>
     <Step Id="post_place_power_opt_design"/>
-    <Step Id="phys_opt_design"/>
-    <Step Id="route_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="0"/>
+    <Step Id="route_design">
+      <Option Id="Directive">5</Option>
+    </Step>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
