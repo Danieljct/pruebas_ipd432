@@ -1,0 +1,40 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Fri Aug 16 14:12:13 2024
+| Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file bypass_sensor_methodology_drc_routed.rpt -pb bypass_sensor_methodology_drc_routed.pb -rpx bypass_sensor_methodology_drc_routed.rpx
+| Design       : bypass_sensor
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 1
++--------+----------+----------------------------------+------------+
+| Rule   | Severity | Description                      | Violations |
++--------+----------+----------------------------------+------------+
+| HPDR-1 | Warning  | Port pin direction inconsistency | 1          |
++--------+----------+----------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+HPDR-1#1 Warning
+Port pin direction inconsistency  
+Hierarchical port(pin) C15 direction INOUT is not consistent with the directions of the cell pins/ports found at that level of the netlist hierarchy. Please review the design and consider changing the port(pin) direction. Both drivers and loads were expected for the net (C15) connected to this Port, but both were not found.
+Related violations: <none>
+
+
