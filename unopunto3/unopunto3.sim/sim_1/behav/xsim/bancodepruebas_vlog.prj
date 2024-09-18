@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../unopunto3.srcs/sources_1/new/PB_FSM.sv" \
+"../../../../unopunto3.srcs/sources_1/new/T1_design1.sv" \
+"../../../../../Modulos_utiles/debouncer_FSM.sv" \
+"../../../../unopunto3.srcs/sim_1/new/bancodepruebas.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

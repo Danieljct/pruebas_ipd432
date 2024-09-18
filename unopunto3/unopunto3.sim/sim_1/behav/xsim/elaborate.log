@@ -1,0 +1,18 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot bancodepruebas_behav xil_defaultlib.bancodepruebas xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-2861] module 'T1_design1' does not have a parameter named N_INCREMENT_DELAY_CONTINUOU [E:/github/pruebas_ipd432/unopunto3/unopunto3.srcs/sim_1/new/bancodepruebas.sv:30]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PB_Debouncer_FSM(DELAY=10)
+Compiling module xil_defaultlib.PB_FSM_default
+Compiling module xil_defaultlib.T1_design1_default
+Compiling module xil_defaultlib.bancodepruebas
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot bancodepruebas_behav

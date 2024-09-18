@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"bancodepruebas_func_synth.v" \
+
+sv xil_defaultlib  \
+"../../../../../unopunto3.srcs/sim_1/new/bancodepruebas.sv" \
+
+# Do not sort compile order
+nosort

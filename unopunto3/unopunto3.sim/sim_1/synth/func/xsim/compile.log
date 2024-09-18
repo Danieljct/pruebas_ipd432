@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/github/pruebas_ipd432/unopunto3/unopunto3.sim/sim_1/synth/func/xsim/bancodepruebas_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PB_Debouncer_FSM
+INFO: [VRFC 10-311] analyzing module PB_FSM
+INFO: [VRFC 10-311] analyzing module T1_design1
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/github/pruebas_ipd432/unopunto3/unopunto3.srcs/sim_1/new/bancodepruebas.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bancodepruebas
