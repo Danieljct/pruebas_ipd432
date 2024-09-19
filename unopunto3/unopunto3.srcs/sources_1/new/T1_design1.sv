@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: USM
-// Engineer: Tómas Riveros, Daniel Cubillos
+// Engineer: Tomás Riveros, Daniel Cubillos
 // 
 // Create Date: 18.09.2024 11:10:27
 // Design Name: Tarea 1.3
