@@ -26,14 +26,16 @@ module FSM_tiempo
     (
         input logic clk, 
         input logic rst,
+        input logic [1:0] SW,
         input logic [5:0] t, T2,
         input logic Bm, Bh,
         output logic M, H,
+        output logic MA, HA,
         output logic Rt, Rm
     );
 
      //FSM states type:
-enum logic [3:0] {IDLE, MINUTO, HORA, T_min, T_hora} CurrentState, NextState;
+enum logic [6:0] {IDLE, MINUTO, HORA, T_min, T_hora, ALARMA_MINUTO, ALARMA_HORA} CurrentState, NextState;
 
 
 //FSM state register:
@@ -48,12 +50,23 @@ always_comb begin
     H = 0;
     Rt = 0;
     Rm = 0;
+    MA = 0;
+    HA = 0;
     case (CurrentState)
         IDLE: begin
             if (t > N-1) NextState = T_min;
             else if (T2 > N-1) NextState = T_hora;
-            else if (Bm) NextState = MINUTO;
-            else if (Bh) NextState = HORA;
+
+            if(SW[1]) 
+               begin: if1
+                    if (Bm) NextState = ALARMA_MINUTO;
+                    else if (Bh) NextState = ALARMA_HORA;
+                end: if1
+            else 
+                begin:else1
+                    if (Bm) NextState = MINUTO;
+                    else if (Bh) NextState = HORA;
+                end: else1
         end
 
         T_min: begin
@@ -72,6 +85,14 @@ always_comb begin
 
         HORA: begin
             H = 1;
+        end
+
+        ALARMA_MINUTO: begin
+            MA = 1;
+        end
+
+        ALARMA_HORA: begin
+            HA = 1;
         end
 
     endcase

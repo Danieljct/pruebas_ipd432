@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Fri Sep 20 10:48:58 2024
-# Process ID: 21136
+# Start of session at: Fri Sep 20 16:41:23 2024
+# Process ID: 13180
 # Current directory: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/synth_1
 # Command line: vivado.exe -log top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
 # Log file: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/synth_1/top_module.vds
@@ -17,12 +17,12 @@
 # CPU Physical cores:4
 # CPU Logical cores :4
 # Host memory       :17092 MB
-# Swap memory       :8053 MB
-# Total Virtual     :25145 MB
-# Available Virtual :6828 MB
+# Swap memory       :9417 MB
+# Total Virtual     :26509 MB
+# Available Virtual :4466 MB
 #-----------------------------------------------------------
 source top_module.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 485.270 ; gain = 200.934
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 484.188 ; gain = 200.484
 Command: read_checkpoint -auto_incremental -incremental E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/utils_1/imports/synth_1/top_module.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/utils_1/imports/synth_1/top_module.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -36,21 +36,21 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16120
+INFO: [Synth 8-7075] Helper process launched with PID 13360
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1355.332 ; gain = 448.504
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1355.477 ; gain = 448.957
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_module' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'PB_Debouncer_FSM' [E:/github/pruebas_ipd432/Modulos_utiles/debouncer_FSM.sv:1]
-	Parameter DELAY bound to: 1000 - type: integer 
+	Parameter DELAY bound to: 10000 - type: integer 
 INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/Modulos_utiles/debouncer_FSM.sv:53]
 INFO: [Synth 8-6155] done synthesizing module 'PB_Debouncer_FSM' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/debouncer_FSM.sv:1]
-WARNING: [Synth 8-7071] port 'PB_pressed_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_IZQ' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:40]
-WARNING: [Synth 8-7071] port 'PB_released_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_IZQ' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:40]
-WARNING: [Synth 8-7023] instance 'BOTON_IZQ' of module 'PB_Debouncer_FSM' has 6 connections declared, but only 4 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:40]
-WARNING: [Synth 8-7071] port 'PB_pressed_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_DER' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:48]
-WARNING: [Synth 8-7071] port 'PB_released_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_DER' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:48]
-WARNING: [Synth 8-7023] instance 'BOTON_DER' of module 'PB_Debouncer_FSM' has 6 connections declared, but only 4 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:48]
+WARNING: [Synth 8-7071] port 'PB_pressed_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_IZQ' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:41]
+WARNING: [Synth 8-7071] port 'PB_released_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_IZQ' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:41]
+WARNING: [Synth 8-7023] instance 'BOTON_IZQ' of module 'PB_Debouncer_FSM' has 6 connections declared, but only 4 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:41]
+WARNING: [Synth 8-7071] port 'PB_pressed_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_DER' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:49]
+WARNING: [Synth 8-7071] port 'PB_released_pulse' of module 'PB_Debouncer_FSM' is unconnected for instance 'BOTON_DER' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:49]
+WARNING: [Synth 8-7023] instance 'BOTON_DER' of module 'PB_Debouncer_FSM' has 6 connections declared, but only 4 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:49]
 INFO: [Synth 8-6157] synthesizing module 'divisor_frec' [E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv:23]
 	Parameter fin bound to: 100000000 - type: integer 
 	Parameter fout bound to: 1 - type: integer 
@@ -62,71 +62,56 @@ INFO: [Synth 8-6155] done synthesizing module 'divisor_frec__parameterized0' (0#
 INFO: [Synth 8-6157] synthesizing module 'ContadorN' [E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv:23]
 	Parameter N bound to: 6 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'ContadorN' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'divisor_frec__parameterized1' [E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv:23]
-	Parameter fin bound to: 100000000 - type: integer 
-	Parameter fout bound to: 100 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'divisor_frec__parameterized1' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'FSM_botones' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_botones.sv:22]
 	Parameter N bound to: 100000000 - type: integer 
 INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_botones.sv:59]
 INFO: [Synth 8-6155] done synthesizing module 'FSM_botones' (0#1) [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_botones.sv:22]
 INFO: [Synth 8-6157] synthesizing module 'FSM_tiempo' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_tiempo.sv:23]
 	Parameter N bound to: 60 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_tiempo.sv:51]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_tiempo.sv:55]
 INFO: [Synth 8-6155] done synthesizing module 'FSM_tiempo' (0#1) [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_tiempo.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'RTC' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/RTC.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'RTC' (0#1) [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/RTC.sv:23]
+WARNING: [Synth 8-7071] port 'T1' of module 'RTC' is unconnected for instance 'ALARMADEHORA' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:118]
+WARNING: [Synth 8-7023] instance 'ALARMADEHORA' of module 'RTC' has 9 connections declared, but only 8 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:118]
 INFO: [Synth 8-6157] synthesizing module 'ContadorN__parameterized0' [E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv:23]
 	Parameter N bound to: 3 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'ContadorN__parameterized0' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'Formato_Hora' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'unsigned_to_bcd' [E:/github/pruebas_ipd432/Modulos_utiles/unsigned_to_bcd.sv:25]
 INFO: [Synth 8-6155] done synthesizing module 'unsigned_to_bcd' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/unsigned_to_bcd.sv:25]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (32) of module 'unsigned_to_bcd' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:147]
-WARNING: [Synth 8-7071] port 'idle' of module 'unsigned_to_bcd' is unconnected for instance 'Double_Dabble_segundos' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:142]
-WARNING: [Synth 8-7023] instance 'Double_Dabble_segundos' of module 'unsigned_to_bcd' has 6 connections declared, but only 5 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:142]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (32) of module 'unsigned_to_bcd' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:155]
-WARNING: [Synth 8-7071] port 'idle' of module 'unsigned_to_bcd' is unconnected for instance 'Double_Dabble_minutos' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:150]
-WARNING: [Synth 8-7023] instance 'Double_Dabble_minutos' of module 'unsigned_to_bcd' has 6 connections declared, but only 5 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:150]
-WARNING: [Synth 8-689] width (8) of port connection 'bcd' does not match port width (32) of module 'unsigned_to_bcd' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:163]
-WARNING: [Synth 8-7071] port 'idle' of module 'unsigned_to_bcd' is unconnected for instance 'Double_Dabble_horas' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:158]
-WARNING: [Synth 8-7023] instance 'Double_Dabble_horas' of module 'unsigned_to_bcd' has 6 connections declared, but only 5 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:158]
+WARNING: [Synth 8-7071] port 'idle' of module 'unsigned_to_bcd' is unconnected for instance 'Double_Dabble_segundos' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:20]
+WARNING: [Synth 8-7023] instance 'Double_Dabble_segundos' of module 'unsigned_to_bcd' has 6 connections declared, but only 5 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:20]
+WARNING: [Synth 8-7071] port 'idle' of module 'unsigned_to_bcd' is unconnected for instance 'Double_Dabble_minutos' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:29]
+WARNING: [Synth 8-7023] instance 'Double_Dabble_minutos' of module 'unsigned_to_bcd' has 6 connections declared, but only 5 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:29]
+WARNING: [Synth 8-7071] port 'idle' of module 'unsigned_to_bcd' is unconnected for instance 'Double_Dabble_horas' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:65]
+WARNING: [Synth 8-7023] instance 'Double_Dabble_horas' of module 'unsigned_to_bcd' has 6 connections declared, but only 5 given [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:65]
+INFO: [Synth 8-6155] done synthesizing module 'Formato_Hora' (0#1) [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'BCD_to_display' [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/BCD_to_display.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'led7segmentos' [E:/github/pruebas_ipd432/Modulos_utiles/led7segmentos.sv:1]
 INFO: [Synth 8-226] default block is never used [E:/github/pruebas_ipd432/Modulos_utiles/led7segmentos.sv:7]
 INFO: [Synth 8-6155] done synthesizing module 'led7segmentos' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/led7segmentos.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'BCD_to_display' (0#1) [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/BCD_to_display.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'divisor_frec__parameterized1' [E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv:23]
+	Parameter fin bound to: 100000000 - type: integer 
+	Parameter fout bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'divisor_frec__parameterized1' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'top_module' (0#1) [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:23]
-WARNING: [Synth 8-3848] Net LED in module/entity top_module does not have driver. [E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv:28]
-WARNING: [Synth 8-7129] Port Rt in module RTC is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[15] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[14] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[13] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[12] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[11] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[10] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[9] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[8] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[7] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[6] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[5] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[4] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[3] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[2] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[1] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[0] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SW[1] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SW[0] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[1] in module Formato_Hora is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[0] in module FSM_tiempo is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1466.656 ; gain = 559.828
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1467.086 ; gain = 560.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1466.656 ; gain = 559.828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1467.086 ; gain = 560.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1466.656 ; gain = 559.828
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1467.086 ; gain = 560.566
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1466.656 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1467.086 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -137,28 +122,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1562.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1570.027 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1562.734 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1570.027 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'PB_Debouncer_FSM'
 INFO: [Synth 8-802] inferred FSM for state register 'CurrentState_reg' in module 'FSM_botones'
@@ -187,11 +172,13 @@ INFO: [Synth 8-3354] encoded FSM with state register 'CurrentState_reg' using en
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                            00001 |                             0000
-                   T_min |                            00010 |                             0011
-                  T_hora |                            00100 |                             0100
-                  MINUTO |                            01000 |                             0001
-                    HORA |                            10000 |                             0010
+                    IDLE |                          0000001 |                          0000000
+           ALARMA_MINUTO |                          0000010 |                          0000101
+             ALARMA_HORA |                          0000100 |                          0000110
+                   T_min |                          0001000 |                          0000011
+                  T_hora |                          0010000 |                          0000100
+                  MINUTO |                          0100000 |                          0000001
+                    HORA |                          1000000 |                          0000010
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'CurrentState_reg' using encoding 'one-hot' in module 'FSM_tiempo'
 ---------------------------------------------------------------------------------------------------
@@ -203,7 +190,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'CurrentState_reg' using en
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'unsigned_to_bcd'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -212,40 +199,43 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   27 Bit       Adders := 2     
 	   2 Input   26 Bit       Adders := 1     
-	   2 Input   19 Bit       Adders := 1     
+	   2 Input   22 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 1     
-	   2 Input   10 Bit       Adders := 2     
-	   2 Input    6 Bit       Adders := 5     
-	   2 Input    5 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 24    
+	   2 Input    6 Bit       Adders := 9     
+	   2 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 48    
 	   2 Input    3 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 6     
+	               32 Bit    Registers := 12    
 	               27 Bit    Registers := 2     
 	               26 Bit    Registers := 1     
-	               19 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
 	               13 Bit    Registers := 1     
-	               10 Bit    Registers := 2     
-	                6 Bit    Registers := 6     
-	                5 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 11    
+	                5 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 9     
 +---Muxes : 
-	   3 Input   32 Bit        Muxes := 6     
+	   3 Input   32 Bit        Muxes := 12    
+	   2 Input   32 Bit        Muxes := 1     
 	   3 Input   27 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 2     
+	  17 Input    7 Bit        Muxes := 1     
 	   5 Input    6 Bit        Muxes := 2     
-	   3 Input    6 Bit        Muxes := 3     
+	   3 Input    6 Bit        Muxes := 6     
 	   5 Input    5 Bit        Muxes := 4     
-	   2 Input    5 Bit        Muxes := 10    
-	  10 Input    5 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 17    
+	   2 Input    5 Bit        Muxes := 16    
+	   2 Input    3 Bit        Muxes := 20    
 	   5 Input    3 Bit        Muxes := 6     
-	   3 Input    3 Bit        Muxes := 5     
+	   3 Input    3 Bit        Muxes := 8     
 	   2 Input    2 Bit        Muxes := 2     
 	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 12    
 	   5 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 9     
+	   3 Input    1 Bit        Muxes := 18    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -262,44 +252,28 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port LED[15] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[14] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[13] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[12] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[11] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[10] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[9] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[8] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[7] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[6] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[5] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[4] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[3] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[2] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[1] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port LED[0] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SW[1] in module top_module is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SW[0] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[1] in module Formato_Hora is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SW[0] in module FSM_tiempo is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -317,37 +291,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -364,42 +338,41 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    24|
-|3     |LUT1   |     7|
-|4     |LUT2   |    53|
-|5     |LUT3   |    36|
-|6     |LUT4   |    59|
-|7     |LUT5   |    34|
-|8     |LUT6   |    96|
-|9     |FDCE   |    50|
-|10    |FDRE   |   184|
-|11    |FDSE   |     7|
-|12    |IBUF   |     4|
-|13    |OBUF   |    15|
-|14    |OBUFT  |    16|
+|2     |CARRY4 |    39|
+|3     |LUT1   |    24|
+|4     |LUT2   |    89|
+|5     |LUT3   |    42|
+|6     |LUT4   |    88|
+|7     |LUT5   |    60|
+|8     |LUT6   |   146|
+|9     |FDCE   |    73|
+|10    |FDRE   |   300|
+|11    |FDSE   |    17|
+|12    |IBUF   |     6|
+|13    |OBUF   |    31|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1570.027 ; gain = 663.508
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:43 . Memory (MB): peak = 1562.734 ; gain = 559.828
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 1562.734 ; gain = 655.906
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:47 . Memory (MB): peak = 1570.027 ; gain = 560.566
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1570.027 ; gain = 663.508
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1562.734 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1570.027 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1562.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1570.027 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 63bec80c
+Synth Design complete | Checksum: b8a10b70
 INFO: [Common 17-83] Releasing license: Synthesis
-58 Infos, 54 Warnings, 0 Critical Warnings and 0 Errors encountered.
+62 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:01:04 . Memory (MB): peak = 1562.734 ; gain = 1072.797
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1562.734 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:59 . Memory (MB): peak = 1570.027 ; gain = 1081.105
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1570.027 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/synth_1/top_module.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Sep 20 10:50:34 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 20 16:42:38 2024...

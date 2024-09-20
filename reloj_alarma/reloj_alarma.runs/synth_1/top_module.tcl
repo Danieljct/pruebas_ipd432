@@ -77,9 +77,11 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/BCD_to_display.sv
   E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_botones.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_tiempo.sv
+  E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/Formato_Hora.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/RTC.sv
   E:/github/pruebas_ipd432/Modulos_utiles/debouncer_FSM.sv
   E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv

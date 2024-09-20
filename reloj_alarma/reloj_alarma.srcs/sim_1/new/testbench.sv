@@ -37,6 +37,7 @@ always #1 CLK100MHZ = ~CLK100MHZ;
 initial begin    
     CLK100MHZ = 0;
     CPU_RESETN = 1;
+    SW = 2'b00;
     #5 
     CPU_RESETN = 0;
     #5

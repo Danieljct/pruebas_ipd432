@@ -23,7 +23,7 @@
 module RTC(
     input logic clk, 
     input logic rst,
-    input logic M, H, Rt, Rm,
+    input logic M, H, Rm,
     input logic [5:0] t,
     output logic [5:0] T1,
     output logic [5:0] T2,
@@ -41,8 +41,10 @@ module RTC(
             T2_rom <= 0;
             T3_rom <= 0;    
         end
-        else if (Rm) 
+        else if (Rm || T2_rom > 59) 
             T2_rom <= 0;
+        else if (T3_rom > 23)
+            T3_rom <= 0;
         else begin
             T1_rom <= t;
             T2_rom <= T2_rom + M;

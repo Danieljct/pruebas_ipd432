@@ -20,7 +20,7 @@ module led7segmentos(
             4'd12: segmentos = ~7'b1100111;
             4'd13: segmentos = ~7'b0111101;
             4'd14: segmentos = ~7'b1001111;
-            4'd15: segmentos = ~7'b1000111;
+            4'd15: segmentos = ~7'b0000000;
             default: segmentos=~7'd0; 
         endcase
      end

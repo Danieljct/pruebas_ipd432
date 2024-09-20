@@ -34,9 +34,10 @@ module top_module(
     logic clk_s, clk_segment;
     logic PBL, PBR;
     logic M, H;
+    logic MA, HA;
     logic Bm, Bh;
     
-    PB_Debouncer_FSM #(.DELAY(1000))
+    PB_Debouncer_FSM #(.DELAY(10000))
         BOTON_IZQ (
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
@@ -44,7 +45,7 @@ module top_module(
             .PB_pressed_status(PBL)
         );
 
-    PB_Debouncer_FSM #(.DELAY(1000))
+    PB_Debouncer_FSM #(.DELAY(10000))
         BOTON_DER (
         .clk(CLK100MHZ),
         .rst(~CPU_RESETN),
@@ -75,24 +76,7 @@ module top_module(
         .count(t)  
     );
 
-
-//   always_comb begin
-//       if (t_internal >= 59)
-//           t = 0;        
-//       else
-//           t = t_internal; 
-//   end
-  
-
-    logic CLK100HZ;
-    divisor_frec #(.fin(100000000), .fout(100)) //le agregué 5 ceros
-        periodo10ms(
-            .CLK100MHZ,
-            .reset(~CPU_RESETN),
-            .clkout(CLK100HZ)
-    );
-
-    FSM_botones #(.N(100000000))
+    FSM_botones #(.N(100000000)) // le quite 5 ceros
         FSM_Boton_DER(
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
@@ -100,7 +84,8 @@ module top_module(
             .more(Bm)
         );
         
-    FSM_botones #(.N(100000000))
+    
+    FSM_botones #(.N(100000000)) // le quite 5 ceros
         FSM_Boton_IZQ(
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
@@ -118,12 +103,25 @@ module top_module(
             .rst(~CPU_RESETN),
             .*
         );
-
+        
+    
 
     RTC MARCADORDEHORA(
         .clk(CLK100MHZ), 
         .rst(~CPU_RESETN),
         .*
+    );
+
+    logic [5:0] T2_alarma;
+    logic [4:0] T3_alarma;
+
+    RTC ALARMADEHORA(
+        .clk(CLK100MHZ), 
+        .rst(~CPU_RESETN),
+        .M(MA), .H(HA), .Rm(0),
+        .t(0),
+        .T2(T2_alarma),
+        .T3(T3_alarma)
     );
 
     logic [2:0] contador8;
@@ -135,48 +133,53 @@ module top_module(
         .count(contador8)
         );
 
-    logic [7:0] s_bcd, m_bcd, h_bcd;
 
-
-    unsigned_to_bcd 
-    Double_Dabble_segundos(
-        .clk(CLK100MHZ), 
-        .reset(~CPU_RESETN), 
-        .trigger(1'b1), 
-        .in({26'b0,T1}),
-        .bcd(s_bcd)
-        );
-    unsigned_to_bcd 
-    Double_Dabble_minutos(
-        .clk(CLK100MHZ), 
-        .reset(~CPU_RESETN), 
-        .trigger(1'b1), 
-        .in({26'b0,T2}),
-        .bcd(m_bcd)
-        );
-    unsigned_to_bcd 
-    Double_Dabble_horas(
-        .clk(CLK100MHZ), 
-        .reset(~CPU_RESETN), 
-        .trigger(1'b1), 
-        .in({27'b0,T3}),
-        .bcd(h_bcd)
-        );
-    const logic [7:0] AM = 8'hAB, PM = 8'hCB;
-    
     logic [31:0] hora_display;
+    logic [31:0] alarma_display;
+
     
-    assign hora_display = {h_bcd[7:0], m_bcd[7:0], s_bcd[7:0], PM};
-   
-    logic [4:0] contador8shift;
-    logic [3:0] numero_bcd;
+    Formato_Hora formato(
+        .LED(LED[0]),
+        .*
+    );
 
-    assign contador8shift = contador8 << 2;
-    assign numero_bcd =  hora_display >> contador8shift;
+    Formato_Hora formato_alarma(
+        .T1(0),
+        .T2(T2_alarma),
+        .T3(T3_alarma),
+        .hora_display(alarma_display),
+        .LED(),
+        .*
+    );
+    
+    
+    
+    BCD_to_display display(
+        .hora_display(SW[1]?alarma_display:hora_display),
+        .*
+    );
 
-    led7segmentos conversor(.BCD_in(numero_bcd), .segmentos);
+    logic [14:0] LEDs, LEDsf;
+    logic clockalarma;
+    divisor_frec #(.fin(100000000), .fout(20)) // le agregué 3 ceros
+    frecuencia_alarma(
+        .CLK100MHZ,
+        .reset(~CPU_RESETN),
+        .clkout(clockalarma)
+    );
 
-    assign AN = ~(8'b1 << contador8);
+    always_ff @(posedge clockalarma)
+        if(~CPU_RESETN)
+            LEDsf <= 15'b101010101010101;
+        else
+            LEDsf <= ~LEDsf;
 
+    always_comb begin
+        if({T2_alarma,T3_alarma} == {T2,T3} && t < 5)
+            LEDs = LEDsf;
+        else
+            LEDs = 15'b000000000000000;
+    end
 
+    assign LED = {LEDs,LED[0]};
 endmodule
