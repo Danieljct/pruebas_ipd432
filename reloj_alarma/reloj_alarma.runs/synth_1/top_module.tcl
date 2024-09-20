@@ -56,8 +56,10 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15740-DESKTOP-MK895J2/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1600-DESKTOP-MK895J2/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -81,6 +83,8 @@ read_verilog -library xil_defaultlib -sv {
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/RTC.sv
   E:/github/pruebas_ipd432/Modulos_utiles/debouncer_FSM.sv
   E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv
+  E:/github/pruebas_ipd432/Modulos_utiles/led7segmentos.sv
+  E:/github/pruebas_ipd432/Modulos_utiles/unsigned_to_bcd.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv
 }
 OPTRACE "Adding files" END { }
@@ -96,6 +100,8 @@ read_xdc E:/github/pruebas_ipd432/reloj_alarma/Nexys-4-DDR-Master.xdc
 set_property used_in_implementation false [get_files E:/github/pruebas_ipd432/reloj_alarma/Nexys-4-DDR-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/utils_1/imports/synth_1/top_module.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

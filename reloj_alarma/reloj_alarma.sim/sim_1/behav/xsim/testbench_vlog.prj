@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../Modulos_utiles/ContadorN.sv" \
+"../../../../reloj_alarma.srcs/sources_1/new/FSM_botones.sv" \
+"../../../../reloj_alarma.srcs/sources_1/new/FSM_tiempo.sv" \
+"../../../../reloj_alarma.srcs/sources_1/new/RTC.sv" \
+"../../../../../Modulos_utiles/debouncer_FSM.sv" \
+"../../../../../Modulos_utiles/divisor_frec.sv" \
+"../../../../../Modulos_utiles/led7segmentos.sv" \
+"../../../../reloj_alarma.srcs/sources_1/new/top_module.sv" \
+"../../../../../Modulos_utiles/unsigned_to_bcd.sv" \
+"../../../../reloj_alarma.srcs/sim_1/new/testbench.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ContadorN #(N)(input logic clk,reset, output logic[N-1:0] count);
+module ContadorN #(N = 3)(input logic clk,reset, output logic[N-1:0] count);
     always_ff @(posedge clk, posedge reset)
     if (reset)
         count<= 'b0;

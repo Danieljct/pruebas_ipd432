@@ -1,0 +1,99 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Fri Sep 20 10:51:21 2024
+| Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_module_control_sets_placed.rpt
+| Design       : top_module
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    21 |
+|    Minimum number of control sets                        |    21 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    71 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    21 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |              50 |           15 |
+| No           | Yes                   | No                     |             114 |           37 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              77 |           22 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------+-------------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|      Clock Signal     |               Enable Signal               |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------+-------------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|  frec_div_segment/CLK |                                           | frec_div_1seg/CPU_RESETN[0]         |                2 |              3 |         1.50 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_horas/shift[3]_i_1__1_n_0   | frec_div_1seg/CPU_RESETN[0]         |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_horas/shift[7]_i_1__1_n_0   | frec_div_1seg/CPU_RESETN[0]         |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_minutos/shift[3]_i_1__0_n_0 | frec_div_1seg/CPU_RESETN[0]         |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_minutos/shift[7]_i_1__0_n_0 | frec_div_1seg/CPU_RESETN[0]         |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_segundos/shift[7]_i_1_n_0   | frec_div_1seg/CPU_RESETN[0]         |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_segundos/shift[3]_i_1_n_0   | frec_div_1seg/CPU_RESETN[0]         |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  |                                           | FSM_tiempo/SR[0]                    |                1 |              6 |         6.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_horas/counter_next          | frec_div_1seg/CPU_RESETN[0]         |                3 |              6 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_minutos/counter_next        | frec_div_1seg/CPU_RESETN[0]         |                2 |              6 |         3.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_segundos/counter_next       | frec_div_1seg/CPU_RESETN[0]         |                2 |              6 |         3.00 |
+|  frec_div_1seg/CLK    |                                           | FSM_tiempo/AR[0]                    |                2 |              6 |         3.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_horas/bcd_next              | frec_div_1seg/CPU_RESETN[0]         |                2 |              8 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_minutos/bcd_next            | frec_div_1seg/CPU_RESETN[0]         |                2 |              8 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  | Double_Dabble_segundos/bcd_next           | frec_div_1seg/CPU_RESETN[0]         |                2 |              8 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG  |                                           | BOTON_DER/delay_timer[9]_i_1__0_n_0 |                3 |             10 |         3.33 |
+|  CLK100MHZ_IBUF_BUFG  |                                           | BOTON_IZQ/delay_timer[9]_i_1_n_0    |                3 |             10 |         3.33 |
+|  CLK100MHZ_IBUF_BUFG  | FSM_tiempo/sel                            | frec_div_1seg/CPU_RESETN[0]         |                3 |             11 |         3.67 |
+|  CLK100MHZ_IBUF_BUFG  |                                           | FSM_Boton_DER/t[26]                 |                7 |             26 |         3.71 |
+|  CLK100MHZ_IBUF_BUFG  |                                           | FSM_Boton_IZQ/t[26]                 |                7 |             26 |         3.71 |
+|  CLK100MHZ_IBUF_BUFG  |                                           | frec_div_1seg/CPU_RESETN[0]         |               27 |             77 |         2.85 |
++-----------------------+-------------------------------------------+-------------------------------------+------------------+----------------+--------------+
+
+
