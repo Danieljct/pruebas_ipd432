@@ -56,10 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1600-DESKTOP-MK895J2/incrSyn
-set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6740-DESKTOP-MK895J2/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -77,6 +75,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/ALARMA_LEDs.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/BCD_to_display.sv
   E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/FSM_botones.sv

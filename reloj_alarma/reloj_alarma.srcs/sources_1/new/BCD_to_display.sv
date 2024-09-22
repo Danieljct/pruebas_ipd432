@@ -21,12 +21,21 @@
 
 
 module BCD_to_display(
-    input logic [2:0] contador8,
+    input logic clk_segment,
+    input logic CPU_RESETN,
     input logic [31:0] hora_display,
     output logic [7:0] AN,
     output logic [6:0] segmentos
     );
+        
+    logic [2:0] contador8;
     
+    ContadorN #(.N(3))
+    contador_anodos(
+        .clk(clk_segment),
+        .reset(~CPU_RESETN), 
+        .count(contador8)
+        );
     
     
     logic [4:0] contador8shift;

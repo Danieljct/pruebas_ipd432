@@ -38,7 +38,7 @@ module top_module(
     logic Bm, Bh;
     
     PB_Debouncer_FSM #(.DELAY(10000))
-        BOTON_IZQ (
+        PB_Debouncer_L (
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
             .PB(BTNL),
@@ -46,7 +46,7 @@ module top_module(
         );
 
     PB_Debouncer_FSM #(.DELAY(10000))
-        BOTON_DER (
+        PB_Debouncer_R (
         .clk(CLK100MHZ),
         .rst(~CPU_RESETN),
         .PB(BTNR),
@@ -54,14 +54,14 @@ module top_module(
     );
 
     divisor_frec #(.fin(100000000), .fout(1)) //le agregué 6 ceros
-    frec_div_1seg(
+    CLK_divider_To_1Hz(
         .CLK100MHZ,
         .reset(~CPU_RESETN),
         .clkout(clk_s)
     );
     
     divisor_frec #(.fin(100000000), .fout(10000)) // le agregué 3 ceros
-    frec_div_segment(
+    frec_div_10kHz(
         .CLK100MHZ,
         .reset(~CPU_RESETN),
         .clkout(clk_segment)
@@ -77,7 +77,7 @@ module top_module(
     );
 
     FSM_botones #(.N(100000000)) // le quite 5 ceros
-        FSM_Boton_DER(
+        FSM_PB_R(
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
             .PB(PBR),
@@ -86,7 +86,7 @@ module top_module(
         
     
     FSM_botones #(.N(100000000)) // le quite 5 ceros
-        FSM_Boton_IZQ(
+        FSM_PB_L(
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
             .PB(PBL),
@@ -106,7 +106,7 @@ module top_module(
         
     
 
-    RTC MARCADORDEHORA(
+    RTC Memoria_HORA(
         .clk(CLK100MHZ), 
         .rst(~CPU_RESETN),
         .*
@@ -115,7 +115,7 @@ module top_module(
     logic [5:0] T2_alarma;
     logic [4:0] T3_alarma;
 
-    RTC ALARMADEHORA(
+    RTC Memoria_ALARMA(
         .clk(CLK100MHZ), 
         .rst(~CPU_RESETN),
         .M(MA), .H(HA), .Rm(0),
@@ -124,26 +124,17 @@ module top_module(
         .T3(T3_alarma)
     );
 
-    logic [2:0] contador8;
-
-    ContadorN #(.N(3))
-    anodos(
-        .clk(clk_segment),
-        .reset(~CPU_RESETN), 
-        .count(contador8)
-        );
-
 
     logic [31:0] hora_display;
     logic [31:0] alarma_display;
 
     
-    Formato_Hora formato(
+    Formato_Hora Formato_Hora(
         .LED(LED[0]),
         .*
     );
 
-    Formato_Hora formato_alarma(
+    Formato_Hora Formato_Alarma(
         .T1(0),
         .T2(T2_alarma),
         .T3(T3_alarma),
@@ -154,32 +145,26 @@ module top_module(
     
     
     
-    BCD_to_display display(
+    BCD_to_display BCD_to_display(
         .hora_display(SW[1]?alarma_display:hora_display),
         .*
     );
 
-    logic [14:0] LEDs, LEDsf;
+    logic [14:0] LEDs;
     logic clockalarma;
     divisor_frec #(.fin(100000000), .fout(20)) // le agregué 3 ceros
-    frecuencia_alarma(
+    CLK_divider_to_20hz(
         .CLK100MHZ,
         .reset(~CPU_RESETN),
         .clkout(clockalarma)
     );
+    
+    
+    ALARMA_LEDs 
+        ALARMA_LEDs(
+        .*
+        );
 
-    always_ff @(posedge clockalarma)
-        if(~CPU_RESETN)
-            LEDsf <= 15'b101010101010101;
-        else
-            LEDsf <= ~LEDsf;
-
-    always_comb begin
-        if({T2_alarma,T3_alarma} == {T2,T3} && t < 5)
-            LEDs = LEDsf;
-        else
-            LEDs = 15'b000000000000000;
-    end
 
     assign LED = {LEDs,LED[0]};
 endmodule
