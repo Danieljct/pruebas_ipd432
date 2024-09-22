@@ -37,10 +37,12 @@ module Formato_Hora(
     always_ff @(posedge CLK100MHZ)
         if(SW[0])
             begin
-                if (T3 > 12) 
+                
+                if  (T3 > 12) 
                     T3_2 <= T3 - 12;
                 else
                     T3_2 <= T3;
+
                 if(T3>=12) 
                     begin
                         tipo_hora <= PM;
@@ -49,7 +51,10 @@ module Formato_Hora(
                     end
                 else
                     begin
-                        T3_2 <= T3; 
+                        if (T3 == 0)
+                            T3_2 <= T3 + 12;
+                        else
+                            T3_2 <= T3; 
                         tipo_hora <= AM;
                         LED <= 0;
                     end

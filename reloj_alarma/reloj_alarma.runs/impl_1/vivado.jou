@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Sep 22 16:14:47 2024
-# Process ID: 12920
+# Start of session at: Sun Sep 22 17:18:11 2024
+# Process ID: 14792
 # Current directory: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1
 # Command line: vivado.exe -log top_module.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_module.tcl -notrace
 # Log file: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1/top_module.vdi
@@ -17,8 +17,8 @@
 # CPU Physical cores:4
 # CPU Logical cores :4
 # Host memory       :17092 MB
-# Swap memory       :8439 MB
-# Total Virtual     :25531 MB
-# Available Virtual :4899 MB
+# Swap memory       :8748 MB
+# Total Virtual     :25840 MB
+# Available Virtual :5028 MB
 #-----------------------------------------------------------
 source top_module.tcl -notrace

@@ -37,7 +37,7 @@ module top_module(
     logic MA, HA;
     logic Bm, Bh;
     
-    PB_Debouncer_FSM #(.DELAY(10000))
+    PB_Debouncer_FSM #(.DELAY(100000))
         PB_Debouncer_L (
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
@@ -45,7 +45,7 @@ module top_module(
             .PB_pressed_status(PBL)
         );
 
-    PB_Debouncer_FSM #(.DELAY(10000))
+    PB_Debouncer_FSM #(.DELAY(100000))
         PB_Debouncer_R (
         .clk(CLK100MHZ),
         .rst(~CPU_RESETN),
