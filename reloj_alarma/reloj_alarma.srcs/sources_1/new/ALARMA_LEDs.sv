@@ -23,8 +23,8 @@
 module ALARMA_LEDs(
     input logic clockalarma,
     input logic CPU_RESETN,
-    input logic [4:0] T2, T2_alarma,
-    input logic [3:0] T3, T3_alarma,
+    input logic [5:0] T2, T2_alarma,
+    input logic [4:0] T3, T3_alarma,
     input logic [5:0] t,
     output logic [14:0] LEDs
     );

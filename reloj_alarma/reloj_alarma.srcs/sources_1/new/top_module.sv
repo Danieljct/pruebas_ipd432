@@ -53,14 +53,14 @@ module top_module(
         .PB_pressed_status(PBR)
     );
 
-    divisor_frec #(.fin(100000000), .fout(1)) //le agregué 6 ceros
+    divisor_frec #(.fin(100000000), .fout(1)) //le agregué 6 ceros para el testbench
     CLK_divider_To_1Hz(
         .CLK100MHZ,
         .reset(~CPU_RESETN),
         .clkout(clk_s)
     );
     
-    divisor_frec #(.fin(100000000), .fout(10000)) // le agregué 3 ceros
+    divisor_frec #(.fin(100000000), .fout(10000)) // le agregué 3 ceros para el testbench
     frec_div_10kHz(
         .CLK100MHZ,
         .reset(~CPU_RESETN),
@@ -76,7 +76,7 @@ module top_module(
         .count(t)  
     );
 
-    FSM_botones #(.N(100000000)) // le quite 5 ceros
+    FSM_botones #(.N(100000000)) // le quite 5 ceros para el testbench
         FSM_PB_R(
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
@@ -85,7 +85,7 @@ module top_module(
         );
         
     
-    FSM_botones #(.N(100000000)) // le quite 5 ceros
+    FSM_botones #(.N(100000000)) // le quite 5 ceros para el testbench
         FSM_PB_L(
             .clk(CLK100MHZ),
             .rst(~CPU_RESETN),
