@@ -53,7 +53,7 @@ module top_module(
         .PB_pressed_status(PBR)
     );
 
-    divisor_frec #(.fin(100000000), .fout(1)) //le agregué 6 ceros para el testbench
+    generador_1hz //le agregué 6 ceros para el testbench
     CLK_divider_To_1Hz(
         .CLK100MHZ,
         .reset(~CPU_RESETN),
