@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Mon Sep 23 19:16:22 2024
+| Date             : Mon Sep 23 21:03:44 2024
 | Host             : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_module_power_routed.rpt -pb top_module_power_summary_routed.pb -rpx top_module_power_routed.rpx
 | Design           : top_module
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.125        |
+| Total On-Chip Power (W)  | 0.126        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.028        |
+| Dynamic (W)              | 0.029        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.4         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      910 |       --- |             --- |
-|   LUT as Logic |     0.002 |      337 |     63400 |            0.53 |
-|   Register     |    <0.001 |      396 |    126800 |            0.31 |
+| Slice Logic    |     0.002 |      952 |       --- |             --- |
+|   LUT as Logic |     0.002 |      388 |     63400 |            0.61 |
+|   Register     |    <0.001 |      397 |    126800 |            0.31 |
 |   CARRY4       |    <0.001 |       41 |     15850 |            0.26 |
 |   Others       |     0.000 |       29 |       --- |             --- |
-| Signals        |     0.002 |      690 |       --- |             --- |
+| Signals        |     0.002 |      706 |       --- |             --- |
 | I/O            |     0.022 |       37 |       210 |           17.62 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.125 |          |           |                 |
+| Total          |     0.126 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -137,10 +137,11 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------+-----------+
-| Name       | Power (W) |
-+------------+-----------+
-| top_module |     0.028 |
-+------------+-----------+
++----------------+-----------+
+| Name           | Power (W) |
++----------------+-----------+
+| top_module     |     0.029 |
+|   Formato_Hora |     0.001 |
++----------------+-----------+
 
 

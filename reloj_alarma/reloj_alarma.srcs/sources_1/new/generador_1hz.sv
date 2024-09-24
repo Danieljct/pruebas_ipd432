@@ -22,7 +22,7 @@
 
 module generador_1hz (input logic CLK100MHZ, reset, output logic clkout);
 
-localparam delay=$clog2(100000000);
+localparam delay=$clog2(50000000);
 
 logic [delay-1:0] counter = '0;
 
@@ -31,7 +31,7 @@ always_ff @(posedge CLK100MHZ, posedge reset) begin
         counter<='d0;
         clkout<=0;
     end 
-    else if (counter>=100000000-1) begin
+    else if (counter>=50000000-1) begin
         counter<='d0;
         clkout<=~clkout;
     end 

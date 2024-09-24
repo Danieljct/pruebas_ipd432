@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -80,6 +81,7 @@ read_verilog -library xil_defaultlib -sv {
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/RTC.sv
   E:/github/pruebas_ipd432/Modulos_utiles/debouncer_FSM.sv
   E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv
+  E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/generador_1hz.sv
   E:/github/pruebas_ipd432/Modulos_utiles/led7segmentos.sv
   E:/github/pruebas_ipd432/Modulos_utiles/unsigned_to_bcd.sv
   E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.srcs/sources_1/new/top_module.sv
