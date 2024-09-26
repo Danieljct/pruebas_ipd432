@@ -3,22 +3,22 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Sep 23 21:02:06 2024
-# Process ID: 11760
-# Current directory: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1
+# Start of session at: Thu Sep 26 11:40:14 2024
+# Process ID: 21860
+# Current directory: C:/Users/danie/Documents/GitHub/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1
 # Command line: vivado.exe -log top_module.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_module.tcl -notrace
-# Log file: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1/top_module.vdi
-# Journal file: E:/github/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1\vivado.jou
-# Running On        :DESKTOP-MK895J2
+# Log file: C:/Users/danie/Documents/GitHub/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1/top_module.vdi
+# Journal file: C:/Users/danie/Documents/GitHub/pruebas_ipd432/reloj_alarma/reloj_alarma.runs/impl_1\vivado.jou
+# Running On        :PC-Daniel
 # Platform          :Windows Server 2016 or Windows 10
-# Operating System  :19045
-# Processor Detail  :Intel(R) Core(TM) i3-9100F CPU @ 3.60GHz
-# CPU Frequency     :3600 MHz
+# Operating System  :22631
+# Processor Detail  :11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+# CPU Frequency     :2419 MHz
 # CPU Physical cores:4
-# CPU Logical cores :4
-# Host memory       :17092 MB
-# Swap memory       :9342 MB
-# Total Virtual     :26434 MB
-# Available Virtual :5124 MB
+# CPU Logical cores :8
+# Host memory       :16856 MB
+# Swap memory       :18253 MB
+# Total Virtual     :35110 MB
+# Available Virtual :9368 MB
 #-----------------------------------------------------------
 source top_module.tcl -notrace

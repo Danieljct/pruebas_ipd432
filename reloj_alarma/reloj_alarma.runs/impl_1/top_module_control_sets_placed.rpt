@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Mon Sep 23 21:02:58 2024
-| Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
+| Date         : Thu Sep 26 11:40:44 2024
+| Host         : PC-Daniel running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_module_control_sets_placed.rpt
 | Design       : top_module
 | Device       : xc7a100t
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    39 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   115 |
+| Unused register locations in slices containing registers |   116 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              15 |            6 |
-| No           | No                    | Yes                    |              74 |           21 |
-| No           | Yes                   | No                     |             149 |           55 |
+| No           | No                    | No                     |              15 |            4 |
+| No           | No                    | Yes                    |              73 |           23 |
+| No           | Yes                   | No                     |             149 |           52 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             159 |           48 |
+| Yes          | Yes                   | No                     |             159 |           45 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -75,43 +75,43 @@ Table of Contents
 +----------------------------------+-----------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
 |  CLK100MHZ_IBUF_BUFG             |                                                           | Formato_Hora/LED_i_1_n_0                 |                1 |              1 |         1.00 |
 |  frec_div_10kHz/CLK              |                                                           | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              3 |         3.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/shift[3]_i_1_n_0       | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              4 |         2.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/shift[3]_i_1__1_n_0   | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/shift[7]_i_1__1_n_0   | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/shift[7]_i_1_n_0       | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/shift[7]_i_1__4_n_0    | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/shift[3]_i_1__4_n_0    | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/shift[3]_i_1__0_n_0  | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/shift[7]_i_1__0_n_0  | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              4 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/shift[3]_i_1__1_n_0   | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/shift[7]_i_1_n_0       | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/shift[3]_i_1_n_0       | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/shift[3]_i_1__2_n_0      | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/shift[7]_i_1__2_n_0      | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/shift[7]_i_1__0_n_0  | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_segundos/shift[3]_i_1__3_n_0 | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_segundos/shift[7]_i_1__3_n_0 | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/shift[7]_i_1__2_n_0      | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/shift[3]_i_1__2_n_0      | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/shift[7]_i_1__4_n_0    | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/shift[3]_i_1__4_n_0    | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/shift[7]_i_1__1_n_0   | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              4 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG             | Memoria_ALARMA/T3_rom[4]_i_2__0_n_0                       | Memoria_ALARMA/T3_rom[4]_i_1__0_n_0      |                1 |              5 |         5.00 |
 |  CLK100MHZ_IBUF_BUFG             | Memoria_HORA/T3_rom[4]_i_2_n_0                            | Memoria_HORA/T3_rom[4]_i_1_n_0           |                1 |              5 |         5.00 |
-|  CLK_divider_To_1Hz/clkout_reg_0 |                                                           | FSM_tiempo/AR[0]                         |                2 |              6 |         3.00 |
+|  CLK100MHZ_IBUF_BUFG             | Memoria_HORA/T2_rom[5]_i_2_n_0                            | Memoria_HORA/T2_rom[5]_i_1_n_0           |                2 |              6 |         3.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/counter_next           | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/counter_next         | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
+|  CLK_divider_To_1Hz/clkout_reg_0 |                                                           | FSM_tiempo/AR[0]                         |                1 |              6 |         6.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_segundos/counter_next        | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/counter_next             | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              6 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/counter_next           | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              6 |         2.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/counter_next          | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
 |  CLK100MHZ_IBUF_BUFG             | Memoria_ALARMA/T2_rom[5]_i_2__0_n_0                       | Memoria_ALARMA/T2_rom[5]_i_1__0_n_0      |                2 |              6 |         3.00 |
 |  CLK100MHZ_IBUF_BUFG             | Memoria_HORA/T1_rom                                       | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              6 |         6.00 |
-|  CLK100MHZ_IBUF_BUFG             | Memoria_HORA/T2_rom[5]_i_2_n_0                            | Memoria_HORA/T2_rom[5]_i_1_n_0           |                2 |              6 |         3.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/counter_next             | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/counter_next           | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/counter_next         | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              6 |         2.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/counter_next           | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              6 |         2.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_segundos/counter_next        | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/counter_next          | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              6 |         3.00 |
 |  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_segundos/bcd_next            | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              7 |         3.50 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/bcd_next               | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              8 |         2.67 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/bcd_next             | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              8 |         2.67 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/bcd_next                 | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              8 |         8.00 |
 |  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_minutos/bcd_next               | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              8 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/bcd_next              | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              8 |         4.00 |
-|  CLK_divider_to_20hz/CLK         |                                                           | Formato_Hora/Double_Dabble_minutos/SR[0] |                7 |             15 |         2.14 |
-|  CLK100MHZ_IBUF_BUFG             |                                                           |                                          |                6 |             15 |         2.50 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_minutos/bcd_next             | Formato_Hora/Double_Dabble_minutos/SR[0] |                1 |              8 |         8.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_segundos/bcd_next              | Formato_Hora/Double_Dabble_minutos/SR[0] |                3 |              8 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Alarma/Double_Dabble_horas/bcd_next               | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              8 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG             | Formato_Hora/Double_Dabble_horas/bcd_next                 | Formato_Hora/Double_Dabble_minutos/SR[0] |                2 |              8 |         4.00 |
+|  CLK_divider_to_20hz/CLK         |                                                           | Formato_Hora/Double_Dabble_minutos/SR[0] |                8 |             15 |         1.88 |
+|  CLK100MHZ_IBUF_BUFG             |                                                           |                                          |                4 |             15 |         3.75 |
 |  CLK100MHZ_IBUF_BUFG             |                                                           | PB_Debouncer_R/delay_timer[0]_i_1__0_n_0 |                5 |             17 |         3.40 |
 |  CLK100MHZ_IBUF_BUFG             |                                                           | PB_Debouncer_L/delay_timer[0]_i_1_n_0    |                5 |             17 |         3.40 |
-|  CLK100MHZ_IBUF_BUFG             |                                                           | FSM_PB_L/t[26]                           |                7 |             26 |         3.71 |
-|  CLK100MHZ_IBUF_BUFG             |                                                           | FSM_PB_R/t[26]                           |                7 |             26 |         3.71 |
-|  CLK100MHZ_IBUF_BUFG             |                                                           | Formato_Hora/Double_Dabble_minutos/SR[0] |               41 |            112 |         2.73 |
+|  CLK100MHZ_IBUF_BUFG             |                                                           | FSM_PB_R/t[26]_i_1_n_0                   |                7 |             26 |         3.71 |
+|  CLK100MHZ_IBUF_BUFG             |                                                           | FSM_PB_L/t[26]_i_1__0_n_0                |                7 |             26 |         3.71 |
+|  CLK100MHZ_IBUF_BUFG             |                                                           | Formato_Hora/Double_Dabble_minutos/SR[0] |               40 |            111 |         2.78 |
 +----------------------------------+-----------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
 
 
