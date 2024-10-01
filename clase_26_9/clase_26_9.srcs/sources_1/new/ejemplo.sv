@@ -27,14 +27,17 @@ module ejemplo #(parameter OP_WIDTH = 8)(
         input logic clk
     );
     logic [OP_WIDTH-1:0] rA, rB, rC, rD, rE;
-    logic [OP_WIDTH-1:0] rAB_sum_X, rC_X;
+    logic [OP_WIDTH-1:0] rAB_sum_X, rC_X, rB_X;
     
     always_ff @(posedge clk) begin
         rA <= A;
         rB <= B;
         rC <= rA * rA;
-        rD <= rB * rB * rB;
-        Y <= rC * rD;
+        rC_X <= rC;
+        rD <= rB * rB;
+        rB_X <= rB;
+        rE <= rD * rB_X;
+        Y <= rC_X * rE;
     end
     
     

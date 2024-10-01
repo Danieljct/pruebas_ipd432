@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1727363233">
-  <File Type="ROUTE-PWR" Name="ejemplo_power_routed.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1727748337">
+  <File Type="ROUTE-PWR" Name="route_report_power_0.rpt"/>
   <File Type="PA-TCL" Name="ejemplo.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="ejemplo_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-SUM" Name="route_report_power_summary_0.pb"/>
   <File Type="REPORTS-TCL" Name="ejemplo_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="ejemplo_rqa_opted.pb"/>
+  <File Type="OPT-RQA-PB" Name="opt_report_qor_assessment_0.pb"/>
   <File Type="BITSTR-MMI" Name="ejemplo.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="ejemplo_methodology_drc_opted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="opt_report_methodology_0.rpt"/>
   <File Type="INIT-TIMING" Name="ejemplo_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="ejemplo_timing_summary_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="opt_report_timing_summary_0.rpt"/>
   <File Type="OPT-DCP" Name="ejemplo_opt.dcp"/>
-  <File Type="OPT-DRC" Name="ejemplo_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="opt_report_drc_0.rpt"/>
   <File Type="OPT-HWDEF" Name="ejemplo.hwdef"/>
   <File Type="PWROPT-DCP" Name="ejemplo_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="ejemplo_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="ejemplo_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="ejemplo_placed.dcp"/>
-  <File Type="PLACE-IO" Name="ejemplo_io_placed.rpt"/>
+  <File Type="PLACE-IO" Name="place_report_io_0.rpt"/>
   <File Type="PLACE-CLK" Name="ejemplo_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="ejemplo_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="ejemplo_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="ejemplo_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="ejemplo_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="place_report_incremental_reuse_0.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="ejemplo_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BIN" Name="ejemplo.bin"/>
-  <File Type="PLACE-TIMING" Name="ejemplo_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="ejemplo_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="ejemplo_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="place_report_timing_summary_0.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="route_report_power_0.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="place_report_qor_assessment_0.pb"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="ejemplo_postplace_pwropt.dcp"/>
   <File Type="BITSTR-MSK" Name="ejemplo.msk"/>
   <File Type="POSTPLACE-PWROPT-TIMING" Name="ejemplo_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="ejemplo_physopt.dcp"/>
   <File Type="PHYSOPT-DRC" Name="ejemplo_drc_physopted.rpt"/>
   <File Type="BITSTR-RBT" Name="ejemplo.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="ejemplo_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="phys_opt_report_timing_summary_0.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="ejemplo_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="ejemplo_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="ejemplo_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="ejemplo_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="ejemplo_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="ejemplo_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC" Name="route_report_drc_0.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="route_report_drc_0.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="route_report_drc_0.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="ejemplo_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="ejemplo_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="ejemplo_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="ejemplo_rqs_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="ejemplo_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="ejemplo_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="ejemplo_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-RQS-PB" Name="route_report_qor_suggestions_0.pb"/>
+  <File Type="ROUTE-STATUS" Name="route_report_route_status_0.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="route_report_route_status_0.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="route_report_timing_summary_0.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="ejemplo_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="ejemplo_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="ejemplo_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="ejemplo_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="ejemplo_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="ejemplo_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="ejemplo_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-TIMING-RPX" Name="route_report_timing_summary_0.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="route_report_incremental_reuse_0.rpt"/>
+  <File Type="ROUTE-CLK" Name="route_report_clock_utilization_0.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="route_report_bus_skew_0.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="route_report_bus_skew_0.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="route_report_bus_skew_0.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="ejemplo_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="ejemplo_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ejemplo_timing_summary_postroute_physopted.rpt"/>
@@ -126,16 +126,22 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-      <Desc>Default settings for Implementation.</Desc>
+    <StratHandle Name="Performance_ExtraTimingOpt" Flow="Vivado Implementation 2024">
+      <Desc>Includes alternate algorithms for timing-driven optimization</Desc>
     </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
-    <Step Id="place_design"/>
+    <Step Id="place_design">
+      <Option Id="Directive">8</Option>
+    </Step>
     <Step Id="post_place_power_opt_design"/>
-    <Step Id="phys_opt_design"/>
-    <Step Id="route_design"/>
+    <Step Id="phys_opt_design">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="route_design">
+      <Option Id="Directive">1</Option>
+    </Step>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>

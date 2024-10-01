@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/danie/Documents/GitHub/pruebas_ipd432/clase_26_9/clase_26_9.runs/impl_1/ejemplo.tcl"
+  variable script "E:/github/pruebas_ipd432/clase_26_9/clase_26_9.runs/impl_1/ejemplo.tcl"
   variable category "vivado_impl"
 }
 
@@ -106,24 +106,25 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
+  set_param chipscope.maxJobs 1
   set_param checkpoint.writeSynthRtdsInDcp 1
-  set_param runs.launchOptions { -jobs 8  }
+  set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12756-DESKTOP-MK895J2/incrSyn
+  set_param runs.launchOptions { -jobs 4  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/danie/Documents/GitHub/pruebas_ipd432/clase_26_9/clase_26_9.cache/wt [current_project]
-  set_property parent.project_path C:/Users/danie/Documents/GitHub/pruebas_ipd432/clase_26_9/clase_26_9.xpr [current_project]
-  set_property ip_output_repo C:/Users/danie/Documents/GitHub/pruebas_ipd432/clase_26_9/clase_26_9.cache/ip [current_project]
+  set_property webtalk.parent_dir E:/github/pruebas_ipd432/clase_26_9/clase_26_9.cache/wt [current_project]
+  set_property parent.project_path E:/github/pruebas_ipd432/clase_26_9/clase_26_9.xpr [current_project]
+  set_property ip_output_repo E:/github/pruebas_ipd432/clase_26_9/clase_26_9.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/danie/Documents/GitHub/pruebas_ipd432/clase_26_9/clase_26_9.runs/synth_1/ejemplo.dcp
+  add_files -quiet E:/github/pruebas_ipd432/clase_26_9/clase_26_9.runs/synth_1/ejemplo.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/danie/Documents/GitHub/pruebas_ipd432/clase_26_9/constraints.xdc
+  read_xdc E:/github/pruebas_ipd432/clase_26_9/constraints.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
@@ -162,7 +163,7 @@ OPTRACE "read constraints: opt_design_post" START { }
 OPTRACE "read constraints: opt_design_post" END { }
 OPTRACE "opt_design reports" START { REPORT }
   set_param project.isImplRun true
-  generate_parallel_reports -reports { "report_drc -file ejemplo_drc_opted.rpt -pb ejemplo_drc_opted.pb -rpx ejemplo_drc_opted.rpx"  }
+  generate_parallel_reports -reports { "report_drc -file opt_report_drc_0.rpt -pb opt_report_drc_0.pb -rpx opt_report_drc_0.rpx" "report_utilization -file opt_report_utilization_0.rpt -pb opt_report_utilization_0.pb" "report_methodology -file opt_report_methodology_0.rpt -pb opt_report_methodology_0.pb -rpx opt_report_methodology_0.rpx" "report_timing_summary -max_paths 10 -report_unconstrained -file opt_report_timing_summary_0.rpt -pb opt_report_timing_summary_0.pb -rpx opt_report_timing_summary_0.rpx" "report_qor_assessment -max_paths 100 -file opt_report_qor_assessment_0.rpt -pb opt_report_qor_assessment_0.pb"  }
   set_param project.isImplRun false
 OPTRACE "opt_design reports" END { }
 OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
@@ -192,13 +193,13 @@ OPTRACE "implement_debug_core" START { }
 OPTRACE "implement_debug_core" END { }
   } 
 OPTRACE "place_design" START { }
-  place_design 
+  place_design -directive ExtraTimingOpt
 OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
 OPTRACE "read constraints: place_design_post" END { }
 OPTRACE "place_design reports" START { REPORT }
   set_param project.isImplRun true
-  generate_parallel_reports -reports { "report_io -file ejemplo_io_placed.rpt" "report_utilization -file ejemplo_utilization_placed.rpt -pb ejemplo_utilization_placed.pb" "report_control_sets -verbose -file ejemplo_control_sets_placed.rpt"  }
+  generate_parallel_reports -reports { "report_io -file place_report_io_0.rpt" "report_incremental_reuse -file place_report_incremental_reuse_0.rpt" "report_timing_summary -max_paths 10 -report_unconstrained -file place_report_timing_summary_0.rpt -pb place_report_timing_summary_0.pb -rpx place_report_timing_summary_0.rpx" "report_qor_assessment -max_paths 100 -file place_report_qor_assessment_0.rpt -pb place_report_qor_assessment_0.pb"  }
   set_param project.isImplRun false
 OPTRACE "place_design reports" END { }
 OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
@@ -223,11 +224,14 @@ set rc [catch {
 OPTRACE "read constraints: phys_opt_design" START { }
 OPTRACE "read constraints: phys_opt_design" END { }
 OPTRACE "phys_opt_design" START { }
-  phys_opt_design 
+  phys_opt_design -directive Explore
 OPTRACE "phys_opt_design" END { }
 OPTRACE "read constraints: phys_opt_design_post" START { }
 OPTRACE "read constraints: phys_opt_design_post" END { }
 OPTRACE "phys_opt_design report" START { REPORT }
+  set_param project.isImplRun true
+  generate_parallel_reports -reports { "report_timing_summary -max_paths 10 -report_unconstrained -file phys_opt_report_timing_summary_0.rpt -pb phys_opt_report_timing_summary_0.pb -rpx phys_opt_report_timing_summary_0.rpx" "report_design_analysis -congestion -timing -logic_level_distribution -max_paths 100 -file phys_opt_report_design_analysis_0.rpt"  }
+  set_param project.isImplRun false
 OPTRACE "phys_opt_design report" END { }
 OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
   write_checkpoint -force ejemplo_physopt.dcp
@@ -251,13 +255,13 @@ set rc [catch {
 OPTRACE "read constraints: route_design" START { }
 OPTRACE "read constraints: route_design" END { }
 OPTRACE "route_design" START { }
-  route_design 
+  route_design -directive NoTimingRelaxation
 OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
 OPTRACE "route_design reports" START { REPORT }
   set_param project.isImplRun true
-  generate_parallel_reports -reports { "report_drc -file ejemplo_drc_routed.rpt -pb ejemplo_drc_routed.pb -rpx ejemplo_drc_routed.rpx" "report_methodology -file ejemplo_methodology_drc_routed.rpt -pb ejemplo_methodology_drc_routed.pb -rpx ejemplo_methodology_drc_routed.rpx" "report_power -file ejemplo_power_routed.rpt -pb ejemplo_power_summary_routed.pb -rpx ejemplo_power_routed.rpx" "report_route_status -file ejemplo_route_status.rpt -pb ejemplo_route_status.pb" "report_timing_summary -max_paths 10 -report_unconstrained -file ejemplo_timing_summary_routed.rpt -pb ejemplo_timing_summary_routed.pb -rpx ejemplo_timing_summary_routed.rpx -warn_on_violation " "report_incremental_reuse -file ejemplo_incremental_reuse_routed.rpt" "report_clock_utilization -file ejemplo_clock_utilization_routed.rpt" "report_bus_skew -warn_on_violation -file ejemplo_bus_skew_routed.rpt -pb ejemplo_bus_skew_routed.pb -rpx ejemplo_bus_skew_routed.rpx"  }
+  generate_parallel_reports -reports { "report_utilization -file route_report_utilization_0.rpt -pb route_report_utilization_0.pb" "report_clock_utilization -file route_report_clock_utilization_0.rpt" "report_drc -file route_report_drc_0.rpt -pb route_report_drc_0.pb -rpx route_report_drc_0.rpx" "report_power -file route_report_power_0.rpt -pb route_report_power_summary_0.pb -rpx route_report_power_0.rpx" "report_route_status -file route_report_route_status_0.rpt -pb route_report_route_status_0.pb" "report_timing_summary -max_paths 10 -report_unconstrained -warn_on_violation -file route_report_timing_summary_0.rpt -pb route_report_timing_summary_0.pb -rpx route_report_timing_summary_0.rpx" "report_design_analysis -congestion -timing -logic_level_distribution -max_paths 100 -file route_report_design_analysis_0.rpt" "report_qor_suggestions -max_paths 100 -file route_report_qor_suggestions_0.rpt -pb route_report_qor_suggestions_0.pb" "report_incremental_reuse -file route_report_incremental_reuse_0.rpt" "report_bus_skew -warn_on_violation -file route_report_bus_skew_0.rpt -pb route_report_bus_skew_0.pb -rpx route_report_bus_skew_0.rpx"  }
   set_param project.isImplRun false
 OPTRACE "route_design reports" END { }
 OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }

@@ -1,0 +1,67 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Mon Sep 30 23:07:32 2024
+| Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
+| Command      : report_qor_assessment -max_paths 100 -file opt_report_qor_assessment_0.rpt -pb opt_report_qor_assessment_0.pb
+| Design       : ejemplo
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Optimized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report QoR Assessment
+
+Table of Contents
+-----------------
+1. Overall Assessment Summary
+2. QoR Assessment Details
+3. Methodology Check Details
+4. ML Strategy Availability
+
+1. Overall Assessment Summary
+-----------------------------
+
++----------------------+----------------------------------------------------------------------------+
+| QoR Assessment Score | 3 - Design runs have a small chance of success                             |
++----------------------+----------------------------------------------------------------------------+
+| Flow Guidance        | Run report_methodology and fix or waive warnings                           |
+|                      | To see critical timing paths examine the CSV file containing timing paths. |
++----------------------+----------------------------------------------------------------------------+
+
+
+2. QoR Assessment Details
+-------------------------
+
++----------------------------------------+-----------+--------+------+-----------+-------+--------+
+| Name                                   | Threshold | Actual | Used | Available | Score | Status |
++----------------------------------------+-----------+--------+------+-----------+-------+--------+
+| Utilization                            |           |        |      |           |   5.0 |        |
+| *  Min LUT Combined                    |     <2.00 |   0.00 |    0 |       144 |       | REVIEW |
+| Netlist                                |           |        |      |           |       |     OK |
+| *  High Fanout Nets driven by FFs/LUTs |         5 |   4.50 |   -  |        -  |       | REVIEW |
+| Clocking                               |           |        |      |           |   5.0 |     OK |
+| Congestion                             |           |        |      |           |   3.0 |
+|    Predicted Congestion Score          |         5 |      3 |      |           |   3.0 | REVIEW |
+| Timing                                 |           |        |      |           |   3.0 |        |
+|    WNS                                 |    -0.001 | -0.506 |   -  |        -  |       | REVIEW |
+|    TNS                                 |    -0.001 | -2.025 |   -  |        -  |       | REVIEW |
++----------------------------------------+-----------+--------+------+-----------+-------+--------+
+* Sub-categories with prefix * do not impact score
+
+
+3. Methodology Check Details
+----------------------------
+
++-----------+-------------------------------+-------------+----------------------+
+| ID        | Description                   | Criticality | Number of Violations |
++-----------+-------------------------------+-------------+----------------------+
+| TIMING-18 | Missing input or output delay | Warning     | 24                   |
++-----------+-------------------------------+-------------+----------------------+
+
+
+4. ML Strategy Availability
+---------------------------
+
+ML Strategy is not supported for 7-series architectures.
+
