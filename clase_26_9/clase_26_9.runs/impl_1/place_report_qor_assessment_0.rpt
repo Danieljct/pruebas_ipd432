@@ -1,0 +1,64 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Mon Sep 30 23:27:53 2024
+| Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
+| Command      : report_qor_assessment -max_paths 100 -file place_report_qor_assessment_0.rpt -pb place_report_qor_assessment_0.pb
+| Design       : ejemplo
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Placed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report QoR Assessment
+
+Table of Contents
+-----------------
+1. Overall Assessment Summary
+2. QoR Assessment Details
+3. Methodology Check Details
+4. ML Strategy Availability
+
+1. Overall Assessment Summary
+-----------------------------
+
++----------------------+----------------------------------------------------------------------------+
+| QoR Assessment Score | 4 - Design runs have a good chance of success                              |
++----------------------+----------------------------------------------------------------------------+
+| Flow Guidance        | Run report_methodology and fix or waive warnings                           |
+|                      | To see critical timing paths examine the CSV file containing timing paths. |
++----------------------+----------------------------------------------------------------------------+
+
+
+2. QoR Assessment Details
+-------------------------
+
++-------------+-----------+--------+------+-----------+-------+--------+
+| Name        | Threshold | Actual | Used | Available | Score | Status |
++-------------+-----------+--------+------+-----------+-------+--------+
+| Utilization |           |        |      |           |   5.0 |     OK |
+| Netlist     |           |        |      |           |       |     OK |
+| Clocking    |           |        |      |           |   5.0 |     OK |
+| Congestion  |           |        |      |           |   5.0 |     OK |
+| Timing      |           |        |      |           |   5.0 |        |
+|    WNS      |    -0.001 | -0.042 |   -  |        -  |       | REVIEW |
+|    TNS      |    -0.001 | -0.042 |   -  |        -  |       | REVIEW |
++-------------+-----------+--------+------+-----------+-------+--------+
+* Sub-categories with prefix * do not impact score
+
+
+3. Methodology Check Details
+----------------------------
+
++-----------+-------------------------------+-------------+----------------------+
+| ID        | Description                   | Criticality | Number of Violations |
++-----------+-------------------------------+-------------+----------------------+
+| TIMING-18 | Missing input or output delay | Warning     | 24                   |
++-----------+-------------------------------+-------------+----------------------+
+
+
+4. ML Strategy Availability
+---------------------------
+
+ML Strategy is not supported for 7-series architectures.
+
