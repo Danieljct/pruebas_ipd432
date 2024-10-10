@@ -1,73 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1728012243">
-  <File Type="ROUTE-PWR" Name="TOP_ECHO_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="TOP_ECHO.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="TOP_ECHO_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="TOP_ECHO_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="TOP_ECHO.msk"/>
-  <File Type="ROUTE-CLK" Name="TOP_ECHO_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="TOP_ECHO.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="TOP_ECHO_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="TOP_ECHO.bit"/>
-  <File Type="BG-DRC" Name="TOP_ECHO.drc"/>
-  <File Type="BG-BGN" Name="TOP_ECHO.bgn"/>
-  <File Type="BG-BIN" Name="TOP_ECHO.bin"/>
-  <File Type="BITSTR-RBT" Name="TOP_ECHO.rbt"/>
-  <File Type="BITSTR-NKY" Name="TOP_ECHO.nky"/>
-  <File Type="BITSTR-BMM" Name="TOP_ECHO_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="TOP_ECHO.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="TOP_ECHO_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="TOP_ECHO.sysdef"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1728510923">
+  <File Type="ROUTE-PWR" Name="TOP_module_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="TOP_module.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="TOP_module_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="TOP_module_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="TOP_module_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="TOP_module.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="TOP_module_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="TOP_module_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="TOP_module_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="TOP_module_opt.dcp"/>
+  <File Type="OPT-DRC" Name="TOP_module_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="TOP_module.hwdef"/>
+  <File Type="PWROPT-DCP" Name="TOP_module_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="TOP_module_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="TOP_module_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="TOP_module_placed.dcp"/>
+  <File Type="PLACE-IO" Name="TOP_module_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="TOP_module_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="TOP_module_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="TOP_module_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="TOP_module_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="TOP_module_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="TOP_module_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="TOP_module.bin"/>
+  <File Type="PLACE-TIMING" Name="TOP_module_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="TOP_module_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="TOP_module_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="TOP_module_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="TOP_module.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="TOP_module_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="TOP_module_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="TOP_module_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="TOP_module.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="TOP_module_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="TOP_module_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="TOP_module_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="TOP_module_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="TOP_module_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="TOP_module_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="TOP_module_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="TOP_module_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TOP_module_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TOP_module_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="TOP_module_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="TOP_module_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="TOP_module_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="TOP_module_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="TOP_module_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="TOP_module_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="TOP_module_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="TOP_module_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="TOP_module_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="TOP_module_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="TOP_module_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="TOP_module_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="TOP_module_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="TOP_module_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="TOP_module_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="TOP_module_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="TOP_module_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="TOP_module.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="TOP_module_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="TOP_module_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="TOP_module.nky"/>
+  <File Type="BITSTR-BMM" Name="TOP_module_bd.bmm"/>
+  <File Type="PDI-FILE" Name="TOP_module.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="TOP_module_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="TOP_module_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="TOP_module.rcfi"/>
+  <File Type="CFI_FILE" Name="TOP_module.cfi"/>
+  <File Type="RNPI_FILE" Name="TOP_module.rnpi"/>
+  <File Type="NPI_FILE" Name="TOP_module.npi"/>
+  <File Type="RBD_FILE" Name="TOP_module.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="TOP_ECHO.ltx"/>
+  <File Type="BITSTR-LTX" Name="TOP_module.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="TOP_module.sysdef"/>
+  <File Type="BG-BGN" Name="TOP_module.bgn"/>
+  <File Type="BG-DRC" Name="TOP_module.drc"/>
+  <File Type="RDI-RDI" Name="TOP_module.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-DRC" Name="TOP_ECHO_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="TOP_ECHO.hwdef"/>
-  <File Type="PLACE-IO" Name="TOP_ECHO_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="TOP_ECHO_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="TOP_ECHO_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="TOP_ECHO_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="TOP_ECHO_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DRC" Name="TOP_ECHO_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="TOP_ECHO_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="TOP_ECHO_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="TOP_ECHO_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="TOP_ECHO_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="TOP_ECHO_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="TOP_ECHO_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="TOP_ECHO_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="TOP_ECHO_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="TOP_ECHO_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="TOP_ECHO_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="TOP_ECHO_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="TOP_ECHO_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="TOP_ECHO_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="TOP_ECHO_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="TOP_ECHO_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="TOP_ECHO_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="TOP_ECHO_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="TOP_ECHO_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="TOP_ECHO_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="TOP_ECHO_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="TOP_ECHO_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="TOP_ECHO_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="TOP_ECHO_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="TOP_ECHO_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="TOP_ECHO_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="TOP_ECHO_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TOP_ECHO_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="TOP_ECHO_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TOP_ECHO_methodology_drc_routed.rpx"/>
-  <File Type="PDI-FILE" Name="TOP_ECHO.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="TOP_ECHO_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="TOP_ECHO_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="TOP_ECHO.rcfi"/>
-  <File Type="CFI_FILE" Name="TOP_ECHO.cfi"/>
-  <File Type="RNPI_FILE" Name="TOP_ECHO.rnpi"/>
-  <File Type="NPI_FILE" Name="TOP_ECHO.npi"/>
-  <File Type="RBD_FILE" Name="TOP_ECHO.rbd"/>
-  <File Type="ROUTE-RQS" Name="TOP_ECHO_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="TOP_ECHO_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="TOP_module_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="TOP_module_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
@@ -107,7 +121,55 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/TOP_ECHO.sv">
+    <File Path="$PSRCDIR/sources_1/new/TOP_module.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/main_FSM.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Modulos_utiles/ContadorN.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/memoria_ff.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_unit.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Modulos_utiles/divisor_frec.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Modulos_utiles/EContadorN.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Modulos_utiles/EContadorN_1.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -116,7 +178,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="TOP_ECHO"/>
+      <Option Name="TopModule" Val="TOP_module"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -156,7 +218,9 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_real"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_ff"/>
 </GenRun>

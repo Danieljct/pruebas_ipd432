@@ -56,9 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "clk_wiz_0_synth_1" START { ROLLUP_AUTO }
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -77,7 +77,7 @@ set_property ip_output_repo e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.c
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]

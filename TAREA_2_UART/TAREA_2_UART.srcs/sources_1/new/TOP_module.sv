@@ -23,69 +23,81 @@
 module TOP_module(
 	input  logic               clk_100M,
 	input  logic               reset_n,
-	input  logic               button_c,
-	
 	input  logic               uart_rx,
 	//output logic               uart_tx_busy,
 	output logic               uart_tx_usb
-
-
-
-
 );
-
-	logic [7:0]    tx_data; 
-	logic [7:0]    rx_data; 
-
-	logic uart_tx;
-	logic [1:0]    reset_sr;
-	logic reset;
-	assign reset = reset_sr[1];
-	
-	always_ff @(posedge clk_100M)
-		reset_sr <= {reset_sr[0], ~reset_n};
-
-    assign uart_tx_usb = uart_tx;
-
-
-
-  clk_wiz_0 instance_name
+logic clk;
+logic reset;
+assign reset = ~reset_n;
+ clk_wiz_0 clk100MHZ
    (
-    // Clock out ports
-    .clk_out1(clk_out1),     // output clk_out1
-    // Status and control signals
-    .reset(reset), // input reset
-    .locked(locked),       // output locked
-   // Clock in ports
-    .clk_in1(clk_in1)      // input clk_in1
+    .clk_out1(clk),  // output clk_out1
+    .reset,         // input reset
+    .locked(),       // output locked
+    .clk_in1(clk_100M)      // input clk_in1
 );
+
+
+    
+logic tx_start, tx_busy, rx_ready;
+logic [7:0]    tx_data; 
+logic [7:0]    rx_data; 
+logic mready, rready;
+
 
 uart_basic #(
 		.CLK_FREQUENCY(100000000), // reloj base de entrada
 		.BAUD_RATE(115200)
 	) uart_basic_inst (
-		.clk(clk_100M),
-		.reset(reset),
+		.clk,
+		.reset,
 		.rx(uart_rx),
 		.rx_data(rx_data),
 		.rx_ready(rx_ready),
-		.tx(uart_tx),
-		.tx_start(1),
+		.tx(uart_tx_usb),
+		.tx_start(tx_start),
 		.tx_data(tx_data),
 		.tx_busy(tx_busy)
 	);
-
-    assign tx_data = rx_data;
-    
-    blk_mem_gen_0 your_instance_name (
-      .clka(clka),    // input wire clka
-      .ena(ena),      // input wire ena
-      .wea(wea),      // input wire [0 : 0] wea
-      .addra(addra),  // input wire [9 : 0] addra
-      .dina(dina),    // input wire [7 : 0] dina
-      .douta(douta)  // output wire [7 : 0] douta
-    );
+	
+logic WM, RM, op, SW, SR, tx, CMD;
+main_FSM main_FSM(
+	.clk, .rst(reset), .rx_ready, .mready, .rready,
+	.rx(rx_data),
+	.WM, .RM, .op, .SW, .SR, .tx, .CMD
+	);
+ logic [7:0] douta, doutb;
+logic [7:0] tx_in;	
 
 
 
+memory_unit memory_unit(
+		.*	
+	);
+
+always_comb begin
+	if (RM && tx) begin
+		tx_data = tx_in;
+		tx_start = ~tx_busy;
+	end
+	else begin
+		tx_start = 0;
+		tx_data = 8'b0;
+	end
+end
+
+
+/*
+ila_real your_instance_name (
+	.clk(clkila), // input wire clk
+	.probe0(rx_data), // input wire [7:0]  probe0  
+	.probe1(tx_data), // input wire [7:0]  probe1 
+	.probe2(CurrentState), // input wire [3:0]  probe2 
+	.probe3(uart_rx), // input wire [0:0]  probe3 
+	.probe4(uart_tx_usb), // input wire [0:0]  probe4 
+	.probe5(tx_busy), // input wire [0:0]  probe5 
+	.probe6(rx_ready) // input wire [0:0]  probe6
+);
+*/
 endmodule

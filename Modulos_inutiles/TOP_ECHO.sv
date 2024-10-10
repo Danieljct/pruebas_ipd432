@@ -49,7 +49,7 @@ module TOP_ECHO(
 
 
 
-
+logic rx_ready;
 
 uart_basic #(
 		.CLK_FREQUENCY(100000000), // reloj base de entrada
@@ -61,23 +61,13 @@ uart_basic #(
 		.rx_data(rx_data),
 		.rx_ready(rx_ready),
 		.tx(uart_tx),
-		.tx_start(1),
+		.tx_start(rx_ready),
 		.tx_data(tx_data),
 		.tx_busy(tx_busy)
 	);
 
     assign tx_data = rx_data;
     
-ila_1 your_instance_name (
-	.clk(clk_100M), // input wire clk
-
-
-	.probe0(tx_data), // input wire [7:0]  probe0  
-	.probe1(rx_data), // input wire [7:0]  probe1 
-	.probe2(uart_rx), // input wire [0:0]  probe2 
-	.probe3(uart_tx_usb), // input wire [0:0]  probe3 
-	.probe4(button_c) // input wire [0:0]  probe4
-);
 
 
 
