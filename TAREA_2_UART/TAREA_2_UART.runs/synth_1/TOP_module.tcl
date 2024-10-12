@@ -58,8 +58,9 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15040-DESKTOP-MK895J2/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3780-DESKTOP-MK895J2/incrSyn
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -87,6 +88,7 @@ read_verilog -library xil_defaultlib -sv {
   E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv
   E:/github/pruebas_ipd432/Modulos_utiles/EContadorN.sv
   E:/github/pruebas_ipd432/Modulos_utiles/EContadorN_1.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv
 }
 read_verilog -library xil_defaultlib {
   E:/github/pruebas_ipd432/Modulos_utiles/uart/data_sync.v
@@ -105,12 +107,6 @@ set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd4
 
 read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff.xci
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff_ooc.xdc]
-
-read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/ila_real/ila_real.xci
-set_property used_in_synthesis false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_real/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_real/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_real/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_real/ila_real_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

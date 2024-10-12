@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="6,934.272609 us"></ZoomStartTime>
-      <ZoomEndTime time="7,685.272610 us"></ZoomEndTime>
-      <Cursor1Time time="7,092.396120 us"></Cursor1Time>
+      <ZoomStartTime time="4,068,964.694 ns"></ZoomStartTime>
+      <ZoomEndTime time="4,069,719.695 ns"></ZoomEndTime>
+      <Cursor1Time time="4,069,253.694 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="219"></NameColumnWidth>
-      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+      <NameColumnWidth column_width="218"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="35" />
    <wvobject fp_name="/testbench/uart_rx" type="logic">
       <obj_property name="ElementShortName">uart_rx</obj_property>
       <obj_property name="ObjectShortName">uart_rx</obj_property>
@@ -91,5 +91,73 @@
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_salida" type="array">
       <obj_property name="ElementShortName">addr_count_salida[4:0]</obj_property>
       <obj_property name="ObjectShortName">addr_count_salida[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/sel_op" type="array">
+      <obj_property name="ElementShortName">sel_op[2:0]</obj_property>
+      <obj_property name="ObjectShortName">sel_op[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/man" type="array">
+      <obj_property name="ElementShortName">man[17:0]</obj_property>
+      <obj_property name="ObjectShortName">man[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/distancia_FSM/N" type="array">
+      <obj_property name="ElementShortName">N[2:0]</obj_property>
+      <obj_property name="ObjectShortName">N[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/N_shift" type="array">
+      <obj_property name="ElementShortName">N_shift[2:0]</obj_property>
+      <obj_property name="ObjectShortName">N_shift[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/douta_salida" type="array">
+      <obj_property name="ElementShortName">douta_salida[7:0]</obj_property>
+      <obj_property name="ObjectShortName">douta_salida[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/CMD" type="logic">
+      <obj_property name="ElementShortName">CMD</obj_property>
+      <obj_property name="ObjectShortName">CMD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/BRAMA/addra" type="array">
+      <obj_property name="ElementShortName">addra[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/BRAMA/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/BRAMB/addra" type="array">
+      <obj_property name="ElementShortName">addra[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/BRAMB/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/Ac" type="logic">
+      <obj_property name="ElementShortName">Ac</obj_property>
+      <obj_property name="ObjectShortName">Ac</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/distancia_FSM/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/distancia_FSM/CurrentState" type="array">
+      <obj_property name="ElementShortName">CurrentState[10:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrentState[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/tx_dist" type="logic">
+      <obj_property name="ElementShortName">tx_dist</obj_property>
+      <obj_property name="ObjectShortName">tx_dist</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/tx_in" type="array">
+      <obj_property name="ElementShortName">tx_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/tx_busy" type="logic">
+      <obj_property name="ElementShortName">tx_busy</obj_property>
+      <obj_property name="ObjectShortName">tx_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/tx_start" type="logic">
+      <obj_property name="ElementShortName">tx_start</obj_property>
+      <obj_property name="ObjectShortName">tx_start</obj_property>
    </wvobject>
 </wave_config>

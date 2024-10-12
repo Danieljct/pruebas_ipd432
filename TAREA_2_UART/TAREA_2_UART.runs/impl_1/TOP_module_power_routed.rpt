@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Wed Oct  9 18:58:11 2024
+| Date             : Sat Oct 12 19:43:15 2024
 | Host             : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command          : report_power -file TOP_module_power_routed.rpt -pb TOP_module_power_summary_routed.pb -rpx TOP_module_power_routed.rpx
 | Design           : TOP_module
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.237        |
+| Total On-Chip Power (W)  | 0.238        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.139        |
+| Dynamic (W)              | 0.141        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      226 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       76 |     63400 |            0.12 |
-|   CARRY4       |    <0.001 |       11 |     15850 |            0.07 |
-|   Register     |    <0.001 |      101 |    126800 |            0.08 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |    <0.001 |      174 |       --- |             --- |
+| Clocks         |     0.002 |        8 |       --- |             --- |
+| Slice Logic    |    <0.001 |      422 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      161 |     63400 |            0.25 |
+|   CARRY4       |    <0.001 |       21 |     15850 |            0.13 |
+|   Register     |    <0.001 |      166 |    126800 |            0.13 |
+|   Others       |     0.000 |       21 |       --- |             --- |
+| Signals        |    <0.001 |      287 |       --- |             --- |
 | Block RAM      |     0.002 |        1 |       135 |            0.74 |
 | MMCM           |     0.135 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |        4 |       210 |            1.90 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.237 |          |           |                 |
+| Total          |     0.238 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.004 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.093 |       0.075 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,14 +144,17 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------+-----------+
-| Name              | Power (W) |
-+-------------------+-----------+
-| TOP_module        |     0.139 |
-|   clk100MHZ       |     0.136 |
-|     inst          |     0.136 |
-|   memory_unit     |     0.002 |
-|   uart_basic_inst |     0.001 |
-+-------------------+-----------+
++---------------+-----------+
+| Name          | Power (W) |
++---------------+-----------+
+| TOP_module    |     0.141 |
+|   clk100MHZ   |     0.136 |
+|     inst      |     0.136 |
+|   memory_unit |     0.004 |
+|     BRAMA     |     0.001 |
+|       U0      |     0.001 |
+|     BRAMB     |     0.001 |
+|       U0      |     0.001 |
++---------------+-----------+
 
 

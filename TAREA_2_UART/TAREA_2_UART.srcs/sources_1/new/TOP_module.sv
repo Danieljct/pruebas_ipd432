@@ -43,7 +43,7 @@ assign reset = ~reset_n;
 logic tx_start, tx_busy, rx_ready;
 logic [7:0]    tx_data; 
 logic [7:0]    rx_data; 
-logic mready, rready;
+logic mready, rready, man_ready;
 
 
 uart_basic #(
@@ -61,29 +61,35 @@ uart_basic #(
 		.tx_busy(tx_busy)
 	);
 	
-logic WM, RM, op, SW, SR, tx, CMD;
+logic WM, RM, op, SW, SR, tx, CMD, Ac;
+logic [2:0] sel_op;
+
 main_FSM main_FSM(
-	.clk, .rst(reset), .rx_ready, .mready, .rready,
+	.clk, .rst(reset), .rx_ready, .mready, .rready, .man_ready,
 	.rx(rx_data),
-	.WM, .RM, .op, .SW, .SR, .tx, .CMD
+	.WM, .RM, .op, .SW, .SR, .tx, .CMD, .Ac, .sel_op
 	);
  logic [7:0] douta, doutb;
 logic [7:0] tx_in;	
 
 
-
+logic tx_dist;
 memory_unit memory_unit(
 		.*	
 	);
 
 always_comb begin
-	if (RM && tx) begin
+	if (RM && tx) begin        //leyendo
 		tx_data = tx_in;
 		tx_start = ~tx_busy;
 	end
-	else begin
+	else if (tx_dist)begin   // man enviar
+	   tx_start = tx_dist;
+	   tx_data = tx_in;	
+	end
+	else begin             // no sé
 		tx_start = 0;
-		tx_data = 8'b0;
+		tx_data = 8'd11;   //párece que es este
 	end
 end
 

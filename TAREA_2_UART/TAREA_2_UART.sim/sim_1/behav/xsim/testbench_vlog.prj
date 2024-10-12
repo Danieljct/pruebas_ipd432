@@ -4,7 +4,6 @@ verilog xil_defaultlib  --include "../../../../TAREA_2_UART.ip_user_files/ipstat
 "../../../../TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
 "../../../../TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
 "../../../../TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/sim/blk_mem_gen_ff.v" \
-"../../../../TAREA_2_UART.gen/sources_1/ip/ila_real/sim/ila_real.v" \
 "../../../../../Modulos_utiles/uart/data_sync.v" \
 "../../../../../Modulos_utiles/uart/uart_basic.v" \
 "../../../../../Modulos_utiles/uart/uart_baud_tick_gen.v" \
@@ -19,6 +18,7 @@ sv xil_defaultlib  --include "../../../../TAREA_2_UART.ip_user_files/ipstatic" \
 "../../../../../Modulos_utiles/divisor_frec.sv" \
 "../../../../../Modulos_utiles/EContadorN.sv" \
 "../../../../../Modulos_utiles/EContadorN_1.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv" \
 "../../../../TAREA_2_UART.srcs/sim_1/new/testbench.sv" \
 
 # compile glbl module

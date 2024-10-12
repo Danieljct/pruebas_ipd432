@@ -24,9 +24,10 @@ module testbench();
         send_byte(8'h00);
         send_byte(8'h01);
 
+        #300000
         // Enviar los bytes del 0 al 1023
-        for (int i = 0; i < 16; i++) begin
-            send_byte(15-i[7:0]); // Enviar cada byte
+        for (int i = 0; i < 1024; i++) begin
+            send_byte(i[7:0]+100); // Enviar cada byte
         end
         send_byte(8'h00);
         #300000
@@ -35,16 +36,28 @@ module testbench();
        send_byte(8'h00);
        send_byte(8'h00);
        
-       for (int i = 0; i < 16; i++) begin
-           send_byte(i[7:0]); // Enviar cada byte
+       for (int i = 0; i < 1024; i++) begin
+           send_byte(i[7:0]+200); // Enviar cada byte
        end
        
-       send_byte(8'h00);     
+       
        send_byte(8'h01);
-       #30000
+       send_byte(8'h01);   
+       send_byte(8'h00);   
+       send_byte(8'h00);
+       send_byte(8'h01);
+       
+       
+       #3000000
+       send_byte(8'h01);   
+       send_byte(8'h00);   
+       send_byte(8'h01);
+       send_byte(8'h01);
+       
+       send_byte(8'h01);     
+       send_byte(8'h03);
 
-       send_byte(8'h00);     
-       send_byte(8'h01);
+       
        end
 
     // Declaración de tarea para enviar un byte por UART

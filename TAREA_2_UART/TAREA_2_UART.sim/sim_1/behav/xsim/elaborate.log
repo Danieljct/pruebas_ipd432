@@ -5,10 +5,10 @@ Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ena' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:80]
-WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 10 for port 'addra' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:82]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ena' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:89]
-WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 10 for port 'addra' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:91]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ena' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:94]
+WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 10 for port 'addra' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:96]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ena' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:103]
+WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 10 for port 'addra' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:105]
 WARNING: [VRFC 10-3823] variable 'uart_tx_usb' might have multiple concurrent drivers [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sim_1/new/testbench.sv:16]
 Completed static elaboration
 Starting simulation data flow analysis
@@ -26,14 +26,14 @@ Compiling module xil_defaultlib.uart_baud_tick_gen(CLK_FREQUENCY...
 Compiling module xil_defaultlib.uart_tx
 Compiling module xil_defaultlib.uart_basic
 Compiling module xil_defaultlib.main_FSM
-Compiling module xil_defaultlib.EContadorN(N=5)
-Compiling module xil_defaultlib.EContadorN_1(N=5)
+Compiling module xil_defaultlib.EContadorN(N=11)
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_output_stage(...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_output_stage(...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_softecc_outpu...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8(C_FAMILY="art...
 Compiling module xil_defaultlib.blk_mem_gen_ff
+Compiling module xil_defaultlib.dista_FSM
 Compiling module xil_defaultlib.memory_unit
 Compiling module xil_defaultlib.TOP_module_default
 Compiling module xil_defaultlib.testbench
