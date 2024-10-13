@@ -29,7 +29,7 @@ module memory_unit (
         output logic [7:0] douta, doutb, tx_in,
         output logic tx_dist
     );
-localparam N = 10; 
+localparam N = 10;
 logic wea;
 logic web;
 logic [7:0] din;
@@ -40,11 +40,12 @@ logic [10:0] addr_count_rapido;
 
 assign mready = addr_count_2 == 1<<N;
 assign rready = addr_count_salida == 1<<N;
-assign man_ready = addr_count_rapido == 1<<10;
+assign man_ready = addr_count_rapido == (1<<10)+1;
 
+logic [10:0] addra;
 
-assign wea = sel ? 0 : WM;
-assign web = ~sel ? 0 : WM;
+assign wea = (addra >= 1<<N) ? 0 :(sel ? 0 : WM);
+assign web = (addra >= 1<<N) ? 0 :(~sel ? 0 : WM);
 
 EContadorN #(.N(N+1)) address_counter (
     .clk,
@@ -81,7 +82,7 @@ EContadorN #(.N(N+1)) address_counter_test (
 logic reset_counter;
 logic [7:0] douta_salida;
 
-EContadorN #(.N(N+1)) address_counter_rapido (
+EContadorN #(.N(11)) address_counter_rapido (
     .clk,
     .enable(Ac),
     .reset(SR | reset_counter), 
@@ -89,11 +90,13 @@ EContadorN #(.N(N+1)) address_counter_rapido (
     );
 
 
+assign addra = Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida : addr_count_2)};
+
 blk_mem_gen_ff BRAMA(
       .clka(clk),     // input wire clka
       .ena(1),      // input wire ena
       .wea,      // input wire [0 : 0] wea
-      .addra(Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida : addr_count_2)}),  // input wire [9 : 0] addra
+      .addra(addra[9:0]),  // input wire [9 : 0] addra
       .dina(din),    // input wire [7 : 0] dina
       .douta(douta)  // output wire [7 : 0] douta
     );
@@ -102,7 +105,7 @@ blk_mem_gen_ff BRAMB(
       .clka(clk),     // input wire clka
       .ena(1),      // input wire ena
       .wea(web),      // input wire [0 : 0] wea
-      .addra(Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida : addr_count_2)}),  // input wire [9 : 0] addra
+      .addra(addra[9:0]),  // input wire [9 : 0] addra
       .dina(din),    // input wire [7 : 0] dina
       .douta(doutb)  // output wire [7 : 0] douta
     );
@@ -122,12 +125,13 @@ logic [3:0] N_shift;
 
 always_ff @(posedge clk) begin
     man <= man >> N_shift;
-    if (SR) begin
+    if (SR || &(~(addra-1))) begin
         man <= 0;
         euc <= 0;
     end
-    if (Ac) 
+    if (Ac && ~(&(~(addra-1)))) 
         man <= man + abs;
+ 
 end
 
 
@@ -136,7 +140,7 @@ dista_FSM distancia_FSM (
     .rst(reset),
     .tx_busy,
     .tx_dist,
-    .start(addr_count_rapido >= (1<<10)),
+    .start(addr_count_rapido > (1<<10)),
     .N(N_shift),
     .reset_counter(reset_counter)
     );

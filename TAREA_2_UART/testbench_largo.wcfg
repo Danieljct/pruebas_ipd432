@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4,068,964.694 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,069,719.695 ns"></ZoomEndTime>
-      <Cursor1Time time="4,069,253.694 ns"></Cursor1Time>
+      <ZoomStartTime time="10,773,921.799 ns"></ZoomStartTime>
+      <ZoomEndTime time="10,774,073.600 ns"></ZoomEndTime>
+      <Cursor1Time time="10,774,014.999 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="218"></NameColumnWidth>
+      <NameColumnWidth column_width="214"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="37" />
    <wvobject fp_name="/testbench/uart_rx" type="logic">
       <obj_property name="ElementShortName">uart_rx</obj_property>
       <obj_property name="ObjectShortName">uart_rx</obj_property>
@@ -39,6 +39,7 @@
    <wvobject fp_name="/testbench/DUT/tx_data" type="array">
       <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/uart_tx_usb" type="logic">
       <obj_property name="ElementShortName">uart_tx_usb</obj_property>
@@ -71,14 +72,17 @@
    <wvobject fp_name="/testbench/DUT/douta" type="array">
       <obj_property name="ElementShortName">douta[7:0]</obj_property>
       <obj_property name="ObjectShortName">douta[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/doutb" type="array">
       <obj_property name="ElementShortName">doutb[7:0]</obj_property>
       <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/din" type="array">
       <obj_property name="ElementShortName">din[7:0]</obj_property>
       <obj_property name="ObjectShortName">din[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count" type="array">
       <obj_property name="ElementShortName">addr_count[4:0]</obj_property>
@@ -87,6 +91,14 @@
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_2" type="array">
       <obj_property name="ElementShortName">addr_count_2[4:0]</obj_property>
       <obj_property name="ObjectShortName">addr_count_2[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_rapido" type="array">
+      <obj_property name="ElementShortName">addr_count_rapido[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_count_rapido[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SR" type="logic">
+      <obj_property name="ElementShortName">SR</obj_property>
+      <obj_property name="ObjectShortName">SR</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_salida" type="array">
       <obj_property name="ElementShortName">addr_count_salida[4:0]</obj_property>
@@ -99,14 +111,15 @@
    <wvobject fp_name="/testbench/DUT/memory_unit/man" type="array">
       <obj_property name="ElementShortName">man[17:0]</obj_property>
       <obj_property name="ObjectShortName">man[17:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/distancia_FSM/N" type="array">
-      <obj_property name="ElementShortName">N[2:0]</obj_property>
-      <obj_property name="ObjectShortName">N[2:0]</obj_property>
+      <obj_property name="ElementShortName">N[3:0]</obj_property>
+      <obj_property name="ObjectShortName">N[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/N_shift" type="array">
-      <obj_property name="ElementShortName">N_shift[2:0]</obj_property>
-      <obj_property name="ObjectShortName">N_shift[2:0]</obj_property>
+      <obj_property name="ElementShortName">N_shift[3:0]</obj_property>
+      <obj_property name="ObjectShortName">N_shift[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/douta_salida" type="array">
       <obj_property name="ElementShortName">douta_salida[7:0]</obj_property>

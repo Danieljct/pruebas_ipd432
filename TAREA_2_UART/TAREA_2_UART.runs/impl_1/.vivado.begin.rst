@@ -53,3 +53,48 @@
     <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="10800" HostCore="4" HostMemory="017092083712">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="15824" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="18788" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="19996" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="16308" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="5532" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="11276" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="13416" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="7464" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="19680" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Sat Oct 12 19:43:15 2024
+| Date             : Sat Oct 12 23:37:42 2024
 | Host             : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command          : report_power -file TOP_module_power_routed.rpt -pb TOP_module_power_summary_routed.pb -rpx TOP_module_power_routed.rpx
 | Design           : TOP_module
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      422 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      161 |     63400 |            0.25 |
+| Slice Logic    |    <0.001 |      437 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      176 |     63400 |            0.28 |
 |   CARRY4       |    <0.001 |       21 |     15850 |            0.13 |
 |   Register     |    <0.001 |      166 |    126800 |            0.13 |
-|   Others       |     0.000 |       21 |       --- |             --- |
-| Signals        |    <0.001 |      287 |       --- |             --- |
+|   Others       |     0.000 |       20 |       --- |             --- |
+| Signals        |    <0.001 |      299 |       --- |             --- |
 | Block RAM      |     0.002 |        1 |       135 |            0.74 |
 | MMCM           |     0.135 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |        4 |       210 |            1.90 |
