@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sat Oct 12 23:34:41 2024
-# Process ID: 12572
+# Start of session at: Sun Oct 13 19:30:52 2024
+# Process ID: 2124
 # Current directory: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1
 # Command line: vivado.exe -log TOP_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP_module.tcl
 # Log file: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/TOP_module.vds
@@ -19,6 +19,6 @@
 # Host memory       :17092 MB
 # Swap memory       :12189 MB
 # Total Virtual     :29281 MB
-# Available Virtual :5281 MB
+# Available Virtual :6636 MB
 #-----------------------------------------------------------
 source TOP_module.tcl -notrace

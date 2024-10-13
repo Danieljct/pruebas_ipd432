@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sat Oct 12 23:35:59 2024
+| Date         : Sun Oct 13 19:31:56 2024
 | Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TOP_module_utilization_synth.rpt -pb TOP_module_utilization_synth.pb
 | Design       : TOP_module
@@ -31,12 +31,12 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  176 |     0 |          0 |     63400 |  0.28 |
-|   LUT as Logic          |  176 |     0 |          0 |     63400 |  0.28 |
+| Slice LUTs*             |  340 |     0 |          0 |     63400 |  0.54 |
+|   LUT as Logic          |  340 |     0 |          0 |     63400 |  0.54 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         |  169 |     0 |          0 |    126800 |  0.13 |
-|   Register as Flip Flop |  169 |     0 |          0 |    126800 |  0.13 |
-|   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
+| Slice Registers         |  255 |     0 |          0 |    126800 |  0.20 |
+|   Register as Flip Flop |  234 |     0 |          0 |    126800 |  0.18 |
+|   Register as Latch     |   21 |     0 |          0 |    126800 |  0.02 |
 | F7 Muxes                |    0 |     0 |          0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -58,9 +58,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 33    |          Yes |           - |        Reset |
+| 54    |          Yes |           - |        Reset |
 | 7     |          Yes |         Set |            - |
-| 129   |          Yes |       Reset |            - |
+| 194   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -80,11 +80,12 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 3. DSP
 ------
 
-+-----------+------+-------+------------+-----------+-------+
-| Site Type | Used | Fixed | Prohibited | Available | Util% |
-+-----------+------+-------+------------+-----------+-------+
-| DSPs      |    0 |     0 |          0 |       240 |  0.00 |
-+-----------+------+-------+------------+-----------+-------+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |    1 |     0 |          0 |       240 |  0.42 |
+|   DSP48E1 only |    1 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -149,18 +150,20 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  129 |        Flop & Latch |
-| LUT5     |   58 |                 LUT |
-| LUT2     |   56 |                 LUT |
-| LUT6     |   45 |                 LUT |
+| FDRE     |  194 |        Flop & Latch |
+| LUT2     |  117 |                 LUT |
+| LUT4     |   91 |                 LUT |
+| LUT3     |   86 |                 LUT |
+| LUT5     |   75 |                 LUT |
+| LUT6     |   67 |                 LUT |
+| CARRY4   |   45 |          CarryLogic |
 | FDCE     |   33 |        Flop & Latch |
-| LUT3     |   30 |                 LUT |
-| LUT4     |   27 |                 LUT |
-| CARRY4   |   21 |          CarryLogic |
-| LUT1     |   14 |                 LUT |
+| LDCE     |   21 |        Flop & Latch |
+| LUT1     |   15 |                 LUT |
 | FDSE     |    7 |        Flop & Latch |
 | IBUF     |    2 |                  IO |
 | OBUF     |    1 |                  IO |
+| DSP48E1  |    1 |    Block Arithmetic |
 +----------+------+---------------------+
 
 
@@ -171,6 +174,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 |    Ref Name    | Used |
 +----------------+------+
 | blk_mem_gen_ff |    2 |
+| ila_0          |    1 |
 | clk_wiz_0      |    1 |
 +----------------+------+
 

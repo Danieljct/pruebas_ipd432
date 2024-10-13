@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun Oct 13 19:27:12 2024
+# Process ID: 18768
+# Current directory: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/ila_0_synth_1
+# Command line: vivado.exe -log ila_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_0.tcl
+# Log file: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/ila_0_synth_1/ila_0.vds
+# Journal file: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/ila_0_synth_1\vivado.jou
+# Running On        :DESKTOP-MK895J2
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :Intel(R) Core(TM) i3-9100F CPU @ 3.60GHz
+# CPU Frequency     :3600 MHz
+# CPU Physical cores:4
+# CPU Logical cores :4
+# Host memory       :17092 MB
+# Swap memory       :12189 MB
+# Total Virtual     :29281 MB
+# Available Virtual :5964 MB
+#-----------------------------------------------------------
+source ila_0.tcl -notrace

@@ -47,7 +47,7 @@ logic mready, rready, man_ready;
 
 
 uart_basic #(
-		.CLK_FREQUENCY(100000000), // reloj base de entrada
+		.CLK_FREQUENCY(7001970), // reloj base de entrada
 		.BAUD_RATE(115200)
 	) uart_basic_inst (
 		.clk,
@@ -71,7 +71,9 @@ main_FSM main_FSM(
 	);
  logic [7:0] douta, doutb;
 logic [7:0] tx_in;	
-
+logic [15:0] t_sqrteuc, sqrteuc;
+logic tm_axis_dout_tvalid;
+logic [25:0] euc;
 
 logic tx_dist;
 memory_unit memory_unit(
@@ -94,16 +96,15 @@ always_comb begin
 end
 
 
-/*
-ila_real your_instance_name (
-	.clk(clkila), // input wire clk
-	.probe0(rx_data), // input wire [7:0]  probe0  
+
+ila_0 your_instance_name (
+	.clk(clk), // input wire clk
+	.probe0(t_sqrteuc), // input wire [15:0]  probe0  
 	.probe1(tx_data), // input wire [7:0]  probe1 
-	.probe2(CurrentState), // input wire [3:0]  probe2 
-	.probe3(uart_rx), // input wire [0:0]  probe3 
-	.probe4(uart_tx_usb), // input wire [0:0]  probe4 
-	.probe5(tx_busy), // input wire [0:0]  probe5 
-	.probe6(rx_ready) // input wire [0:0]  probe6
+	.probe2(tm_axis_dout_tvalid), // done
+	.probe3(tx_in), // input wire [7:0]  probe3 
+	.probe4(sqrteuc),
+	.probe5(euc)
 );
-*/
+
 endmodule

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="10,773,921.799 ns"></ZoomStartTime>
-      <ZoomEndTime time="10,774,073.600 ns"></ZoomEndTime>
-      <Cursor1Time time="10,774,014.999 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="391.500000001 ms"></ZoomEndTime>
+      <Cursor1Time time="44.241421528 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="214"></NameColumnWidth>
+      <NameColumnWidth column_width="190"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="37" />
+   <WVObjectSize size="50" />
    <wvobject fp_name="/testbench/uart_rx" type="logic">
       <obj_property name="ElementShortName">uart_rx</obj_property>
       <obj_property name="ObjectShortName">uart_rx</obj_property>
@@ -28,10 +28,6 @@
       <obj_property name="ElementShortName">rx_ready</obj_property>
       <obj_property name="ObjectShortName">rx_ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/DUT/main_FSM/rx" type="array">
-      <obj_property name="ElementShortName">rx[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rx[7:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/testbench/DUT/rx_data" type="array">
       <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
@@ -39,7 +35,7 @@
    <wvobject fp_name="/testbench/DUT/tx_data" type="array">
       <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/uart_tx_usb" type="logic">
       <obj_property name="ElementShortName">uart_tx_usb</obj_property>
@@ -85,12 +81,12 @@
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count" type="array">
-      <obj_property name="ElementShortName">addr_count[4:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_count[4:0]</obj_property>
+      <obj_property name="ElementShortName">addr_count[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_count[10:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_2" type="array">
-      <obj_property name="ElementShortName">addr_count_2[4:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_count_2[4:0]</obj_property>
+      <obj_property name="ElementShortName">addr_count_2[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_count_2[10:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_rapido" type="array">
       <obj_property name="ElementShortName">addr_count_rapido[10:0]</obj_property>
@@ -101,8 +97,8 @@
       <obj_property name="ObjectShortName">SR</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/memory_unit/addr_count_salida" type="array">
-      <obj_property name="ElementShortName">addr_count_salida[4:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_count_salida[4:0]</obj_property>
+      <obj_property name="ElementShortName">addr_count_salida[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_count_salida[10:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench/DUT/sel_op" type="array">
       <obj_property name="ElementShortName">sel_op[2:0]</obj_property>
@@ -172,5 +168,63 @@
    <wvobject fp_name="/testbench/DUT/tx_start" type="logic">
       <obj_property name="ElementShortName">tx_start</obj_property>
       <obj_property name="ObjectShortName">tx_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/sqrteuc" type="array">
+      <obj_property name="ElementShortName">sqrteuc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sqrteuc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/t_sqrteuc" type="array">
+      <obj_property name="ElementShortName">t_sqrteuc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">t_sqrteuc[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/N_shift_euc" type="array">
+      <obj_property name="ElementShortName">N_shift_euc[4:0]</obj_property>
+      <obj_property name="ObjectShortName">N_shift_euc[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/tx_dist_euc" type="logic">
+      <obj_property name="ElementShortName">tx_dist_euc</obj_property>
+      <obj_property name="ObjectShortName">tx_dist_euc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/euc" type="array">
+      <obj_property name="ElementShortName">euc[25:0]</obj_property>
+      <obj_property name="ObjectShortName">euc[25:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/euc_FSM/CurrentState" type="array">
+      <obj_property name="ElementShortName">CurrentState[10:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrentState[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/base" type="array">
+      <obj_property name="ElementShortName">base[15:0]</obj_property>
+      <obj_property name="ObjectShortName">base[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/i" type="array">
+      <obj_property name="ElementShortName">i[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/y_next" type="array">
+      <obj_property name="ElementShortName">y_next[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y_next[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/y" type="array">
+      <obj_property name="ElementShortName">y[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/memory_unit/SQRT/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
 </wave_config>

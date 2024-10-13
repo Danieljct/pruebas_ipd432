@@ -1,0 +1,2 @@
+cordic_1.vhd,vhdl,xil_defaultlib,../../../../TAREA_2_UART.gen/sources_1/ip/cordic_1/sim/cordic_1.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v

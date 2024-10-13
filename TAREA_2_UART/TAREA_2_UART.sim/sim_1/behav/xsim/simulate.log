@@ -1,8 +1,0 @@
-Time resolution is 1 ps
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module testbench.DUT.memory_unit.BRAMA.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module testbench.DUT.memory_unit.BRAMB.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-INFO: xsimkernel Simulation Memory Usage: 18976 KB (Peak: 18976 KB), Simulation CPU Usage: 111140 ms

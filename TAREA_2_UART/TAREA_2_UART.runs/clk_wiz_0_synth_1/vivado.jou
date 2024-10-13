@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Oct  6 12:52:17 2024
-# Process ID: 17892
+# Start of session at: Sun Oct 13 18:54:16 2024
+# Process ID: 15648
 # Current directory: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/clk_wiz_0_synth_1
 # Command line: vivado.exe -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
 # Log file: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores:4
 # CPU Logical cores :4
 # Host memory       :17092 MB
-# Swap memory       :10737 MB
-# Total Virtual     :27829 MB
-# Available Virtual :8342 MB
+# Swap memory       :12189 MB
+# Total Virtual     :29281 MB
+# Available Virtual :6568 MB
 #-----------------------------------------------------------
 source clk_wiz_0.tcl -notrace

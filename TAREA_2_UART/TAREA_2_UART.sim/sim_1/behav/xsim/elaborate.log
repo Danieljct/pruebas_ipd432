@@ -1,7 +1,7 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_8 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_8 -L xbip_utils_v3_0_13 -L c_reg_fd_v12_0_9 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_9 -L xbip_dsp48_addsub_v3_0_9 -L xbip_addsub_v3_0_9 -L c_addsub_v12_0_18 -L xbip_bram18k_v3_0_9 -L mult_gen_v12_0_21 -L axi_utils_v2_0_9 -L cordic_v6_0_22 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -22,9 +22,8 @@ Compiling module xil_defaultlib.data_sync
 Compiling module xil_defaultlib.uart_rx
 Compiling module xil_defaultlib.uart_baud_tick_gen(CLK_FREQUENCY...
 Compiling module xil_defaultlib.uart_tx
-Compiling module xil_defaultlib.uart_basic
+Compiling module xil_defaultlib.uart_basic(CLK_FREQUENCY=5000000...
 Compiling module xil_defaultlib.main_FSM
-Compiling module xil_defaultlib.EContadorN(N=5)
 Compiling module xil_defaultlib.EContadorN(N=11)
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_output_stage(...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_output_stage(...
@@ -32,6 +31,7 @@ Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_softecc_outpu...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_8.blk_mem_gen_v8_4_8(C_FAMILY="art...
 Compiling module xil_defaultlib.blk_mem_gen_ff
+Compiling module xil_defaultlib.sqrt_FSM
 Compiling module xil_defaultlib.dista_FSM
 Compiling module xil_defaultlib.memory_unit
 Compiling module xil_defaultlib.TOP_module_default

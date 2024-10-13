@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../TAREA_2_UART.gen/sources_1/ip/cordic_1/demo_tb/tb_cordic_1.vhd" \
+"../../../../TAREA_2_UART.gen/sources_1/ip/cordic_1/sim/cordic_1.vhd" \
+
+# Do not sort compile order
+nosort

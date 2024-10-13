@@ -11,51 +11,52 @@ module testbench();
         .uart_tx_usb(uart_tx_usb)
     );
     
-    always #5 clk_100M = ~clk_100M;
+    always #10 clk_100M = ~clk_100M;
 
     initial begin
         clk_100M = 0;
         reset_n = 0;
         uart_rx = 1'b1;  // UART line idle state is high (1)
         uart_tx_usb = 0;
-        #10 reset_n = 1;
+        #20 reset_n = 1;
         
         // Enviar dos bytes en 0
         send_byte(8'h00);
         send_byte(8'h01);
 
-        #300000
+        #600000
         // Enviar los bytes del 0 al 1023
-        for (int i = 0; i < 16; i++) begin
-            send_byte(i[7:0]+100); // Enviar cada byte
+        for (int i = 0; i < 1024; i++) begin
+            send_byte(0); // Enviar cada byte
         end
         send_byte(8'h00);
-        #300000
+        #600000
 
 
        send_byte(8'h00);
        send_byte(8'h00);
        
-       for (int i = 0; i < 16; i++) begin
-           send_byte(i[7:0]+200); // Enviar cada byte
+       for (int i = 0; i < 1024; i++) begin
+           send_byte(255); // Enviar cada byte
        end
        
        
        send_byte(8'h01);
-       send_byte(8'h01);   
-       send_byte(8'h00);   
-       send_byte(8'h00);
-       send_byte(8'h01);
-       
-       
-       #3000000
-       send_byte(8'h01);   
-       send_byte(8'h00);   
-       send_byte(8'h01);
-       send_byte(8'h01);
-        #3000000
+    //   send_byte(8'h01);   
+    //   send_byte(8'h00);   
+    //   send_byte(8'h00);
+    //   send_byte(8'h01);
+    //   
+    //   
+    //   #3000000
+    //   send_byte(8'h01);   
+    //   send_byte(8'h00);   
+    //   send_byte(8'h01);
+    //   send_byte(8'h01);
+        #6000000
+        
        send_byte(8'h01);     
-       send_byte(8'h03);
+       send_byte(8'h04);
 
        
        end
