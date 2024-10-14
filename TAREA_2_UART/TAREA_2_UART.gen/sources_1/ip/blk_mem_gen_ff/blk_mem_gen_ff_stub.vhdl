@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Sun Oct  6 09:24:39 2024
+-- Date        : Sun Oct  6 09:24:38 2024
 -- Host        : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top blk_mem_gen_ff -prefix
+--               blk_mem_gen_ff_ blk_mem_gen_ff_stub.vhdl
 -- Design      : blk_mem_gen_ff
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

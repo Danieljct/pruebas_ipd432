@@ -76,6 +76,8 @@ logic tm_axis_dout_tvalid;
 logic [25:0] euc;
 
 logic tx_dist;
+logic [2:0] stateW;
+logic [7:0] douta_salida;
 memory_unit memory_unit(
 		.*	
 	);
@@ -104,7 +106,13 @@ ila_0 your_instance_name (
 	.probe2(tm_axis_dout_tvalid), // done
 	.probe3(tx_in), // input wire [7:0]  probe3 
 	.probe4(sqrteuc),
-	.probe5(euc)
+	.probe5(euc),
+	.probe6(stateW),
+	.probe7(tx_dist),
+	.probe8(uart_tx_usb),
+	.probe9(sel_op),
+	.probe10(douta_salida)
+	
 );
 
 endmodule

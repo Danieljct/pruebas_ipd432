@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sun Oct 13 19:34:23 2024
+| Date         : Mon Oct 14 00:07:18 2024
 | Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file TOP_module_methodology_drc_routed.rpt -pb TOP_module_methodology_drc_routed.pb -rpx TOP_module_methodology_drc_routed.rpx
 | Design       : TOP_module
@@ -23,17 +23,16 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 39
+             Violations found: 20
 +-----------+------------------+------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                      | Violations |
 +-----------+------------------+------------------------------------------------------------------+------------+
 | TIMING-6  | Critical Warning | No common primary clock between related clocks                   | 2          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                                     | 7          |
-| TIMING-20 | Warning          | Non-clocked latch                                                | 21         |
+| SYNTH-10  | Warning          | Wide multiplier                                                  | 3          |
 | TIMING-38 | Warning          | Bus skew constraint applied on multiple clocks                   | 4          |
 | TIMING-56 | Warning          | Missing logically or physically excluded clock groups constraint | 2          |
 | XDCB-5    | Warning          | Runtime inefficient way to find pin objects                      | 2          |
-| LATCH-1   | Advisory         | Existing latches in the design                                   | 1          |
 +-----------+------------------+------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -78,7 +77,7 @@ Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell main_FSM/memory_unit_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) memory_unit/address_counter_test/count_reg[0]/CLR,
+LUT cell main_FSM/SR_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) memory_unit/address_counter_test/count_reg[0]/CLR,
 memory_unit/address_counter_test/count_reg[10]/CLR,
 memory_unit/address_counter_test/count_reg[1]/CLR,
 memory_unit/address_counter_test/count_reg[2]/CLR,
@@ -121,109 +120,19 @@ memory_unit/address_counter_rapido/count_reg[8]/CLR
 memory_unit/address_counter_rapido/count_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[0] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[0]/G is not reached by a timing clock
+SYNTH-10#1 Warning
+Wide multiplier  
+Detected multiplier at memory_unit/SQRT/next_state2 of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[10] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[10]/G is not reached by a timing clock
+SYNTH-10#2 Warning
+Wide multiplier  
+Detected multiplier at memory_unit/SQRT/next_state2__0 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[11] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[12] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[13] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[13]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[14] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[14]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[15] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[15]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[1] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[2] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[3] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[4] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[5] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[6] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[7] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[8] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/base_reg[9] cannot be properly analyzed as its control pin memory_unit/SQRT/base_reg[9]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/i_reg[0] cannot be properly analyzed as its control pin memory_unit/SQRT/i_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/i_reg[1] cannot be properly analyzed as its control pin memory_unit/SQRT/i_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/i_reg[2] cannot be properly analyzed as its control pin memory_unit/SQRT/i_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/i_reg[3] cannot be properly analyzed as its control pin memory_unit/SQRT/i_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch memory_unit/SQRT/i_reg[4] cannot be properly analyzed as its control pin memory_unit/SQRT/i_reg[4]/G is not reached by a timing clock
+SYNTH-10#3 Warning
+Wide multiplier  
+Detected multiplier at memory_unit/SQRT/next_state2__1 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
 TIMING-38#1 Warning
@@ -258,19 +167,14 @@ Related violations: <none>
 
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
-The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_2_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '44' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_2_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '42' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 
 XDCB-5#2 Warning
 Runtime inefficient way to find pin objects  
-The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '44' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '42' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc (Line: 72)
-Related violations: <none>
-
-LATCH-1#1 Advisory
-Existing latches in the design  
-There are 21 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

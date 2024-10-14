@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Oct 13 19:30:52 2024
-# Process ID: 2124
+# Start of session at: Mon Oct 14 00:02:40 2024
+# Process ID: 18648
 # Current directory: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1
 # Command line: vivado.exe -log TOP_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP_module.tcl
 # Log file: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/TOP_module.vds
@@ -19,34 +19,29 @@
 # Host memory       :17092 MB
 # Swap memory       :12189 MB
 # Total Virtual     :29281 MB
-# Available Virtual :6636 MB
+# Available Virtual :6513 MB
 #-----------------------------------------------------------
 source TOP_module.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 484.383 ; gain = 200.695
-Command: read_checkpoint -auto_incremental -incremental E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/utils_1/imports/synth_1/TOP_ECHO.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/utils_1/imports/synth_1/TOP_ECHO.dcp for incremental synthesis
-INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 485.195 ; gain = 201.066
 Command: synth_design -top TOP_module -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19548
+INFO: [Synth 8-7075] Helper process launched with PID 11428
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1388.297 ; gain = 447.781
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1387.094 ; gain = 446.848
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'euc' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:117]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'sqrteuc' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:118]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 't_sqrteuc' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:118]
-WARNING: [Synth 8-11121] redeclaration of ANSI port 'tm_axis_dout_tvalid' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:169]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'euc' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:119]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'sqrteuc' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:120]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 't_sqrteuc' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:120]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'tm_axis_dout_tvalid' is not allowed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:172]
 INFO: [Synth 8-6157] synthesizing module 'TOP_module' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-2124-DESKTOP-MK895J2/realtime/clk_wiz_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-2124-DESKTOP-MK895J2/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-18648-DESKTOP-MK895J2/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-18648-DESKTOP-MK895J2/realtime/clk_wiz_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'uart_basic' [E:/github/pruebas_ipd432/Modulos_utiles/uart/uart_basic.v:10]
 	Parameter CLK_FREQUENCY bound to: 7001970 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
@@ -75,84 +70,88 @@ INFO: [Synth 8-6157] synthesizing module 'memory_unit' [E:/github/pruebas_ipd432
 INFO: [Synth 8-6157] synthesizing module 'EContadorN' [E:/github/pruebas_ipd432/Modulos_utiles/EContadorN.sv:1]
 	Parameter N bound to: 11 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'EContadorN' (0#1) [E:/github/pruebas_ipd432/Modulos_utiles/EContadorN.sv:1]
-WARNING: [Synth 8-693] zero replication count - replication ignored [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:95]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_ff' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-2124-DESKTOP-MK895J2/realtime/blk_mem_gen_ff_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_ff' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-2124-DESKTOP-MK895J2/realtime/blk_mem_gen_ff_stub.v:6]
+WARNING: [Synth 8-693] zero replication count - replication ignored [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:97]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_ff' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-18648-DESKTOP-MK895J2/realtime/blk_mem_gen_ff_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_ff' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-18648-DESKTOP-MK895J2/realtime/blk_mem_gen_ff_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'sqrt_FSM' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:1]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:42]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:29]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:48]
 INFO: [Synth 8-6155] done synthesizing module 'sqrt_FSM' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:1]
+WARNING: [Synth 8-689] width (16) of port connection 'y' does not match port width (32) of module 'sqrt_FSM' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:167]
+WARNING: [Synth 8-7071] port 'i' of module 'sqrt_FSM' is unconnected for instance 'SQRT' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:162]
+WARNING: [Synth 8-7023] instance 'SQRT' of module 'sqrt_FSM' has 8 connections declared, but only 7 given [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:162]
 INFO: [Synth 8-6157] synthesizing module 'dista_FSM' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv:2]
 INFO: [Synth 8-155] case statement is not full and has no default [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv:24]
 INFO: [Synth 8-6155] done synthesizing module 'dista_FSM' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv:2]
 INFO: [Synth 8-6155] done synthesizing module 'memory_unit' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv:23]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:100]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-2124-DESKTOP-MK895J2/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-2124-DESKTOP-MK895J2/realtime/ila_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:102]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-18648-DESKTOP-MK895J2/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/.Xil/Vivado-18648-DESKTOP-MK895J2/realtime/ila_0_stub.v:6]
+WARNING: [Synth 8-689] width (16) of port connection 'probe0' does not match port width (26) of module 'ila_0' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:104]
 INFO: [Synth 8-6155] done synthesizing module 'TOP_module' (0#1) [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:23]
-WARNING: [Synth 8-87] always_comb on 'base_reg' did not result in combinational logic [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:45]
-WARNING: [Synth 8-87] always_comb on 'i_reg' did not result in combinational logic [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:47]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'memory_unit'. This will prevent further optimization [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:79]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:100]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'memory_unit'. This will prevent further optimization [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:81]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'your_instance_name'. This will prevent further optimization [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:102]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'uart_basic_inst'. This will prevent further optimization [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:52]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'main_FSM'. This will prevent further optimization [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv:67]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1506.891 ; gain = 566.375
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1504.859 ; gain = 564.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1506.891 ; gain = 566.375
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1504.859 ; gain = 564.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1506.891 ; gain = 566.375
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1504.859 ; gain = 564.613
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1506.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1504.859 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
+Finished Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
 Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff/blk_mem_gen_ff_in_context.xdc] for cell 'memory_unit/BRAMA'
 Finished Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff/blk_mem_gen_ff_in_context.xdc] for cell 'memory_unit/BRAMA'
 Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff/blk_mem_gen_ff_in_context.xdc] for cell 'memory_unit/BRAMB'
 Finished Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff/blk_mem_gen_ff_in_context.xdc] for cell 'memory_unit/BRAMB'
-Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk100MHZ'
-Finished Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk100MHZ'
-Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
-Finished Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'your_instance_name'
+Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk100MHZ'
+Finished Parsing XDC File [e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk100MHZ'
 Parsing XDC File [E:/github/pruebas_ipd432/TAREA_2_UART/UART_master_const.xdc]
 Finished Parsing XDC File [E:/github/pruebas_ipd432/TAREA_2_UART/UART_master_const.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/github/pruebas_ipd432/TAREA_2_UART/UART_master_const.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TOP_module_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1606.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1605.703 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1606.445 ; gain = 0.000
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1605.703 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_100M. (constraint file  e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100M. (constraint file  e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100M. (constraint file  e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100M. (constraint file  e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for your_instance_name. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for memory_unit/BRAMA. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for memory_unit/BRAMB. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for clk100MHZ. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for your_instance_name. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
@@ -203,8 +202,6 @@ INFO: [Synth 8-3354] encoded FSM with state register 'CurrentState_reg' using en
                     DONE |                              101 |                              101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sqrt_FSM'
-WARNING: [Synth 8-327] inferring latch for variable 'base_reg' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:45]
-WARNING: [Synth 8-327] inferring latch for variable 'i_reg' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv:47]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -221,15 +218,15 @@ WARNING: [Synth 8-327] inferring latch for variable 'i_reg' [E:/github/pruebas_i
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'CurrentState_reg' using encoding 'one-hot' in module 'dista_FSM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   3 Input   32 Bit       Adders := 1     
 	   2 Input   32 Bit       Adders := 1     
-	   3 Input   16 Bit       Adders := 1     
 	   2 Input   15 Bit       Adders := 2     
 	   2 Input   11 Bit       Adders := 3     
 	   2 Input    8 Bit       Adders := 2     
@@ -238,38 +235,41 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit       Adders := 3     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
+	               32 Bit    Registers := 1     
 	               26 Bit    Registers := 1     
 	               18 Bit    Registers := 1     
-	               16 Bit    Registers := 3     
+	               16 Bit    Registers := 2     
 	               15 Bit    Registers := 2     
 	               11 Bit    Registers := 4     
 	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
 	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 7     
++---Multipliers : 
+	              32x32  Multipliers := 1     
 +---Muxes : 
-	   6 Input   16 Bit        Muxes := 3     
+	   6 Input   32 Bit        Muxes := 2     
 	   2 Input   11 Bit        Muxes := 2     
 	  10 Input   10 Bit        Muxes := 2     
 	   2 Input   10 Bit        Muxes := 8     
 	   9 Input    9 Bit        Muxes := 1     
 	   2 Input    9 Bit        Muxes := 10    
 	   2 Input    8 Bit        Muxes := 5     
-	   6 Input    6 Bit        Muxes := 1     
 	  10 Input    5 Bit        Muxes := 2     
 	  10 Input    4 Bit        Muxes := 2     
 	   4 Input    3 Bit        Muxes := 3     
 	   5 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 3     
-	   6 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 5     
 	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 6     
 	   3 Input    1 Bit        Muxes := 1     
 	   4 Input    1 Bit        Muxes := 7     
 	   5 Input    1 Bit        Muxes := 1     
 	   9 Input    1 Bit        Muxes := 3     
-	   6 Input    1 Bit        Muxes := 5     
+	   6 Input    1 Bit        Muxes := 4     
 	  10 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -289,23 +289,44 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 DSP Report: Generating DSP SQRT/next_state2, operation Mode is: A2*B2.
 DSP Report: register SQRT/y_reg is absorbed into DSP SQRT/next_state2.
+DSP Report: register SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: Generating DSP SQRT/next_state2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register SQRT/y_reg is absorbed into DSP SQRT/next_state2.
 DSP Report: register SQRT/y_reg is absorbed into DSP SQRT/next_state2.
 DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
-WARNING: [Synth 8-3332] Sequential element (SQRT/i_reg[5]) is unused and will be removed from module memory_unit.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: Generating DSP SQRT/next_state2, operation Mode is: A2*B2.
+DSP Report: register SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: register SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: Generating DSP SQRT/next_state2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register SQRT/y_reg is absorbed into DSP SQRT/next_state2.
+DSP Report: register SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
+DSP Report: operator SQRT/next_state2 is absorbed into DSP SQRT/next_state2.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
- Sort Area is  SQRT/next_state2_0 : 0 0 : 1978 1978 : Used 1 time 0
+ Sort Area is  SQRT/next_state2_0 : 0 0 : 3137 5949 : Used 1 time 0
+ Sort Area is  SQRT/next_state2_0 : 0 1 : 2812 5949 : Used 1 time 0
+ Sort Area is  SQRT/next_state2_3 : 0 0 : 2793 5484 : Used 1 time 0
+ Sort Area is  SQRT/next_state2_3 : 0 1 : 2691 5484 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|sqrt_FSM    | A2*B2       | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|memory_unit | A2*B2            | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|memory_unit | (PCIN>>17)+A2*B2 | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|memory_unit | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|memory_unit | (PCIN>>17)+A2*B2 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -315,19 +336,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -345,48 +366,50 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|sqrt_FSM    | A'*B'       | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|memory_unit | A'*B'          | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|memory_unit | A'*B'          | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|memory_unit | PCIN>>17+A'*B' | 17     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -405,44 +428,42 @@ Report Cell Usage:
 |1     |blk_mem_gen_ff |     2|
 |3     |clk_wiz        |     1|
 |4     |ila            |     1|
-|5     |CARRY4         |    45|
-|6     |DSP48E1        |     1|
+|5     |CARRY4         |    53|
+|6     |DSP48E1        |     3|
 |7     |LUT1           |    15|
-|8     |LUT2           |   117|
-|9     |LUT3           |    86|
-|10    |LUT4           |    91|
-|11    |LUT5           |    75|
-|12    |LUT6           |    67|
+|8     |LUT2           |   149|
+|9     |LUT3           |   103|
+|10    |LUT4           |   101|
+|11    |LUT5           |    67|
+|12    |LUT6           |    62|
 |13    |FDCE           |    33|
-|14    |FDRE           |   194|
-|15    |FDSE           |     7|
-|16    |LD             |    21|
-|17    |IBUF           |     2|
-|18    |OBUF           |     1|
+|14    |FDRE           |   229|
+|15    |FDSE           |     9|
+|16    |IBUF           |     2|
+|17    |OBUF           |     1|
 +------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1605.703 ; gain = 665.457
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:41 . Memory (MB): peak = 1606.445 ; gain = 566.375
-Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1606.445 ; gain = 665.930
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:43 . Memory (MB): peak = 1605.703 ; gain = 564.613
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 1605.703 ; gain = 665.457
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1606.445 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1605.703 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1606.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1605.703 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 21 instances were transformed.
-  LD => LDCE: 21 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4ccc1574
+Synth Design complete | Checksum: 626eb196
 INFO: [Common 17-83] Releasing license: Synthesis
-69 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+65 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1606.445 ; gain = 1085.691
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1606.445 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 1605.703 ; gain = 1077.719
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1605.703 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/TOP_module.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file TOP_module_utilization_synth.rpt -pb TOP_module_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Oct 13 19:31:56 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 14 00:03:47 2024...

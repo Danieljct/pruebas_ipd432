@@ -3,24 +3,16 @@ module sqrt_FSM (
     input logic rst,
     input logic start,
     input logic [31:0] x,   // input number
-    output logic [15:0] y,   // result
-    output logic done
+    output logic [31:0] y,   // result
+    output logic done,
+    output logic [2:0] stateW,
+    output logic [5:0] i
 );
-
-    typedef enum logic [2:0] {
-        INIT,
-        ADD_BASE,
-        CHECK,
-        SUB_BASE,
-        SHIFT_BASE,
-        DONE
-    } state_t;
-
-    state_t state, next_state;
-
+    
+    enum logic [2:0] {INIT, ADD_BASE, CHECK, SUB_BASE, SHIFT_BASE, DONE} state, next_state;
+    
     logic [15:0] base;
-    logic [15:0] y_next;
-    logic [5:0] i;
+    logic [31:0] y_next;
 
     // Sequential logic (State register)
     always_ff @(posedge clk) begin
@@ -33,18 +25,30 @@ module sqrt_FSM (
         end
     end
 
+    always_ff@(posedge clk) begin
+        case (state)
+            INIT: begin
+                i = 6'd1;
+                base = 1<<15;
+                end
+            SHIFT_BASE: begin
+                if (i < 16) begin
+                    base = base >> 1;
+                    i = i + 1;
+                    end
+                end
+        endcase
+    end
     // Combinational logic (Next state and output logic)
     always_comb begin
         next_state = state;
         y_next = y;
         done = 1'b0;
-
+        
         case (state)
             INIT: begin
                 if (start) begin
-                    base = 1<<15;
-                    y_next = 16'd0;
-                    i = 6'd1;
+                    y_next = 32'd0;
                     next_state = ADD_BASE;
                 end
             end
@@ -65,8 +69,6 @@ module sqrt_FSM (
             end
             SHIFT_BASE: begin
                 if (i < 16) begin
-                    base = base >> 1;
-                    i = i + 1;
                     next_state = ADD_BASE;
                 end else begin
                     next_state = DONE;
@@ -78,4 +80,5 @@ module sqrt_FSM (
             end
         endcase
     end
+    assign stateW = state;
 endmodule

@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Oct  6 09:23:09 2024
-# Process ID: 21264
+# Start of session at: Sun Oct 13 23:32:53 2024
+# Process ID: 9068
 # Current directory: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/blk_mem_gen_ff_synth_1
 # Command line: vivado.exe -log blk_mem_gen_ff.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_ff.tcl
 # Log file: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/blk_mem_gen_ff_synth_1/blk_mem_gen_ff.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores:4
 # CPU Logical cores :4
 # Host memory       :17092 MB
-# Swap memory       :10737 MB
-# Total Virtual     :27829 MB
-# Available Virtual :11544 MB
+# Swap memory       :12189 MB
+# Total Virtual     :29281 MB
+# Available Virtual :6759 MB
 #-----------------------------------------------------------
 source blk_mem_gen_ff.tcl -notrace

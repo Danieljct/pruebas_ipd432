@@ -29,7 +29,9 @@ module memory_unit (
         output logic [7:0] douta, doutb, tx_in,
         output logic tx_dist, tm_axis_dout_tvalid,
         output logic [15:0] t_sqrteuc, sqrteuc,
-        output logic [25:0] euc
+        output logic [25:0] euc,
+        output logic [2:0] stateW,
+        output logic [7:0] douta_salida
     );
 localparam N = 10;
 logic wea;
@@ -82,7 +84,7 @@ EContadorN #(.N(N+1)) address_counter_test (
     );
 
 logic reset_counter;
-logic [7:0] douta_salida;
+
 logic reset_counter_euc;
 EContadorN #(.N(11)) address_counter_rapido (
     .clk,
@@ -163,7 +165,8 @@ sqrt_FSM SQRT(
         .start(t_start),    // Señal para iniciar el cálculo
         .x({6'b0,euc}),                         // Radicando de 32 bits
         .y(sqrteuc),                            // Parte entera de la raíz cuadrada
-        .done(m_axis_dout_tvalid)               // Señal que indica que el cálculo ha terminado
+        .done(m_axis_dout_tvalid),               // Señal que indica que el cálculo ha terminado
+        .stateW(stateW)
     );
 
 logic tm_axis_dout_tvalid;
