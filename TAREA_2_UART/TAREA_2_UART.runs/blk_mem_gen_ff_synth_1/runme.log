@@ -8,12 +8,12 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Sun Oct 13 23:32:53 2024
+  **** Start of session at: Sat Oct 19 17:38:02 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source blk_mem_gen_ff.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 484.840 ; gain = 198.461
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 486.066 ; gain = 202.047
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: blk_mem_gen_ff
 INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 05f6e37daa0dce19 to dir: E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/blk_mem_gen_ff_synth_1
 INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.cache/ip/2024.1/0/5/05f6e37daa0dce19/blk_mem_gen_ff.dcp to E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/blk_mem_gen_ff_synth_1/blk_mem_gen_ff.dcp.
@@ -22,4 +22,4 @@ INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/github/pruebas_ipd432/TAR
 INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.cache/ip/2024.1/0/5/05f6e37daa0dce19/blk_mem_gen_ff_stub.v to E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/blk_mem_gen_ff_synth_1/blk_mem_gen_ff_stub.v.
 INFO: [IP_Flow 19-6928] IPCACHE: copied cached file e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.cache/ip/2024.1/0/5/05f6e37daa0dce19/blk_mem_gen_ff_stub.vhdl to E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/blk_mem_gen_ff_synth_1/blk_mem_gen_ff_stub.vhdl.
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP blk_mem_gen_ff, cache-ID = 05f6e37daa0dce19.
-INFO: [Common 17-206] Exiting Vivado at Sun Oct 13 23:33:06 2024...
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 19 17:38:14 2024...

@@ -1,6 +1,6 @@
-verilog xil_defaultlib --include "../../../../Tarea2.gen/sources_1/ip/clk_wiz_0" \
-"../../../../Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
-"../../../../Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+verilog xil_defaultlib --include "../../../ipstatic" \
+"../../../../TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
 
 verilog xil_defaultlib "glbl.v"
 

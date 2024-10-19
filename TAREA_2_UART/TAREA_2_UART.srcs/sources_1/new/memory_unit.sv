@@ -215,27 +215,14 @@ end
 
 assign tx_in = douta_salida;
 
-logic clkout;
-divisor_frec #(.fin(100000000), .fout(10000)) divisor_freq(
-    .CLK100MHZ(clk),
-    .reset,
-    .clkout
-);
-
-logic [31:0] to_disp;
-unsigned_to_bcd(
-    .clk(clk),
-    .reset,
-    .trigger(1),
-    .in((sel_op == 3'd3) ? {14'b0, man} : {16'b0, sqrteuc}),
-    .bcd(to_disp)
-);
-
-BCD_to_display(
-    .clk_segment(clkout),
-    .CPU_RESETN(~reset),
-    .hora_display(to_disp),
-    .AN(temp_AN),
-    .segmentos   
-);
+num2display num2display(
+    .clk, .reset, 
+    .sel_op,
+    .man,
+    .sqrteuc,
+    .temp_AN,
+    .segmentos
+   );
+   
+ 
 endmodule

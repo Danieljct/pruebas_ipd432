@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Fri Oct 18 21:15:10 2024
+| Date             : Sat Oct 19 18:25:50 2024
 | Host             : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command          : report_power -file TOP_module_power_routed.rpt -pb TOP_module_power_summary_routed.pb -rpx TOP_module_power_routed.rpx
 | Design           : TOP_module
@@ -53,17 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |     0.003 |     1077 |       --- |             --- |
-|   LUT as Logic |     0.003 |      458 |     63400 |            0.72 |
+| Slice Logic    |     0.003 |     1075 |       --- |             --- |
+|   LUT as Logic |     0.003 |      472 |     63400 |            0.74 |
 |   CARRY4       |    <0.001 |       58 |     15850 |            0.37 |
-|   Register     |    <0.001 |      385 |    126800 |            0.30 |
-|   F7/F8 Muxes  |    <0.001 |        3 |     63400 |           <0.01 |
+|   Register     |    <0.001 |      369 |    126800 |            0.29 |
 |   Others       |     0.000 |       28 |       --- |             --- |
-| Signals        |     0.003 |      885 |       --- |             --- |
+| Signals        |     0.003 |      888 |       --- |             --- |
 | Block RAM      |     0.002 |        1 |       135 |            0.74 |
 | MMCM           |     0.133 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        3 |       240 |            1.25 |
-| I/O            |     0.002 |       19 |       210 |            9.05 |
+| I/O            |     0.003 |       19 |       210 |            9.05 |
 | Static Power   |     0.098 |          |           |                 |
 | Total          |     0.243 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -146,14 +145,15 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------+-----------+
-| Name          | Power (W) |
-+---------------+-----------+
-| TOP_module    |     0.145 |
-|   clk100MHZ   |     0.133 |
-|     inst      |     0.133 |
-|   memory_unit |     0.009 |
-|     SQRT      |     0.002 |
-+---------------+-----------+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| TOP_module      |     0.145 |
+|   clk100MHZ     |     0.133 |
+|     inst        |     0.133 |
+|   memory_unit   |     0.009 |
+|     SQRT        |     0.002 |
+|     num2display |     0.001 |
++-----------------+-----------+
 
 

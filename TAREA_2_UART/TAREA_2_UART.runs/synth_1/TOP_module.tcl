@@ -78,14 +78,14 @@ add_files E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/m
 read_verilog -library xil_defaultlib -sv {
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/TOP_module.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/main_FSM.sv
-  E:/github/pruebas_ipd432/Modulos_utiles/ContadorN.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/memory_unit.sv
-  E:/github/pruebas_ipd432/Modulos_utiles/divisor_frec.sv
   E:/github/pruebas_ipd432/Modulos_utiles/EContadorN.sv
-  E:/github/pruebas_ipd432/Modulos_utiles/EContadorN_1.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/num2display.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/ContadorN.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/led7segmentos.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/divisor_frec.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/unsigned_to_bcd.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/new/BCD_to_display.sv
 }
@@ -102,16 +102,16 @@ set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd4
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
+read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
 read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff.xci
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff_ooc.xdc]
 
 read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/cordic_1/cordic_1.xci
 set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/cordic_1/cordic_1_ooc.xdc]
-
-read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

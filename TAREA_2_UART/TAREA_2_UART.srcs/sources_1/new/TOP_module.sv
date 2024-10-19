@@ -25,10 +25,9 @@ module TOP_module(
 	input  logic               reset_n,
 	input  logic               uart_rx,
 	//output logic               uart_tx_busy,
-	output logic               uart_tx_usb,    
-	output logic [7:0] AN,
+	output logic               uart_tx_usb,
+    output logic [7:0] AN,
     output logic [6:0] segmentos
-	
 );
 logic clk;
 logic reset;
@@ -86,6 +85,8 @@ logic [7:0] temp_AN;
 memory_unit memory_unit(
 		.*	
 	);
+	
+assign AN = (sel_op == 3'd3 | sel_op == 3'd4) ? temp_AN : 8'hff;
 
 always_comb begin
 	if (RM && tx) begin        //leyendo
@@ -102,7 +103,7 @@ always_comb begin
 	end
 end
 
-assign AN = (sel_op == 3'd3 | sel_op == 3'd4) ? temp_AN : 8'hff;
+
 
 //ila_0 your_instance_name (
 //	.clk(clk), // input wire clk
@@ -119,6 +120,5 @@ assign AN = (sel_op == 3'd3 | sel_op == 3'd4) ? temp_AN : 8'hff;
 //	.probe10(douta_salida)
 	
 //);
-
 
 endmodule

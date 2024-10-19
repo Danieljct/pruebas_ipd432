@@ -122,9 +122,9 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/TOP_module.dcp
   read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff.xci
   read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/cordic_1/cordic_1.xci
-  read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc E:/github/pruebas_ipd432/TAREA_2_UART/UART_master_const.xdc
 OPTRACE "read constraints: implementation" END { }

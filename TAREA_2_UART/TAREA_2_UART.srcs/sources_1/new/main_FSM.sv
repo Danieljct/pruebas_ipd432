@@ -68,8 +68,9 @@ enum logic [3:0] {IDLE, COMMAND, NOCOMMAND, WRITE, SEL_mem, OPERATION, SUM_AV, D
 			tx = 1;
 			SR = 1;
 			if (sel_op == 3'd3 | sel_op == 3'd4) NextState = DISTANCIA;
-			else if(rx_ready && ~mready) NextState = RBRAM;
-			else if(~rx_ready && ~mready) NextState = SUM_AV;
+			else if(sel_op == 3'd1 | sel_op == 3'd2) NextState = SUM_AV;
+			else if(rx_ready && sel_op == 3'd0) NextState = RBRAM;
+			else NextState = OPERATION;
 		end
 
         SUM_AV: begin
