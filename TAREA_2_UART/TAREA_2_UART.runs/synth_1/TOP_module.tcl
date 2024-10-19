@@ -56,10 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9680-DESKTOP-MK895J2/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -87,6 +85,9 @@ read_verilog -library xil_defaultlib -sv {
   E:/github/pruebas_ipd432/Modulos_utiles/EContadorN_1.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv
   E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/led7segmentos.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/unsigned_to_bcd.sv
+  E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/imports/new/BCD_to_display.sv
 }
 read_verilog -library xil_defaultlib {
   E:/github/pruebas_ipd432/Modulos_utiles/uart/data_sync.v

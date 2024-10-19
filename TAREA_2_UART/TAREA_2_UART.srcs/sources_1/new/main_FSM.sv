@@ -1,7 +1,7 @@
 // Module header:-----------------------------
 module main_FSM
 (
-	input 	logic clk, rst, rx_ready, mready, rready, man_ready,
+	input 	logic clk, rst, rx_ready, mready, rready, dist_ready,
 	input 	logic [7:0] rx,
 	input   logic [2:0] sel_op,
 	output 	logic WM, RM, SW, SR, tx, CMD, Ac,
@@ -11,7 +11,7 @@ module main_FSM
  //Declarations:------------------------------
 
  //FSM states type:
-enum logic [3:0] {IDLE, COMMAND, NOCOMMAND, WRITE, SEL_mem, OPERATION, DISTANCIA, WBRAM, RBRAM} CurrentState, NextState;
+enum logic [3:0] {IDLE, COMMAND, NOCOMMAND, WRITE, SEL_mem, OPERATION, SUM_AV, DISTANCIA, WBRAM, RBRAM} CurrentState, NextState;
 
  //Statements:--------------------------------
 
@@ -69,13 +69,19 @@ enum logic [3:0] {IDLE, COMMAND, NOCOMMAND, WRITE, SEL_mem, OPERATION, DISTANCIA
 			SR = 1;
 			if (sel_op == 3'd3 | sel_op == 3'd4) NextState = DISTANCIA;
 			else if(rx_ready && ~mready) NextState = RBRAM;
-			else if(~rx_ready && ~mready) NextState = OPERATION;
+			else if(~rx_ready && ~mready) NextState = SUM_AV;
 		end
 
+        SUM_AV: begin
+			RM = 1;
+            tx = 1;
+			if(~rready) NextState = RBRAM;
+		end
+        
 		DISTANCIA: begin
 			Ac = 1;
 			RM = 1;
-			if(~man_ready) NextState = DISTANCIA;
+			if(~dist_ready) NextState = DISTANCIA;
 		end
 
 		RBRAM: begin

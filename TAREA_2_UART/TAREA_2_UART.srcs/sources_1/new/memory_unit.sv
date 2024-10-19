@@ -24,14 +24,16 @@ module memory_unit (
         input logic clk, reset,
         input logic rx_ready, SW, SR, RM, WM, op, tx_busy, CMD, Ac,
         input logic [7:0] rx_data,
-        output logic mready, rready, man_ready,
+        output logic mready, rready, dist_ready,
         output logic [2:0] sel_op,
         output logic [7:0] douta, doutb, tx_in,
         output logic tx_dist, tm_axis_dout_tvalid,
         output logic [15:0] t_sqrteuc, sqrteuc,
         output logic [25:0] euc,
         output logic [2:0] stateW,
-        output logic [7:0] douta_salida
+        output logic [7:0] douta_salida,
+        output logic [7:0] temp_AN,
+        output logic [6:0] segmentos
     );
 localparam N = 10;
 logic wea;
@@ -44,7 +46,7 @@ logic [10:0] addr_count_rapido;
 
 assign mready = addr_count_2 == 1<<N;
 assign rready = addr_count_salida == 1<<N;
-assign man_ready = addr_count_rapido == (1<<10)+1;
+assign dist_ready = addr_count_rapido == (1<<10)+1;
 
 logic [10:0] addra;
 
@@ -76,7 +78,7 @@ always_ff @(posedge clk)
         addr_count_2 <= addr_count;
     
 
-EContadorN #(.N(N+1)) address_counter_test (
+EContadorN #(.N(N+1)) address_counter_tx (
     .clk,
     .enable(~tx_busy),
     .reset(SR), 
@@ -127,11 +129,12 @@ always_comb begin
         abs = doutb - douta;  // Si es positivo, se deja igual
 end
 
-logic [3:0] N_shift;
+logic [4:0] N_shift;
 logic [4:0] N_shift_euc;
+logic [17:0] auxman;
 
 always_ff @(posedge clk) begin
-    man <= man >> N_shift;
+    auxman <= man >> N_shift;
     t_sqrteuc <= sqrteuc >> N_shift_euc;
        // t_euc  <= euc >> N_shift_euc;
     if (SR || &(~(addra-1))) begin
@@ -183,8 +186,7 @@ dista_FSM euc_FSM (
     .tx_busy,
     .start(tm_axis_dout_tvalid),
     .tx_dist(tx_dist_euc),
-    .N(),
-    .N_euc(N_shift_euc),
+    .N(N_shift_euc),
     .reset_counter(reset_counter_euc)
     );
 
@@ -192,10 +194,9 @@ dista_FSM distancia_FSM (
     .clk,
     .rst(reset),
     .tx_busy,
-    .start(addr_count_rapido > (1<<10)),
+    .start(t_start),
     .tx_dist(tx_dist_man),
     .N(N_shift),
-    .N_euc(),
     .reset_counter(reset_counter)
     );
 
@@ -206,7 +207,7 @@ always_comb begin
         3'd0: douta_salida = sel_out ? doutb : douta;
         3'd1: douta_salida = doutb + douta;
         3'd2: douta_salida = doutb/2 + douta/2;
-        3'd3: douta_salida = man[7:0];
+        3'd3: douta_salida = auxman[7:0];
         3'd4: douta_salida = t_sqrteuc[7:0];
         default: douta_salida = 8'd11;
     endcase
@@ -214,5 +215,27 @@ end
 
 assign tx_in = douta_salida;
 
+logic clkout;
+divisor_frec #(.fin(100000000), .fout(10000)) divisor_freq(
+    .CLK100MHZ(clk),
+    .reset,
+    .clkout
+);
 
+logic [31:0] to_disp;
+unsigned_to_bcd(
+    .clk(clk),
+    .reset,
+    .trigger(1),
+    .in((sel_op == 3'd3) ? {14'b0, man} : {16'b0, sqrteuc}),
+    .bcd(to_disp)
+);
+
+BCD_to_display(
+    .clk_segment(clkout),
+    .CPU_RESETN(~reset),
+    .hora_display(to_disp),
+    .AN(temp_AN),
+    .segmentos   
+);
 endmodule

@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Mon Oct 14 00:01:58 2024
+// Date        : Fri Oct 18 20:50:41 2024
 // Host        : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               e:/github/pruebas_ipd432/TAREA_2_UART/Tarea2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
