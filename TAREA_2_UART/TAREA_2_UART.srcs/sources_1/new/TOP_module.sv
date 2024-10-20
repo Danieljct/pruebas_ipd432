@@ -75,11 +75,8 @@ main_FSM main_FSM(
 logic [7:0] tx_in;	
 logic [15:0] t_sqrteuc, sqrteuc;
 logic tm_axis_dout_tvalid;
-logic [25:0] euc;
 
 logic tx_dist;
-logic [2:0] stateW;
-logic [7:0] douta_salida;
 logic [7:0] temp_AN;
 
 memory_unit memory_unit(
@@ -112,12 +109,10 @@ end
 //	.probe2(tm_axis_dout_tvalid), // done
 //	.probe3(tx_in), // input wire [7:0]  probe3 
 //	.probe4(sqrteuc),
-//	.probe5(euc),
 //	.probe6(stateW),
 //	.probe7(tx_dist),
 //	.probe8(uart_tx_usb),
-//	.probe9(sel_op),
-//	.probe10(douta_salida)
+//	.probe9(sel_op)
 	
 //);
 

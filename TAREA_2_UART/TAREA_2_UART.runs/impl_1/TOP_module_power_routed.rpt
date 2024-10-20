@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Sat Oct 19 18:25:50 2024
+| Date             : Sun Oct 20 15:44:49 2024
 | Host             : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command          : report_power -file TOP_module_power_routed.rpt -pb TOP_module_power_summary_routed.pb -rpx TOP_module_power_routed.rpx
 | Design           : TOP_module
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |     0.003 |     1075 |       --- |             --- |
-|   LUT as Logic |     0.003 |      472 |     63400 |            0.74 |
+| Slice Logic    |     0.003 |     1084 |       --- |             --- |
+|   LUT as Logic |     0.003 |      474 |     63400 |            0.75 |
 |   CARRY4       |    <0.001 |       58 |     15850 |            0.37 |
-|   Register     |    <0.001 |      369 |    126800 |            0.29 |
-|   Others       |     0.000 |       28 |       --- |             --- |
-| Signals        |     0.003 |      888 |       --- |             --- |
+|   Register     |    <0.001 |      370 |    126800 |            0.29 |
+|   Others       |     0.000 |       34 |       --- |             --- |
+| Signals        |     0.003 |      889 |       --- |             --- |
 | Block RAM      |     0.002 |        1 |       135 |            0.74 |
 | MMCM           |     0.133 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        3 |       240 |            1.25 |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.026 |       0.011 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.026 |       0.010 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.092 |       0.074 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -152,8 +152,9 @@ Table of Contents
 |   clk100MHZ     |     0.133 |
 |     inst        |     0.133 |
 |   memory_unit   |     0.009 |
-|     SQRT        |     0.002 |
 |     num2display |     0.001 |
+|     vector_calc |     0.005 |
+|       SQRT      |     0.002 |
 +-----------------+-----------+
 
 
