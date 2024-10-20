@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sun Oct 20 15:43:10 2024
+| Date         : Sun Oct 20 17:22:53 2024
 | Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_module_control_sets_placed.rpt
 | Design       : TOP_module
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              51 |           17 |
-| No           | No                    | Yes                    |              17 |            5 |
-| No           | Yes                   | No                     |              66 |           23 |
+| No           | No                    | No                     |              67 |           22 |
+| No           | No                    | Yes                    |              17 |            7 |
+| No           | Yes                   | No                     |              66 |           21 |
 | Yes          | No                    | No                     |              11 |            2 |
-| Yes          | No                    | Yes                    |              33 |           12 |
-| Yes          | Yes                   | No                     |             192 |           56 |
+| Yes          | No                    | Yes                    |              33 |            8 |
+| Yes          | Yes                   | No                     |             192 |           53 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,30 +73,30 @@ Table of Contents
 +-------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------------+------------------+----------------+--------------+
 |                Clock Signal               |                       Enable Signal                      |                              Set/Reset Signal                             | Slice Load Count | Bel Load Count | Bels / Slice |
 +-------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------------+------------------+----------------+--------------+
-|  memory_unit/num2display/divisor_freq/CLK |                                                          | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              3 |         3.00 |
-|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[3]_i_1_n_0  | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
-|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[7]_i_1_n_0  | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
+|  memory_unit/num2display/divisor_freq/CLK |                                                          | memory_unit/num2display/nolabel_line42/SR[0]                              |                2 |              3 |         1.50 |
 |  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[23]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
+|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[27]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
+|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[3]_i_1_n_0  | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
 |  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[15]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
 |  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[19]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
 |  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[11]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
-|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[27]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
 |  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[31]_i_1_n_0 | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
-|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/counter_next      | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              6 |         6.00 |
-|  clk100MHZ/inst/clk_out1                  | uart_basic_inst/uart_rx_blk/rx_data[7]_i_1_n_0           | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              8 |         8.00 |
-|  clk100MHZ/inst/clk_out1                  | main_FSM/FSM_onehot_CurrentState_reg[3]_0[0]             | memory_unit/num2display/nolabel_line42/SR[0]                              |                2 |              8 |         4.00 |
-|  clk100MHZ/inst/clk_out1                  | main_FSM/E[0]                                            | memory_unit/num2display/nolabel_line42/SR[0]                              |                5 |              8 |         1.60 |
-|  clk100MHZ/inst/clk_out1                  | uart_basic_inst/uart_tx_blk/SR[0]                        | main_FSM/AR[0]                                                            |                4 |             11 |         2.75 |
+|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/shift[7]_i_1_n_0  | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              4 |         4.00 |
+|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/counter_next      | memory_unit/num2display/nolabel_line42/SR[0]                              |                2 |              6 |         3.00 |
+|  clk100MHZ/inst/clk_out1                  | main_FSM/E[0]                                            | memory_unit/num2display/nolabel_line42/SR[0]                              |                3 |              8 |         2.67 |
+|  clk100MHZ/inst/clk_out1                  | main_FSM/FSM_onehot_CurrentState_reg[3]_0[0]             | memory_unit/num2display/nolabel_line42/SR[0]                              |                1 |              8 |         8.00 |
+|  clk100MHZ/inst/clk_out1                  | uart_basic_inst/uart_rx_blk/rx_data[7]_i_1_n_0           | memory_unit/num2display/nolabel_line42/SR[0]                              |                2 |              8 |         4.00 |
+|  clk100MHZ/inst/clk_out1                  | main_FSM/Q[4]                                            | memory_unit/vector_calc/distancia_FSM/FSM_onehot_CurrentState_reg[1]_0[0] |                3 |             11 |         3.67 |
+|  clk100MHZ/inst/clk_out1                  | uart_basic_inst/uart_tx_blk/SR[0]                        | main_FSM/AR[0]                                                            |                3 |             11 |         3.67 |
 |  clk100MHZ/inst/clk_out1                  | uart_basic_inst/rx_ready                                 |                                                                           |                2 |             11 |         5.50 |
-|  clk100MHZ/inst/clk_out1                  | uart_basic_inst/rx_ready                                 | main_FSM/FSM_onehot_CurrentState_reg[1]_0[0]                              |                3 |             11 |         3.67 |
-|  clk100MHZ/inst/clk_out1                  | main_FSM/Q[4]                                            | memory_unit/vector_calc/distancia_FSM/FSM_onehot_CurrentState_reg[1]_0[0] |                5 |             11 |         2.20 |
+|  clk100MHZ/inst/clk_out1                  | uart_basic_inst/rx_ready                                 | main_FSM/FSM_onehot_CurrentState_reg[1]_0[0]                              |                2 |             11 |         5.50 |
 |  clk100MHZ/inst/clk_out1                  |                                                          | uart_basic_inst/uart_tx_blk/SR[0]                                         |                6 |             19 |         3.17 |
 |  clk100MHZ/inst/clk_out1                  | memory_unit/vector_calc/SQRT/base[15]_i_2_n_0            | memory_unit/vector_calc/SQRT/i                                            |                6 |             22 |         3.67 |
-|  clk100MHZ/inst/clk_out1                  | memory_unit/vector_calc/SQRT/y_next                      | memory_unit/num2display/nolabel_line42/SR[0]                              |               12 |             32 |         2.67 |
-|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/bcd_next          | memory_unit/num2display/nolabel_line42/SR[0]                              |                9 |             32 |         3.56 |
+|  clk100MHZ/inst/clk_out1                  | memory_unit/num2display/nolabel_line42/bcd_next          | memory_unit/num2display/nolabel_line42/SR[0]                              |                8 |             32 |         4.00 |
+|  clk100MHZ/inst/clk_out1                  | memory_unit/vector_calc/SQRT/y_next                      | memory_unit/num2display/nolabel_line42/SR[0]                              |               11 |             32 |         2.91 |
 |  clk100MHZ/inst/clk_out1                  | main_FSM/FSM_onehot_CurrentState_reg[7]_0[0]             | main_FSM/SR[0]                                                            |               12 |             44 |         3.67 |
-|  clk100MHZ/inst/clk_out1                  |                                                          |                                                                           |               17 |             51 |         3.00 |
-|  clk100MHZ/inst/clk_out1                  |                                                          | memory_unit/num2display/nolabel_line42/SR[0]                              |               21 |             61 |         2.90 |
+|  clk100MHZ/inst/clk_out1                  |                                                          | memory_unit/num2display/nolabel_line42/SR[0]                              |               20 |             61 |         3.05 |
+|  clk100MHZ/inst/clk_out1                  |                                                          |                                                                           |               22 |             67 |         3.05 |
 +-------------------------------------------+----------------------------------------------------------+---------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

@@ -106,7 +106,6 @@ end
 //	.clk(clk), // input wire clk
 //	.probe0(t_sqrteuc), // input wire [15:0]  probe0  
 //	.probe1(tx_data), // input wire [7:0]  probe1 
-//	.probe2(tm_axis_dout_tvalid), // done
 //	.probe3(tx_in), // input wire [7:0]  probe3 
 //	.probe4(sqrteuc),
 //	.probe6(stateW),

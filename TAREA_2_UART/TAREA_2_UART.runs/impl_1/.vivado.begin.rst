@@ -58,3 +58,13 @@
     <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="18128" HostCore="4" HostMemory="017092083712">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="1292" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="danie" Host="DESKTOP-MK895J2" Pid="10340" HostCore="4" HostMemory="017092083712">
+    </Process>
+</ProcessHandle>

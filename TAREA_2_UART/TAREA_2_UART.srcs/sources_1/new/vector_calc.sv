@@ -4,9 +4,8 @@ module vector_calc(
     input logic [10:0] addr_count_rapido,
     input logic [10:0] addra,
     input logic [2:0] sel_op,
-    output logic tx_dist, reset_counter_euc, reset_counter, t_start,
+    output logic tx_dist, reset_counter_euc, reset_counter,
     output logic [15:0] sqrteuc,
-    output logic [2:0] stateW,
     output logic [7:0] douta_salida,
     output logic [17:0] man
     );
@@ -42,6 +41,7 @@ end
 
 logic m_axis_dout_tvalid;
 
+logic t_start;
 
 always_ff @(posedge clk) begin
     t_start <= addr_count_rapido > (1<<10);

@@ -32,7 +32,7 @@ module memory_unit (
         output logic [6:0] segmentos
     );
     
-logic t_start;
+    
 localparam N = 10;
 logic wea;
 logic web;
@@ -47,7 +47,7 @@ logic [10:0] addra;
 
 addr_ctrl #(.N(10)) addr_ctrl (
     .clk, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM,
-    .mready, .rready, .dist_ready, .t_start, .wea, .web,
+    .mready, .rready, .dist_ready, .wea, .web,
     .addra, .addr_count_rapido
     );
     
@@ -94,7 +94,7 @@ vector_calc vector_calc(
     .addra,
     .addr_count_rapido,
     .sel_op,
-    .reset_counter_euc, .reset_counter, .t_start,
+    .reset_counter_euc, .reset_counter, 
     .tx_dist,
     .sqrteuc,
     .man,

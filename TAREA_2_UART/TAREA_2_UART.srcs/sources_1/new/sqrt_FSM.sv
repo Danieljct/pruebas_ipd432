@@ -8,12 +8,13 @@ module sqrt_FSM (
 );
     
     enum logic [2:0] {INIT, ADD_BASE, CHECK, SUB_BASE, SHIFT_BASE, DONE} state, next_state;
-    
+    logic [5:0] i;
     logic [15:0] base;
     logic [31:0] y_next;
     logic count;
     logic save;
-    logic [5:0] i;
+    logic [1:0] op;
+    logic [31:0] sum; 
     // Sequential logic (State register)
     always_ff @(posedge clk) begin
         if (rst) begin
@@ -39,6 +40,19 @@ module sqrt_FSM (
             base <= 1 << 15;
         end
     end
+    
+    always_comb begin
+        sum = 0;
+        case(op)
+            2'd1: begin
+               sum = y + base;
+            end
+            2'd2: begin
+               sum = y - base;
+            end
+        endcase
+    end
+    
     // Combinational logic (Next state and output logic)
     always_comb begin
         next_state = state;
@@ -46,6 +60,7 @@ module sqrt_FSM (
         done = 1'b0;
         count = 0;
         save = 0;
+        op = 0;
         case (state)
             INIT: begin
                 if (start) begin
@@ -54,8 +69,9 @@ module sqrt_FSM (
                 end
             end
             ADD_BASE: begin
+                op = 1;
                 save = 1;
-                y_next = y + base;
+                y_next = sum;
                 next_state = CHECK;
             end
             CHECK: begin
@@ -67,8 +83,9 @@ module sqrt_FSM (
                 end
             end
             SUB_BASE: begin
+                op = 2;
                 save = 1;
-                y_next = y - base;
+                y_next = sum;
                 next_state = SHIFT_BASE;
             end
             SHIFT_BASE: begin
@@ -86,4 +103,5 @@ module sqrt_FSM (
             end
         endcase
     end
+    assign stateW = state;
 endmodule

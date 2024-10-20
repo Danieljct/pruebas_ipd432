@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sun Oct 20 15:41:31 2024
+| Date         : Sun Oct 20 17:21:47 2024
 | Host         : DESKTOP-MK895J2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TOP_module_utilization_synth.rpt -pb TOP_module_utilization_synth.pb
 | Design       : TOP_module
@@ -152,13 +152,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | FDRE     |  309 |        Flop & Latch |
 | LUT6     |  156 |                 LUT |
-| LUT4     |  151 |                 LUT |
-| LUT2     |  136 |                 LUT |
-| LUT3     |  102 |                 LUT |
+| LUT4     |  137 |                 LUT |
+| LUT2     |  135 |                 LUT |
+| LUT3     |   86 |                 LUT |
+| LUT5     |   72 |                 LUT |
 | CARRY4   |   58 |          CarryLogic |
-| LUT5     |   57 |                 LUT |
 | FDCE     |   50 |        Flop & Latch |
-| LUT1     |   20 |                 LUT |
+| LUT1     |   22 |                 LUT |
 | OBUF     |   16 |                  IO |
 | FDSE     |   12 |        Flop & Latch |
 | DSP48E1  |    3 |    Block Arithmetic |
