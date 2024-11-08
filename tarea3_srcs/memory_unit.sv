@@ -65,23 +65,6 @@ rx_logic rx_logic(
 
 
 
-blk_mem_gen_ff BRAMA(
-      .clka(clk),     // input wire clka
-      .ena(1),      // input wire ena
-      .wea,      // input wire [0 : 0] wea
-      .addra(addra[9:0]),  // input wire [9 : 0] addra
-      .dina(din),    // input wire [7 : 0] dina
-      .douta(douta)  // output wire [7 : 0] douta
-    );
-    
-blk_mem_gen_ff BRAMB(
-      .clka(clk),     // input wire clka
-      .ena(1),      // input wire ena
-      .wea(web),      // input wire [0 : 0] wea
-      .addra(addra[9:0]),  // input wire [9 : 0] addra
-      .dina(din),    // input wire [7 : 0] dina
-      .douta(doutb)  // output wire [7 : 0] douta
-    );
 
 // logica leer y calcular distancia
 logic [17:0] man;
