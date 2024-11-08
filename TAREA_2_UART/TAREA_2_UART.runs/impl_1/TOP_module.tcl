@@ -97,8 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -107,9 +105,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  set_param checkpoint.writeSynthRtdsInDcp 1
-  set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18536-DESKTOP-MK895J2/incrSyn
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 4  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
@@ -126,9 +121,9 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.runs/synth_1/TOP_module.dcp
   read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/ila_0/ila_0.xci
-  read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/blk_mem_gen_ff/blk_mem_gen_ff.xci
   read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/cordic_1/cordic_1.xci
+  read_ip -quiet E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc E:/github/pruebas_ipd432/TAREA_2_UART/UART_master_const.xdc
 OPTRACE "read constraints: implementation" END { }
@@ -286,35 +281,4 @@ OPTRACE "route_design write_checkpoint" END { }
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
-OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
-OPTRACE "write_bitstream setup" START { }
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-OPTRACE "read constraints: write_bitstream" START { }
-OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force -no_partial_mmi TOP_module.mmi }
-OPTRACE "write_bitstream setup" END { }
-OPTRACE "write_bitstream" START { }
-  write_bitstream -force TOP_module.bit 
-OPTRACE "write_bitstream" END { }
-OPTRACE "write_bitstream misc" START { }
-OPTRACE "read constraints: write_bitstream_post" START { }
-OPTRACE "read constraints: write_bitstream_post" END { }
-  catch {write_debug_probes -quiet -force TOP_module}
-  catch {file copy -force TOP_module.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
-  unset ACTIVE_STEP 
-}
-
-OPTRACE "write_bitstream misc" END { }
-OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }

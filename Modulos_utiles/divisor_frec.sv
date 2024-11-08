@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Daniel Cubillos y Tomas Riveros
 // 
 // Create Date: 27.08.2024 21:29:25
 // Design Name: 

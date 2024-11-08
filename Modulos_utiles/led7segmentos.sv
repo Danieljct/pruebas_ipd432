@@ -1,3 +1,4 @@
+// autores:: Daniel Cubillos y Tomas Riveros
 module led7segmentos(
     input logic [3:0] BCD_in,
     output logic [6:0] segmentos

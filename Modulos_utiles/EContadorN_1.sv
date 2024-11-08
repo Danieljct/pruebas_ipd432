@@ -1,3 +1,4 @@
+// Daniel Cubillos y Tomas Riveros
 module EContadorN_1 #(N = 3)(
     input logic clk,reset, enable, 
     output logic[N-1:0] count

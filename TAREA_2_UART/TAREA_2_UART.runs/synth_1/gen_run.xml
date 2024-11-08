@@ -1,46 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1729455614">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1729553385">
   <File Type="PA-TCL" Name="TOP_module.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="TOP_module_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TOP_module_reports.tcl"/>
   <File Type="RDS-RDS" Name="TOP_module.vds"/>
   <File Type="RDS-UTIL" Name="TOP_module_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="TOP_module_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TOP_module.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="TOP_module_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="TOP_module_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../Modulos_utiles/uart/data_sync.v">
+    <File Path="$PSRCDIR/sources_1/imports/Modulos_utiles/uart/data_sync.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Modulos_utiles/uart/data_sync.v"/>
+        <Attr Name="ImportTime" Val="1726588038"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Modulos_utiles/uart/uart_basic.v">
+    <File Path="$PSRCDIR/sources_1/imports/Modulos_utiles/uart/uart_basic.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Modulos_utiles/uart/uart_basic.v"/>
+        <Attr Name="ImportTime" Val="1726588038"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Modulos_utiles/uart/uart_baud_tick_gen.v">
+    <File Path="$PSRCDIR/sources_1/imports/Modulos_utiles/uart/uart_baud_tick_gen.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Modulos_utiles/uart/uart_baud_tick_gen.v"/>
+        <Attr Name="ImportTime" Val="1726588038"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Modulos_utiles/uart/uart_rx.v">
+    <File Path="$PSRCDIR/sources_1/imports/Modulos_utiles/uart/uart_rx.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Modulos_utiles/uart/uart_rx.v"/>
+        <Attr Name="ImportTime" Val="1726588038"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Modulos_utiles/uart/uart_tx.v">
+    <File Path="$PSRCDIR/sources_1/imports/Modulos_utiles/uart/uart_tx.v">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Modulos_utiles/uart/uart_tx.v"/>
+        <Attr Name="ImportTime" Val="1726588038"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -73,8 +80,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Modulos_utiles/EContadorN.sv">
+    <File Path="$PSRCDIR/sources_1/imports/Modulos_utiles/EContadorN.sv">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Modulos_utiles/EContadorN.sv"/>
+        <Attr Name="ImportTime" Val="1728499949"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -155,13 +164,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/vector_calc.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -190,8 +192,10 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/UART_master_const.xdc">
+    <File Path="$PSRCDIR/constrs_1/imports/TAREA_2_UART/UART_master_const.xdc">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/UART_master_const.xdc"/>
+        <Attr Name="ImportTime" Val="1729445346"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -212,4 +216,5 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_ff"/>
   <BlockFileSet Type="BlockSrcs" Name="cordic_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>

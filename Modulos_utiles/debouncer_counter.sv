@@ -1,3 +1,4 @@
+// autores: Daniel Cubillos y Tomas Riveros
 module PB_Debouncer_counter#(
     parameter DELAY=15                     // Number of clock pulses to check stable button pressing
     )
