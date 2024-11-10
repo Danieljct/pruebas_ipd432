@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TOP_module(
+module TOP_module #(parameter baudrate = 115200)(
 	input  logic               clk_100M,
 	input  logic               reset_n,
 	input  logic               uart_rx,
@@ -49,8 +49,8 @@ logic mready, rready, dist_ready;
 
 
 uart_basic #(
-		.CLK_FREQUENCY(95000000), // reloj base de entrada
-		.BAUD_RATE(115200)
+		.CLK_FREQUENCY(100000000), // reloj base de entrada
+		.BAUD_RATE(baudrate)
 	) uart_basic_inst (
 		.clk,
 		.reset,

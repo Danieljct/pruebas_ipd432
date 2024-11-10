@@ -39,7 +39,8 @@ divisor_frec #(.fin(100000000), .fout(10000)) divisor_freq(
 );
 
 logic [31:0] to_disp;
-unsigned_to_bcd(
+
+unsigned_to_bcd doubledable(
     .clk(clk),
     .reset,
     .trigger(1),
@@ -47,7 +48,7 @@ unsigned_to_bcd(
     .bcd(to_disp)
 );
 
-BCD_to_display(
+BCD_to_display display(
     .clk_segment(clkout),
     .CPU_RESETN(~reset),
     .hora_display(to_disp),

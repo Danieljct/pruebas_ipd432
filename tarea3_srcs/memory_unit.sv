@@ -44,6 +44,8 @@ logic [10:0] addr_count_rapido;
 logic reset_counter;
 logic reset_counter_euc;
 logic [10:0] addra;
+logic [7:0] memory_A [(1<<N)-1:0];
+logic [7:0] memory_B [(1<<N)-1:0];
 
 addr_ctrl #(.N(10)) addr_ctrl (
     .clk, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM,
@@ -52,7 +54,6 @@ addr_ctrl #(.N(10)) addr_ctrl (
     );
     
 
-   
 rx_logic rx_logic(
     .clk, .reset, 
     .rx_data,
@@ -63,7 +64,18 @@ rx_logic rx_logic(
     );
 
 
-
+SIPO #(.In_width(8), .N_inputs(1024)) memoryA (
+    .clk, .enable(rx_ready & wea), 
+    .in(din), 
+    .out(memory_A)
+    );
+    
+SIPO #(.In_width(8), .N_inputs(1024)) memoryB (
+    .clk, .enable(rx_ready & web), 
+    .in(din), 
+    .out(memory_B)
+    );
+   
 
 
 // logica leer y calcular distancia
