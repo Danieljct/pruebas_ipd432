@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/cordic_1/demo_tb/tb_cordic_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cordic_1'
+ERROR: [VRFC 10-2987] 'cordic_1' is not compiled in library 'xil_defaultlib' [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/cordic_1/demo_tb/tb_cordic_1.vhd:207]
+ERROR: [VRFC 10-9458] unit 'tb' is ignored due to previous errors [E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/cordic_1/demo_tb/tb_cordic_1.vhd:77]
+INFO: [VRFC 10-8704] VHDL file 'E:/github/pruebas_ipd432/TAREA_2_UART/TAREA_2_UART.gen/sources_1/ip/cordic_1/demo_tb/tb_cordic_1.vhd' is ignored due to errors

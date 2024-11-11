@@ -8,7 +8,7 @@ module PISO
 )    
 (
     input logic clk,
-    input logic start,
+    input logic start, enable,
     input logic [In_width-1:0] in [N_inputs-1:0],
     output logic [In_width-1:0] out
 );
@@ -19,7 +19,7 @@ always_ff @(posedge clk) begin : shift
         for (int i = 0; i < N_inputs; i++) begin
             data[i] <= in[i];
         end
-    end else begin
+    end else if (enable) begin
         for (int i = N_inputs-1; i > 0; i--) begin
             data[i] <= data[i-1];
         end

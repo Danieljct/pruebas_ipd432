@@ -4,7 +4,7 @@ module addr_ctrl #(N =10)(
     output logic [10:0] addra, addr_count_rapido
     );
     
-logic [N:0] addr_count, addr_count_2;
+logic [N:0] addr_count;
 logic [N:0] addr_count_salida;
 
 EContadorN #(.N(N+1)) address_counter (
@@ -29,18 +29,17 @@ EContadorN #(.N(11)) address_counter_rapido (
     );
 
 
-always_ff @(posedge clk)
-    if (rx_ready)
-        addr_count_2 <= addr_count;
         
-assign addra = Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida : addr_count_2)};
+assign addra = Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida : addr_count)};
 
 
-        
-assign mready = addr_count_2 == 1<<N;
-assign rready = addr_count_salida == 1<<N;
+always_ff @(posedge clk) begin   
+    mready <= addr_count >= (1<<N);
+end
+assign rready = addr_count_salida >= (1<<N)-1;
 assign dist_ready = addr_count_rapido == (1<<10)+1;  
 assign wea = (addra >= 1<<N) ? 0 :(sel ? 0 : WM);
 assign web = (addra >= 1<<N) ? 0 :(~sel ? 0 : WM);
+
 
 endmodule

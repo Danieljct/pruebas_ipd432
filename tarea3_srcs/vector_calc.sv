@@ -1,22 +1,23 @@
 module vector_calc(
-    input logic clk, reset, SR, Ac, sel_out, tx_busy,
-    input logic [7:0] douta, doutb,
+    input logic clk, reset, SR, Ac, sel_out, tx_busy, tx, RM,
+    input logic [7:0] memory_A [1023:0],
+    input logic [7:0] memory_B [1023:0],
     input logic [10:0] addr_count_rapido,
     input logic [10:0] addra,
     input logic [2:0] sel_op,
     output logic tx_dist, reset_counter_euc, reset_counter,
     output logic [15:0] sqrteuc,
-    output logic [7:0] douta_salida,
+    output logic [7:0] dout_salida,
     output logic [17:0] man
     );
 
 logic [7:0] abs;
 
 always_comb begin
-    if (douta > doutb)
-        abs = douta - doutb; // Si es negativo, se invierte
-    else
-        abs = doutb - douta;  // Si es positivo, se deja igual
+    //if (douta > doutb)
+        abs = 1; //douta - doutb; // Si es negativo, se invierte
+   // else
+   //     abs = 1; //doutb - douta;  // Si es positivo, se deja igual
 end
 
 logic [4:0] N_shift;
@@ -46,14 +47,6 @@ logic t_start;
 always_ff @(posedge clk) begin
     t_start <= addr_count_rapido > (1<<10);
 end
-
-//cordic_1 cordic (
-//  .aclk(clk),
-//  .s_axis_cartesian_tvalid(t_start),  // input wire s_axis_cartesian_tvalid
-//  .s_axis_cartesian_tdata({6'b0,euc}),    // input wire [31 : 0] s_axis_cartesian_tdata
-//  .m_axis_dout_tvalid(m_axis_dout_tvalid),  // output wire m_axis_dout_tvalid
-//  .m_axis_dout_tdata(sqrteuc)              // output wire [15 : 0] m_axis_dout_tdata
-//);
 
 sqrt_FSM SQRT(
         .clk,                                   // Reloj para la secuencia
@@ -94,15 +87,35 @@ dista_FSM distancia_FSM (
 
 assign tx_dist = (sel_op == 3'd3) ? tx_dist_man : tx_dist_euc;
 
+logic [7:0] memory_X [1023:0];
+
+
+
+
 always_comb begin
     case(sel_op)
-        3'd0: douta_salida = sel_out ? doutb : douta;
-        3'd1: douta_salida = doutb + douta;
-        3'd2: douta_salida = doutb/2 + douta/2;
-        3'd3: douta_salida = auxman[7:0];
-        3'd4: douta_salida = t_sqrteuc[7:0];
-        default: douta_salida = 8'd11;
+        3'd0: begin 
+           for (int i = 0; i < 1024; i++) begin
+               memory_X[i] = sel_out ? memory_A[i] : memory_B[i];
+               end  
+        end
+      //  3'd1: dout_salida = doutb + douta;
+      //  3'd2: dout_salida = doutb/2 + douta/2;
+        3'd3: dout_salida = auxman[7:0];
+        3'd4: dout_salida = t_sqrteuc[7:0];
+        default: dout_salida = 8'd11;
     endcase
 end
+
+logic start_piso;
+pulse_generator pulse_generator(
+    .clk, .reset, .in(RM), .pulse_out(start_piso)
+    );
+
+PISO #(.In_width(8), .N_inputs(1024)) memory_send(
+    .clk, .start(start_piso), .enable(~tx_busy),
+    .in(memory_X), 
+    .out(dout_salida)
+    );
 
 endmodule

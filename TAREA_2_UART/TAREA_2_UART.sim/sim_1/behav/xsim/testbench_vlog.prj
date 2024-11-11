@@ -1,25 +1,30 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../TAREA_2_UART.ip_user_files/ipstatic" \
-"../../../../TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
 "../../../../TAREA_2_UART.gen/sources_1/ip/blk_mem_gen_ff/sim/blk_mem_gen_ff.v" \
 "../../../../TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
 "../../../../TAREA_2_UART.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
-"../../../../../Modulos_utiles/uart/data_sync.v" \
-"../../../../../Modulos_utiles/uart/uart_basic.v" \
-"../../../../../Modulos_utiles/uart/uart_baud_tick_gen.v" \
-"../../../../../Modulos_utiles/uart/uart_rx.v" \
-"../../../../../Modulos_utiles/uart/uart_tx.v" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/uart/data_sync.v" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/uart/uart_basic.v" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/uart/uart_baud_tick_gen.v" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/uart/uart_rx.v" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/uart/uart_tx.v" \
 
 sv xil_defaultlib  --include "../../../../TAREA_2_UART.ip_user_files/ipstatic" \
 "../../../../TAREA_2_UART.srcs/sources_1/new/TOP_module.sv" \
 "../../../../TAREA_2_UART.srcs/sources_1/new/main_FSM.sv" \
-"../../../../../Modulos_utiles/ContadorN.sv" \
 "../../../../TAREA_2_UART.srcs/sources_1/new/memory_unit.sv" \
-"../../../../../Modulos_utiles/divisor_frec.sv" \
-"../../../../../Modulos_utiles/EContadorN.sv" \
-"../../../../../Modulos_utiles/EContadorN_1.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/EContadorN.sv" \
 "../../../../TAREA_2_UART.srcs/sources_1/new/dista_FSM.sv" \
 "../../../../TAREA_2_UART.srcs/sources_1/new/sqrt_FSM.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/new/num2display.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/ContadorN.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/led7segmentos.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/divisor_frec.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/Modulos_utiles/unsigned_to_bcd.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/imports/new/BCD_to_display.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/new/vector_calc.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/new/rx_logic.sv" \
+"../../../../TAREA_2_UART.srcs/sources_1/new/addr_ctrl.sv" \
 "../../../../TAREA_2_UART.srcs/sim_1/new/testbench.sv" \
 
 # compile glbl module
