@@ -5,15 +5,17 @@ module main_FSM
 	input 	logic [7:0] rx,
 	input   logic [2:0] sel_op,
 	output 	logic WM, RM, SW, SR, tx, CMD, Ac,
-	output logic op
+	output logic op,
+	output logic [3:0] estado_actual
 	);
 
  //Declarations:------------------------------
 
  //FSM states type:
 enum logic [3:0] {IDLE, COMMAND, NOCOMMAND, WRITE, SEL_mem, OPERATION, SUM_AV, DISTANCIA, WBRAM, RBRAM} CurrentState, NextState;
-
  //Statements:--------------------------------
+
+assign estado_actual = CurrentState;
 
  //FSM state register:
  always_ff @(posedge clk)
@@ -56,6 +58,7 @@ enum logic [3:0] {IDLE, COMMAND, NOCOMMAND, WRITE, SEL_mem, OPERATION, SUM_AV, D
 		end
 		
 		SEL_mem: begin
+		    SW = 1;
 			NextState = WBRAM;
 		end
 		WBRAM: begin

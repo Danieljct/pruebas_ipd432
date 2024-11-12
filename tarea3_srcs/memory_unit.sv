@@ -29,7 +29,8 @@ module memory_unit (
         output logic [7:0]  tx_in,
         output logic tx_dist, 
         output logic [7:0] temp_AN,
-        output logic [6:0] segmentos
+        output logic [6:0] segmentos,
+        output logic [7:0] memory_A_out
     );
     
     
@@ -46,7 +47,7 @@ logic reset_counter_euc;
 logic [10:0] addra;
 
 addr_ctrl #(.N(10)) addr_ctrl (
-    .clk, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM,
+    .clk, .reset, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM,
     .mready, .rready, .dist_ready, .wea, .web,
     .addra, .addr_count_rapido
     );
@@ -63,6 +64,7 @@ rx_logic rx_logic(
 
 logic [7:0] memory_A [1023:0];
 logic [7:0] memory_B [1023:0];
+assign memory_A_out = memory_A[0];
  
 SIPO #(.In_width(8), .N_inputs(1024)) memoryA (
     .clk, .enable(rx_ready & wea), 

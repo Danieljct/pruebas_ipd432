@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TOP_module #(parameter baudrate = 115200)(
+module TOP_module #(parameter baudrate = 921600, parameter clk_base = 10000000)(
 	input  logic               clk_100M,
 	input  logic               reset_n,
 	input  logic               uart_rx,
@@ -32,7 +32,7 @@ module TOP_module #(parameter baudrate = 115200)(
 logic clk;
 logic reset;
 assign reset = ~reset_n;
- clk_wiz_0 clk100MHZ
+clk_wiz_0 clk100MHZ
    (
     .clk_out1(clk),  // output clk_out1
     .reset,         // input reset
@@ -41,6 +41,7 @@ assign reset = ~reset_n;
 );
 
 
+//assign clk = clk_100M;
     
 logic tx_start, tx_busy, rx_ready;
 logic [7:0]    tx_data; 
@@ -49,7 +50,7 @@ logic mready, rready, dist_ready;
 
 
 uart_basic #(
-		.CLK_FREQUENCY(100000000), // reloj base de entrada
+		.CLK_FREQUENCY(clk_base), // reloj base de entrada
 		.BAUD_RATE(baudrate)
 	) uart_basic_inst (
 		.clk,
@@ -65,11 +66,12 @@ uart_basic #(
 	
 logic WM, RM, op, SW, SR, tx, CMD, Ac;
 logic [2:0] sel_op;
-
+logic [3:0] estado_actual;
+ 
 main_FSM main_FSM(
 	.clk, .rst(reset), .rx_ready, .mready, .rready, .dist_ready,
 	.rx(rx_data),
-	.WM, .RM, .op, .SW, .SR, .tx, .CMD, .Ac, .sel_op
+	.WM, .RM, .op, .SW, .SR, .tx, .CMD, .Ac, .sel_op, .estado_actual
 	);
  logic [7:0] douta, doutb;
 logic [7:0] tx_in;	
@@ -78,6 +80,7 @@ logic tm_axis_dout_tvalid;
 
 logic tx_dist;
 logic [7:0] temp_AN;
+logic [7:0] memory_A_out;
 
 memory_unit memory_unit(
 		.*	
@@ -102,17 +105,18 @@ end
 
 
 
-//ila_0 your_instance_name (
-//	.clk(clk), // input wire clk
-//	.probe0(t_sqrteuc), // input wire [15:0]  probe0  
-//	.probe1(tx_data), // input wire [7:0]  probe1 
-//	.probe3(tx_in), // input wire [7:0]  probe3 
-//	.probe4(sqrteuc),
-//	.probe6(stateW),
+ila_0 your_instance_name (
+	.clk(clk), // input wire clk
+	.probe0(memory_A_out), 
+	.probe1(tx_data),
+	.probe2(rx_data), 
+	.probe3(uart_rx),
+	.probe4(mready),
+	.probe5(estado_actual)
 //	.probe7(tx_dist),
 //	.probe8(uart_tx_usb),
 //	.probe9(sel_op)
 	
-//);
+);
 
 endmodule

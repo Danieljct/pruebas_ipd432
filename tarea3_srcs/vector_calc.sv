@@ -101,9 +101,13 @@ always_comb begin
         end
       //  3'd1: dout_salida = doutb + douta;
       //  3'd2: dout_salida = doutb/2 + douta/2;
-        3'd3: dout_salida = auxman[7:0];
-        3'd4: dout_salida = t_sqrteuc[7:0];
-        default: dout_salida = 8'd11;
+      //  3'd3: dout_salida = auxman[7:0];
+      //  3'd4: dout_salida = t_sqrteuc[7:0];
+        default: begin 
+           for (int i = 0; i < 1024; i++) begin
+               memory_X[i] = sel_out ? memory_A[i] : memory_B[i];
+               end  
+        end
     endcase
 end
 

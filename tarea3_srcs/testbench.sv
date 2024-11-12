@@ -4,7 +4,7 @@ module testbench #(int UART_BIT_PERIOD = 100)();
     logic uart_rx;   // Declarado como un solo bit
     logic uart_tx_usb;
 
-    TOP_module #(.baudrate(10000000)) DUT (
+    TOP_module #(.baudrate(10000000),.clk_base(100000000)) DUT (
         .clk_100M(clk_100M),
         .reset_n(reset_n),
         .uart_rx(uart_rx),
