@@ -29,7 +29,7 @@ module testbench #(int UART_BIT_PERIOD = 100)();
         for (int i = 0; i < 1024; i++) begin
             send_byte(i[7:0]); // Enviar cada byte
         end
-        #10000
+        #100000
 
        send_byte(8'h00);
        send_byte(8'h00);
@@ -40,7 +40,7 @@ module testbench #(int UART_BIT_PERIOD = 100)();
        
        
 
-       #10000
+       #100000
        send_byte(8'h01);   
        send_byte(8'h00);
        send_byte(8'h00);

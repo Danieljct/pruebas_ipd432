@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TOP_module #(parameter baudrate = 921600, parameter clk_base = 10000000)(
+module TOP_module #(parameter baudrate = 115200, parameter clk_base = 10000000)(
 	input  logic               clk_100M,
 	input  logic               reset_n,
 	input  logic               uart_rx,
@@ -81,6 +81,7 @@ logic tm_axis_dout_tvalid;
 logic tx_dist;
 logic [7:0] temp_AN;
 logic [7:0] memory_A_out;
+logic [7:0] memory_X_out;
 
 memory_unit memory_unit(
 		.*	
@@ -107,11 +108,11 @@ end
 
 ila_0 your_instance_name (
 	.clk(clk), // input wire clk
-	.probe0(memory_A_out), 
+	.probe0(memory_X_out), 
 	.probe1(tx_data),
 	.probe2(rx_data), 
 	.probe3(uart_rx),
-	.probe4(mready),
+	.probe4(rready),
 	.probe5(estado_actual)
 //	.probe7(tx_dist),
 //	.probe8(uart_tx_usb),

@@ -8,7 +8,8 @@ module vector_calc(
     output logic tx_dist, reset_counter_euc, reset_counter,
     output logic [15:0] sqrteuc,
     output logic [7:0] dout_salida,
-    output logic [17:0] man
+    output logic [17:0] man,
+    output logic [7:0] memory_X_out
     );
 
 logic [7:0] abs;
@@ -89,7 +90,7 @@ assign tx_dist = (sel_op == 3'd3) ? tx_dist_man : tx_dist_euc;
 
 logic [7:0] memory_X [1023:0];
 
-
+assign memory_X_out = memory_X[0];
 
 
 always_comb begin
@@ -105,7 +106,7 @@ always_comb begin
       //  3'd4: dout_salida = t_sqrteuc[7:0];
         default: begin 
            for (int i = 0; i < 1024; i++) begin
-               memory_X[i] = sel_out ? memory_A[i] : memory_B[i];
+               memory_X[i] = 8'hbb;
                end  
         end
     endcase

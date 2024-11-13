@@ -41,11 +41,13 @@ EContadorN #(.N(11)) address_counter_rapido (
         
 assign addra = Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida : addr_count)};
 
-
+logic mready_t;
 always_ff @(posedge clk) begin   
-    mready <= addr_count >= (1<<N)+1;
+    rready <= addr_count_salida >= (1<<N);
+    mready_t <= addr_count >= (1<<N);
+    mready <= mready_t;
 end
-assign rready = addr_count_salida >= (1<<N);
+
 assign dist_ready = addr_count_rapido == (1<<10)+1;  
 assign wea = (addr_count >= (1<<N)) ? 0 :(sel ? 0 : WM);
 assign web = (addr_count >= (1<<N)) ? 0 :(~sel ? 0 : WM);

@@ -30,7 +30,8 @@ module memory_unit (
         output logic tx_dist, 
         output logic [7:0] temp_AN,
         output logic [6:0] segmentos,
-        output logic [7:0] memory_A_out
+        output logic [7:0] memory_A_out,
+        output logic [7:0] memory_X_out
     );
     
     
@@ -85,6 +86,7 @@ logic [17:0] man;
 logic [7:0] dout_salida;
 logic [15:0] sqrteuc;
 
+
 vector_calc vector_calc(
     .clk, .reset, .SR, .Ac, .sel_out, .tx_busy, .tx, .RM,
     .addra,
@@ -95,7 +97,8 @@ vector_calc vector_calc(
     .tx_dist,
     .sqrteuc,
     .man,
-    .dout_salida
+    .dout_salida,
+    .memory_X_out
     );
 	
 
