@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module memory_unit (
+module memory_unit #(parameter N = 10) (
         input logic clk, reset,
         input logic rx_ready, SW, SR, RM, WM, op, tx_busy, CMD, Ac, tx,
         input logic [7:0] rx_data,
@@ -31,26 +31,24 @@ module memory_unit (
         output logic [7:0] temp_AN,
         output logic [6:0] segmentos,
         output logic [7:0] memory_A_out,
-        output logic [7:0] memory_X_out
+        output logic [7:0] memory_X_out,
+        output logic [N:0] addr_count,addr_count_salida
     );
-    
-    
-localparam N = 10;
+
 logic wea;
 logic web;
 logic [7:0] din;
-logic [N:0] addr_count, addr_count_2;
+logic [N:0] addr_count_2;
 logic sel, sel_out;
-logic [N:0] addr_count_salida;
-logic [10:0] addr_count_rapido;
+logic [N:0] addr_count_rapido;
 logic reset_counter;
 logic reset_counter_euc;
-logic [10:0] addra;
+logic [N:0] addra;
 
-addr_ctrl #(.N(10)) addr_ctrl (
+addr_ctrl #(.N(N)) addr_ctrl (
     .clk, .reset, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM,
     .mready, .rready, .dist_ready, .wea, .web,
-    .addra, .addr_count_rapido
+    .addra, .addr_count_rapido, .addr_count, .addr_count_salida //para ver en ila
     );
     
 
@@ -63,17 +61,17 @@ rx_logic rx_logic(
     .sel_op
     );
 
-logic [7:0] memory_A [1023:0];
-logic [7:0] memory_B [1023:0];
+logic [7:0] memory_A [(1<<N)-1:0]; // memorias de 1024x8
+logic [7:0] memory_B [(1<<N)-1:0];
 assign memory_A_out = memory_A[0];
  
-SIPO #(.In_width(8), .N_inputs(1024)) memoryA (
+SIPO #(.In_width(8), .N_inputs(1<<N)) memoryA (
     .clk, .enable(rx_ready & wea), 
     .in(rx_data), 
     .out(memory_A)
     );
     
-SIPO #(.In_width(8), .N_inputs(1024)) memoryB (
+SIPO #(.In_width(8), .N_inputs(1<<N)) memoryB (
     .clk, .enable(rx_ready & web), 
     .in(rx_data), 
     .out(memory_B)
@@ -87,7 +85,7 @@ logic [7:0] dout_salida;
 logic [15:0] sqrteuc;
 
 
-vector_calc vector_calc(
+vector_calc #(.N(N)) vector_calc(
     .clk, .reset, .SR, .Ac, .sel_out, .tx_busy, .tx, .RM,
     .addra,
     .addr_count_rapido,

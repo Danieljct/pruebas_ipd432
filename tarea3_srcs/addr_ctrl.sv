@@ -1,11 +1,11 @@
 module addr_ctrl #(N =10)(
     input logic clk, reset, rx_ready, SW, SR, tx_busy, Ac, reset_counter, reset_counter_euc, RM, sel, WM,
     output logic mready, rready, dist_ready, wea, web,
-    output logic [10:0] addra, addr_count_rapido
+    output logic [N:0] addra, addr_count_rapido,addr_count,addr_count_salida
     );
     
-logic [N:0] addr_count;
-logic [N:0] addr_count_salida;
+//      logic [N:0] addr_count; los puse en el ila 
+//logic [N:0] addr_count_salida;
 
 logic WM_reset;
 
@@ -30,7 +30,7 @@ EContadorN #(.N(N+1)) address_counter_tx (
     .count(addr_count_salida)
     );
 
-EContadorN #(.N(11)) address_counter_rapido (
+EContadorN #(.N(N+1)) address_counter_rapido (
     .clk,
     .enable(Ac),
     .reset(SR | reset_counter | reset_counter_euc), 
@@ -48,7 +48,7 @@ always_ff @(posedge clk) begin
     mready <= mready_t;
 end
 
-assign dist_ready = addr_count_rapido == (1<<10)+1;  
+assign dist_ready = addr_count_rapido == (1<<N)+1;  
 assign wea = (addr_count >= (1<<N)) ? 0 :(sel ? 0 : WM);
 assign web = (addr_count >= (1<<N)) ? 0 :(~sel ? 0 : WM);
 

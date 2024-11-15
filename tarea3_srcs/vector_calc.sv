@@ -1,9 +1,9 @@
-module vector_calc(
+module vector_calc #(parameter N = 10)(
     input logic clk, reset, SR, Ac, sel_out, tx_busy, tx, RM,
-    input logic [7:0] memory_A [1023:0],
-    input logic [7:0] memory_B [1023:0],
-    input logic [10:0] addr_count_rapido,
-    input logic [10:0] addra,
+    input logic [7:0] memory_A [(1<<N)-1:0],
+    input logic [7:0] memory_B [(1<<N)-1:0],
+    input logic [N:0] addr_count_rapido,
+    input logic [N:0] addra,
     input logic [2:0] sel_op,
     output logic tx_dist, reset_counter_euc, reset_counter,
     output logic [15:0] sqrteuc,
@@ -46,7 +46,7 @@ logic m_axis_dout_tvalid;
 logic t_start;
 
 always_ff @(posedge clk) begin
-    t_start <= addr_count_rapido > (1<<10);
+    t_start <= addr_count_rapido > (1<<N);
 end
 
 sqrt_FSM SQRT(
@@ -88,7 +88,7 @@ dista_FSM distancia_FSM (
 
 assign tx_dist = (sel_op == 3'd3) ? tx_dist_man : tx_dist_euc;
 
-logic [7:0] memory_X [1023:0];
+logic [7:0] memory_X [(1<<N)-1:0];
 
 assign memory_X_out = memory_X[0];
 
@@ -96,8 +96,8 @@ assign memory_X_out = memory_X[0];
 always_comb begin
     case(sel_op)
         3'd0: begin 
-           for (int i = 0; i < 1024; i++) begin
-               memory_X[i] = sel_out ? memory_A[i] : memory_B[i];
+           for (int i = 0; i < (1<<N); i++) begin
+               memory_X[i] = sel_out ? memory_B[i] : memory_A[i];
                end  
         end
       //  3'd1: dout_salida = doutb + douta;
@@ -105,7 +105,7 @@ always_comb begin
       //  3'd3: dout_salida = auxman[7:0];
       //  3'd4: dout_salida = t_sqrteuc[7:0];
         default: begin 
-           for (int i = 0; i < 1024; i++) begin
+           for (int i = 0; i < (1<<N); i++) begin
                memory_X[i] = 8'hbb;
                end  
         end
@@ -117,7 +117,7 @@ pulse_generator pulse_generator(
     .clk, .reset, .in(RM), .pulse_out(start_piso)
     );
 
-PISO #(.In_width(8), .N_inputs(1024)) memory_send(
+PISO #(.In_width(8), .N_inputs((1<<N))) memory_send(
     .clk, .start(start_piso), .enable(~tx_busy),
     .in(memory_X), 
     .out(dout_salida)

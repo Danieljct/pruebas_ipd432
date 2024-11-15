@@ -9,7 +9,7 @@
 
 module uart_basic
 #(
-	parameter CLK_FREQUENCY = 100000000,
+	parameter CLK_FREQUENCY = 10000000,
 	parameter BAUD_RATE = 115200
 )(
 	input clk,

@@ -1,10 +1,11 @@
-module testbench #(int UART_BIT_PERIOD = 100)();
+module testbench #(int UART_BIT_PERIOD = 8680)(); // estaba en 100
+    localparam N = 4;
     logic clk_100M;
     logic reset_n;
     logic uart_rx;   // Declarado como un solo bit
     logic uart_tx_usb;
 
-    TOP_module #(.baudrate(10000000),.clk_base(100000000)) DUT (
+    TOP_module #(.baudrate(115200),.clk_base(10000000), .N(N)) DUT ( // estaba en 10000000 y 100000000
         .clk_100M(clk_100M),
         .reset_n(reset_n),
         .uart_rx(uart_rx),
@@ -26,7 +27,7 @@ module testbench #(int UART_BIT_PERIOD = 100)();
 
 
         // Enviar los bytes del 0 al 1023
-        for (int i = 0; i < 1024; i++) begin
+        for (int i = 0; i < (1<<N); i++) begin
             send_byte(i[7:0]); // Enviar cada byte
         end
         #100000
@@ -34,7 +35,7 @@ module testbench #(int UART_BIT_PERIOD = 100)();
        send_byte(8'h00);
        send_byte(8'h00);
 
-       for (int i = 0; i < 1024; i++) begin
+       for (int i = 0; i < (1<<N); i++) begin
            send_byte(255); // Enviar cada byte
        end
        
