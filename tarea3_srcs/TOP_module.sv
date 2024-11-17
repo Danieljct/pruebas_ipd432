@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TOP_module #(parameter baudrate = 115200, parameter clk_base = 94000000, parameter N = 10)(
+module TOP_module #(parameter baudrate = 115200, parameter clk_base = 94000000, parameter N = 8)(
 	input  logic               clk_100M,
 	input  logic               reset_n,
 	input  logic               uart_rx,
@@ -66,26 +66,26 @@ uart_basic #(
 	
 logic WM, RM, op, SW, SR, tx, CMD, Ac;
 logic [2:0] sel_op;
-logic [3:0] estado_actual;
  
 main_FSM main_FSM(
 	.clk, .rst(reset), .rx_ready, .mready, .rready, .dist_ready,
 	.rx(rx_data),
-	.WM, .RM, .op, .SW, .SR, .tx, .CMD, .Ac, .sel_op, .estado_actual
+	.WM, .RM, .op, .SW, .SR, .tx, .CMD, .Ac, .sel_op
 	);
- logic [7:0] douta, doutb;
 logic [7:0] tx_in;	
-logic [15:0] t_sqrteuc, sqrteuc;
-logic tm_axis_dout_tvalid;
-
-logic tx_dist, Ac_retarded;
+logic Ac_retarded;
 logic [7:0] temp_AN;
-logic [7:0] memory_A_out;
-logic [7:0] memory_X_out;
-logic [N:0] addr_count,addr_count_salida;
 
 memory_unit #(.N(N)) memory_unit_inst (
-		.*	
+		.clk, .reset,
+        .rx_ready, .SW, .SR, .RM, .WM, .op, .tx_busy, .CMD, .Ac,
+        .rx_data,
+        .mready, .rready, .dist_ready,
+        .sel_op,
+        .tx_in,
+        .Ac_retarded,
+        .temp_AN,
+        .segmentos
 	);
 	
 assign AN = (sel_op == 3'd3 | sel_op == 3'd4) ? temp_AN : 8'hff;

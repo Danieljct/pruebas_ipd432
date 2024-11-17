@@ -1,11 +1,10 @@
 module vector_calc #(parameter N = 10)(
-    input logic clk, reset, SR, Ac, sel_out, tx_busy, tx, RM,
+    input logic clk, reset, Ac, sel_out, tx_busy, RM,
     input logic [7:0] memory_A [(1<<N)-1:0],
     input logic [7:0] memory_B [(1<<N)-1:0],
     input logic [2:0] sel_op,
     output logic Ac_retarded,
     output logic [7:0] dout_salida,
-    output logic [7:0] memory_X_out,
     output logic [8+N-1:0] manhatan_sum
     );
 
@@ -13,7 +12,6 @@ module vector_calc #(parameter N = 10)(
 
 logic [7:0] memory_X [(1<<N)-1:0];
 
-assign memory_X_out = memory_X[0];
 
 
 always_comb begin

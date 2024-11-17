@@ -22,9 +22,7 @@
 
 module num2display(
     input logic clk, reset, 
-    input logic [2:0] sel_op,
     input logic [31:0] man,
-    input logic [15:0] sqrteuc,
     output logic [7:0] temp_AN,
     output logic [6:0] segmentos
     );
@@ -44,7 +42,7 @@ unsigned_to_bcd doubledable(
     .clk(clk),
     .reset,
     .trigger(1),
-    .in((sel_op == 3'd3) ? {man} : {16'b0, sqrteuc}),
+    .in(man),
     .bcd(to_disp)
 );
 
