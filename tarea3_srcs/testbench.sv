@@ -41,18 +41,18 @@ module testbench #(int UART_BIT_PERIOD = 8680)(); // estaba en 100
        
        
 
-       #100000
+       #120000
        send_byte(8'h01);   
        send_byte(8'h00);
        send_byte(8'h00);
 
 
-       #1200000;
+       #1400000;
        send_byte(8'h01);   
        send_byte(8'h00);
        send_byte(8'h01);
 
-       #1200000;
+       #1400000;
        send_byte(8'h01);   
        send_byte(8'h03);
 

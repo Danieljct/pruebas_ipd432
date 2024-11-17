@@ -32,16 +32,16 @@ module TOP_module #(parameter baudrate = 115200, parameter clk_base = 14006020, 
 logic clk;
 logic reset;
 assign reset = ~reset_n;
-//clk_wiz_0 clk100MHZ
-//   (
-//    .clk_out1(clk),  // output clk_out1
-//    .reset,         // input reset
-//    .locked(),       // output locked
-//    .clk_in1(clk_100M)      // input clk_in1
-//);
+clk_wiz_0 clk100MHZ
+   (
+    .clk_out1(clk),  // output clk_out1
+    .reset,         // input reset
+    .locked(),       // output locked
+    .clk_in1(clk_100M)      // input clk_in1
+);
 
 
-assign clk = clk_100M;
+//assign clk = clk_100M;
     
 logic tx_start, tx_busy, rx_ready;
 logic [7:0]    tx_data; 
@@ -78,7 +78,7 @@ logic [7:0] tx_in;
 logic [15:0] t_sqrteuc, sqrteuc;
 logic tm_axis_dout_tvalid;
 
-logic tx_dist;
+logic tx_dist, Ac_retarded;
 logic [7:0] temp_AN;
 logic [7:0] memory_A_out;
 logic [7:0] memory_X_out;
@@ -96,8 +96,8 @@ always_comb begin
 		tx_data = tx_in;
 		tx_start = ~tx_busy;
 	end
-	else if (tx_dist)begin   // man enviar
-	   tx_start = tx_dist;
+	else if (Ac_retarded) begin   // man enviar
+	   tx_start = ~tx_busy;
 	   tx_data = tx_in;	
 	end
 	else begin             // no sé
@@ -108,20 +108,20 @@ end
 
 
 
-ila_0 your_instance_name (
-	.clk(clk), // input wire clk
-	.probe0(memory_X_out), 
-	.probe1(tx_data),
-	.probe2(rx_data), 
-	.probe3(uart_tx_usb),
-	.probe4(rready),
-	.probe5(estado_actual),
-	.probe6(addr_count_salida),
-	.probe7(tx_start),
-	.probe8(tx_busy)
+//ila_0 your_instance_name (
+//	.clk(clk), // input wire clk
+//	.probe0(memory_X_out), 
+//	.probe1(tx_data),
+//	.probe2(rx_data), 
+//	.probe3(uart_tx_usb),
+//	.probe4(rready),
+//	.probe5(estado_actual),
+//	.probe6(addr_count_salida),
+//	.probe7(tx_start),
+//	.probe8(tx_busy)
 //	.probe8(uart_tx_usb),
 //	.probe9(sel_op)
 	
-);
+//);
 
 endmodule

@@ -27,7 +27,7 @@ module memory_unit #(parameter N = 10) (
         output logic mready, rready, dist_ready,
         output logic [2:0] sel_op,
         output logic [7:0]  tx_in,
-        output logic tx_dist, 
+        output logic tx_dist, Ac_retarded,
         output logic [7:0] temp_AN,
         output logic [6:0] segmentos,
         output logic [7:0] memory_A_out,
@@ -46,7 +46,7 @@ logic reset_counter_euc;
 logic [N:0] addra;
 
 addr_ctrl #(.N(N)) addr_ctrl (
-    .clk, .reset, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM,
+    .clk, .reset, .rx_ready, .SW, .SR, .tx_busy, .Ac, .reset_counter, .reset_counter_euc, .RM, .sel, .WM, .Ac_retarded,
     .mready, .rready, .dist_ready, .wea, .web,
     .addra, .addr_count_rapido, .addr_count, .addr_count_salida //para ver en ila
     );
@@ -87,18 +87,12 @@ logic [15:0] sqrteuc;
 
 vector_calc #(.N(N)) vector_calc(
     .clk, .reset, .SR, .Ac, .sel_out, .tx_busy, .tx, .RM,
-    .addra,
-    .addr_count_rapido,
     .memory_B, .memory_A,
     .sel_op,
-    .reset_counter_euc, .reset_counter, 
-    .tx_dist,
-    .sqrteuc,
-    .man,
     .dout_salida,
-    .memory_X_out
+    .memory_X_out,
+    .Ac_retarded
     );
-	
 
 assign tx_in = dout_salida;
 

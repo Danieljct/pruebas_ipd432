@@ -1,5 +1,5 @@
 module addr_ctrl #(N =10)(
-    input logic clk, reset, rx_ready, SW, SR, tx_busy, Ac, reset_counter, reset_counter_euc, RM, sel, WM,
+    input logic clk, reset, rx_ready, SW, SR, tx_busy, Ac, reset_counter, reset_counter_euc, RM, sel, WM, Ac_retarded,
     output logic mready, rready, dist_ready, wea, web,
     output logic [N:0] addra, addr_count_rapido,addr_count,addr_count_salida
     );
@@ -26,7 +26,7 @@ EContadorN #(.N(N+1)) address_counter (
 EContadorN #(.N(N+1)) address_counter_tx (
     .clk,
     .enable(~tx_busy),
-    .reset(SR), 
+    .reset(SR|(Ac & ~Ac_retarded)), 
     .count(addr_count_salida)
     );
 
@@ -46,7 +46,7 @@ always_ff @(posedge clk) begin
     rready <= addr_count_salida >= (1<<N)+1;
     mready_t <= addr_count >= (1<<N);
     mready <= mready_t;
-    dist_ready <= addr_count_rapido >= N+8;  
+    dist_ready <= addr_count_salida > (((8+N)>>3)+1);  
 end
 
 
