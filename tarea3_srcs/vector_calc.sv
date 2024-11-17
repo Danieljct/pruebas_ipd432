@@ -5,7 +5,8 @@ module vector_calc #(parameter N = 10)(
     input logic [2:0] sel_op,
     output logic Ac_retarded,
     output logic [7:0] dout_salida,
-    output logic [7:0] memory_X_out
+    output logic [7:0] memory_X_out,
+    output logic [8+N-1:0] manhatan_sum
     );
 
 
@@ -49,7 +50,7 @@ always_comb begin
     endcase
 end
 
-logic [8+N-1:0] manhatan_sum;
+
 logic [7:0] sub_vectors[(8+N)/8:0];
 
 always_comb begin

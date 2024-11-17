@@ -83,7 +83,7 @@ SIPO #(.In_width(8), .N_inputs(1<<N)) memoryB (
 logic [17:0] man;
 logic [7:0] dout_salida;
 logic [15:0] sqrteuc;
-
+logic [8+N-1:0] manhatan_sum;
 
 vector_calc #(.N(N)) vector_calc(
     .clk, .reset, .SR, .Ac, .sel_out, .tx_busy, .tx, .RM,
@@ -91,7 +91,8 @@ vector_calc #(.N(N)) vector_calc(
     .sel_op,
     .dout_salida,
     .memory_X_out,
-    .Ac_retarded
+    .Ac_retarded,
+    .manhatan_sum
     );
 
 assign tx_in = dout_salida;
@@ -99,7 +100,7 @@ assign tx_in = dout_salida;
 num2display num2display(
     .clk, .reset, 
     .sel_op,
-    .man,
+    .man({{(32-(8+N)){1'b0}},manhatan_sum}),
     .sqrteuc,
     .temp_AN,
     .segmentos
