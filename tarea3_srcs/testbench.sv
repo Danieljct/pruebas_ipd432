@@ -5,7 +5,7 @@ module testbench #(int UART_BIT_PERIOD = 8680)(); // estaba en 100
     logic uart_rx;   // Declarado como un solo bit
     logic uart_tx_usb;
 
-    TOP_module #(.baudrate(115200),.clk_base(10000000), .N(N)) DUT ( // estaba en 10000000 y 100000000
+    TOP_module #(.baudrate(115200),.clk_base(100000000), .N(N)) DUT ( // estaba en 10000000 y 100000000
         .clk_100M(clk_100M),
         .reset_n(reset_n),
         .uart_rx(uart_rx),
@@ -52,8 +52,10 @@ module testbench #(int UART_BIT_PERIOD = 8680)(); // estaba en 100
        send_byte(8'h00);
        send_byte(8'h01);
 
+       #1200000;
+       send_byte(8'h01);   
+       send_byte(8'h03);
 
-       
        end
 
     // Declaración de tarea para enviar un byte por UART

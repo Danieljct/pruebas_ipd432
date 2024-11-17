@@ -100,9 +100,24 @@ always_comb begin
                memory_X[i] = sel_out ? memory_B[i] : memory_A[i];
                end  
         end
-      //  3'd1: dout_salida = doutb + douta;
-      //  3'd2: dout_salida = doutb/2 + douta/2;
-      //  3'd3: dout_salida = auxman[7:0];
+        3'd1: begin 
+            for (int i = 0; i < (1<<N); i++) begin
+                memory_X[i] =  memory_B[i] + memory_A[i];
+                end  
+         end
+        3'd2: begin
+            for (int i = 0; i < (1<<N); i++) begin
+                memory_X[i] =  memory_B[i]/2 + memory_A[i]/2;
+                end
+            end 
+        3'd3: begin
+            for (int i = 0; i < (1<<N); i++) begin
+                if(memory_A[i] > memory_B[i])
+                    memory_X[i] = memory_A[i] - memory_B[i];
+                else
+                    memory_X[i] = memory_B[i] - memory_A[i];
+                end
+            end
       //  3'd4: dout_salida = t_sqrteuc[7:0];
         default: begin 
            for (int i = 0; i < (1<<N); i++) begin
@@ -112,14 +127,45 @@ always_comb begin
     endcase
 end
 
+logic [8+N-1:0] manhatan_sum;
+logic [7:0] sub_vectors[(1<<N)-1:0];
+
+always_comb 
+    for (int i = 0; i <(8+N-1)>>3; i++) 
+        sub_vectors[i] = manhatan_sum[i*8 +: 8];
+
+
+adder_tree 
+#(
+	.In_width(8),
+	.N_inputs(1<<N)
+) adder_tree_man (
+	.clk,
+    .in(memory_X),
+    .out(manhatan_sum)
+);
+
+
+
+logic Ac_retarded;
+
+signal_delay #(
+    .dt(N)
+) signal_delay_inst (
+    .clk,
+    .rst(reset),
+    .din(Ac),
+    .dout(Ac_retarded)
+);
+
 logic start_piso;
 pulse_generator pulse_generator(
-    .clk, .reset, .in(RM), .pulse_out(start_piso)
+    .clk, .reset, .in(Ac ? Ac_retarded : RM), .pulse_out(start_piso)
     );
 
 PISO #(.In_width(8), .N_inputs((1<<N))) memory_send(
     .clk, .start(start_piso), .enable(~tx_busy),
-    .in(memory_X), 
+    .in(Ac ? sub_vectors : memory_X),
     .out(dout_salida)
     );
 

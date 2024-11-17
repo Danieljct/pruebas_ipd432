@@ -30,7 +30,7 @@ EContadorN #(.N(N+1)) address_counter_tx (
     .count(addr_count_salida)
     );
 
-EContadorN #(.N(N+1)) address_counter_rapido (
+EContadorN #(.N($clog2(N)+4)) address_counter_rapido (
     .clk,
     .enable(Ac),
     .reset(SR | reset_counter | reset_counter_euc), 
@@ -43,12 +43,13 @@ assign addra = Ac ? addr_count_rapido : {{10-N{1'b0}}, (RM ? addr_count_salida :
 
 logic mready_t;
 always_ff @(posedge clk) begin   
-    rready <= addr_count_salida >= (1<<N);
+    rready <= addr_count_salida >= (1<<N)+1;
     mready_t <= addr_count >= (1<<N);
     mready <= mready_t;
+    dist_ready <= addr_count_rapido >= N+8;  
 end
 
-assign dist_ready = addr_count_rapido == (1<<N)+1;  
+
 assign wea = (addr_count >= (1<<N)) ? 0 :(sel ? 0 : WM);
 assign web = (addr_count >= (1<<N)) ? 0 :(~sel ? 0 : WM);
 

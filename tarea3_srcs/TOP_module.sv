@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TOP_module #(parameter baudrate = 115200, parameter clk_base = 10000000, parameter N = 4)(
+module TOP_module #(parameter baudrate = 115200, parameter clk_base = 14006020, parameter N = 4)(
 	input  logic               clk_100M,
 	input  logic               reset_n,
 	input  logic               uart_rx,
@@ -32,16 +32,16 @@ module TOP_module #(parameter baudrate = 115200, parameter clk_base = 10000000, 
 logic clk;
 logic reset;
 assign reset = ~reset_n;
-clk_wiz_0 clk100MHZ
-   (
-    .clk_out1(clk),  // output clk_out1
-    .reset,         // input reset
-    .locked(),       // output locked
-    .clk_in1(clk_100M)      // input clk_in1
-);
+//clk_wiz_0 clk100MHZ
+//   (
+//    .clk_out1(clk),  // output clk_out1
+//    .reset,         // input reset
+//    .locked(),       // output locked
+//    .clk_in1(clk_100M)      // input clk_in1
+//);
 
 
-//assign clk = clk_100M;
+assign clk = clk_100M;
     
 logic tx_start, tx_busy, rx_ready;
 logic [7:0]    tx_data; 
@@ -53,7 +53,7 @@ uart_basic #(
 		.CLK_FREQUENCY(clk_base), // reloj base de entrada
 		.BAUD_RATE(baudrate)
 	) uart_basic_inst (
-		.clk,
+		.clk(clk),
 		.reset,
 		.rx(uart_rx),
 		.rx_data(rx_data),
@@ -90,6 +90,7 @@ memory_unit #(.N(N)) memory_unit_inst (
 	
 assign AN = (sel_op == 3'd3 | sel_op == 3'd4) ? temp_AN : 8'hff;
 
+
 always_comb begin
 	if (RM && tx) begin        //leyendo
 		tx_data = tx_in;
@@ -116,7 +117,8 @@ ila_0 your_instance_name (
 	.probe4(rready),
 	.probe5(estado_actual),
 	.probe6(addr_count_salida),
-	.probe7(tx_start)
+	.probe7(tx_start),
+	.probe8(tx_busy)
 //	.probe8(uart_tx_usb),
 //	.probe9(sel_op)
 	
