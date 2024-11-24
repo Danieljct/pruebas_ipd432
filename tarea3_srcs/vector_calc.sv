@@ -10,8 +10,8 @@ module vector_calc #(parameter N = 3)(
 
 
 
-(* use_dsp = "yes" *) logic [7:0] memory_X [(1<<N)-1:0];
-//logic [7:0] memory_X [(1<<N)-1:0];
+//(* use_dsp = "yes" *) logic [7:0] memory_X [(1<<N)-1:0];
+logic [7:0] memory_X [(1<<N)-1:0];
 
 // para ver si mejora timing
 logic [1:0] sel_op_t;
