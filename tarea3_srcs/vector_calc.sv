@@ -13,9 +13,12 @@ module vector_calc #(parameter N = 3)(
 (* use_dsp = "yes" *) logic [7:0] memory_X [(1<<N)-1:0];
 //logic [7:0] memory_X [(1<<N)-1:0];
 
+// para ver si mejora timing
+logic [1:0] sel_op_t;
 
 always_ff @(posedge clk) begin
-    case(sel_op)
+sel_op_t <= sel_op[1:0];
+    case(sel_op_t)
         3'd0: begin 
            for (int i = 0; i < (1<<N); i++) begin
                memory_X[i] <= sel_out ? memory_B[i] : memory_A[i];
@@ -40,11 +43,11 @@ always_ff @(posedge clk) begin
                 end
             end
       //  3'd4: dout_salida = t_sqrteuc[7:0];
-        default: begin 
-           for (int i = 0; i < (1<<N); i++) begin
-               memory_X[i] <= 8'h00;
-               end  
-        end
+       // default: begin 
+       //    for (int i = 0; i < (1<<N); i++) begin
+       //        memory_X[i] <= 8'h00;
+       //        end  
+      //  end
     endcase
 end
 
