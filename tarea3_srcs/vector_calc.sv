@@ -1,4 +1,4 @@
-module vector_calc #(parameter N = 10)(
+module vector_calc #(parameter N = 3)(
     input logic clk, reset, Ac, sel_out, tx_busy, RM,
     input logic [7:0] memory_A [(1<<N)-1:0],
     input logic [7:0] memory_B [(1<<N)-1:0],
@@ -10,39 +10,39 @@ module vector_calc #(parameter N = 10)(
 
 
 
-logic [7:0] memory_X [(1<<N)-1:0];
+(* use_dsp = "yes" *) logic [7:0] memory_X [(1<<N)-1:0];
+//logic [7:0] memory_X [(1<<N)-1:0];
 
 
-
-always_comb begin
+always_ff @(posedge clk) begin
     case(sel_op)
         3'd0: begin 
            for (int i = 0; i < (1<<N); i++) begin
-               memory_X[i] = sel_out ? memory_B[i] : memory_A[i];
+               memory_X[i] <= sel_out ? memory_B[i] : memory_A[i];
                end  
         end
         3'd1: begin 
             for (int i = 0; i < (1<<N); i++) begin
-                memory_X[i] =  memory_B[i] + memory_A[i];
+                 memory_X[i] <= memory_B[i] + memory_A[i];
                 end  
          end
         3'd2: begin
             for (int i = 0; i < (1<<N); i++) begin
-                memory_X[i] =  memory_B[i]/2 + memory_A[i]/2;
+                memory_X[i] <=  memory_B[i][7:1] + memory_A[i][7:1];
                 end
             end 
         3'd3: begin
             for (int i = 0; i < (1<<N); i++) begin
                 if(memory_A[i] > memory_B[i])
-                    memory_X[i] = memory_A[i] - memory_B[i];
+                    memory_X[i] <= memory_A[i] - memory_B[i];
                 else
-                    memory_X[i] = memory_B[i] - memory_A[i];
+                    memory_X[i] <= memory_B[i] - memory_A[i];
                 end
             end
       //  3'd4: dout_salida = t_sqrteuc[7:0];
         default: begin 
            for (int i = 0; i < (1<<N); i++) begin
-               memory_X[i] = 8'hbb;
+               memory_X[i] <= 8'h00;
                end  
         end
     endcase
