@@ -51,11 +51,12 @@ function receivedData = command2dev(operation, varargin) %BRAMX, COM_port
 
     % Leer 4 números enteros de 16 bits
     if(leertodo) 
-        receivedData = read(port, 1024, "uint8");
+        receivedData = read(port, 1025, "uint8")
+        receivedData = receivedData(2:1025);
     else
        %read(port, 1, "uint8");
-       receivedData = read(port, 3, "uint8") 
-       receivedData =  receivedData(1) + 2^8*receivedData(2) + 2^16*receivedData(3);
+       receivedData = read(port, 4, "uint8");
+       receivedData =  receivedData(4) + 2^8*receivedData(3) + 2^16*receivedData(2);
     end
 
     % Mostrar los datos recibidos

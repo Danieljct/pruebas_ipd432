@@ -31,7 +31,7 @@ function write2dev(filename, BRAMX, COM_port)
         linea = uint8(str2double(fgetl(fid))); % Lee una línea del archivo
         write(port, linea, "uint8");
     end
-	write(port,0,"uint8"); % 0 para write2dev
+%	write(port,0,"uint8"); no se pq estaba % 0 para write2dev
     % Cerrar el archivo
     fclose(fid);
 
