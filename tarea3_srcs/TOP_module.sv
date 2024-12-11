@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TOP_module #(parameter baudrate = 115200, parameter clk_base = 130000000, parameter N = 2)(
+module TOP_module #(parameter baudrate = 115200, parameter clk_base = 175000000, parameter N = 10)(
 	input  logic               clk_100M,
 	input  logic               reset_n,
 	input  logic               uart_rx,

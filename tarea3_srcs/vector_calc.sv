@@ -8,13 +8,16 @@ module vector_calc #(parameter N = 3)(
     output logic [8+N-1:0] manhatan_sum
     );
 
-
-
-(* use_dsp = "yes" *) logic [7:0] memory_X [(1<<N)-1:0];
-//logic [7:0] memory_X [(1<<N)-1:0];
-
+//(* use_dsp = "yes" *) logic [7:0] memory_X [(1<<N)-1:0];
+logic [7:0] memory_X [(1<<N)-1:0];
 // para ver si mejora timing
 logic [1:0] sel_op_t;
+
+logic [8:0] memory_x_sum [(1<<N)-1:0];
+
+always_comb 
+for (int i = 0; i < (1<<N); i++)
+    memory_x_sum[i] = memory_A[i] + memory_B[i];
 
 always_ff @(posedge clk) begin
 sel_op_t <= sel_op[1:0];
@@ -26,12 +29,12 @@ sel_op_t <= sel_op[1:0];
         end
         3'd1: begin 
             for (int i = 0; i < (1<<N); i++) begin
-                 memory_X[i] <= memory_B[i] + memory_A[i];
+                 memory_X[i] <= memory_x_sum[i][7:0];
                 end  
          end
         3'd2: begin
             for (int i = 0; i < (1<<N); i++) begin
-                memory_X[i] <=  memory_B[i][7:1] + memory_A[i][7:1];
+                memory_X[i] <=  memory_x_sum[i][8:1];
                 end
             end 
         3'd3: begin
